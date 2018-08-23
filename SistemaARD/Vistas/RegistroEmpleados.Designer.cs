@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroEmpleados));
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
@@ -54,6 +55,8 @@
             this.lblApellidos = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.iconCerrar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -135,7 +138,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(178, 134);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(233, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(200, 20);
             this.txtDireccion.TabIndex = 33;
             // 
             // txtApellidos
@@ -143,7 +146,7 @@
             this.txtApellidos.Location = new System.Drawing.Point(178, 45);
             this.txtApellidos.Multiline = true;
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(233, 20);
+            this.txtApellidos.Size = new System.Drawing.Size(200, 20);
             this.txtApellidos.TabIndex = 32;
             // 
             // txtNombres
@@ -151,7 +154,7 @@
             this.txtNombres.Location = new System.Drawing.Point(178, 6);
             this.txtNombres.Multiline = true;
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(233, 20);
+            this.txtNombres.Size = new System.Drawing.Size(200, 20);
             this.txtNombres.TabIndex = 34;
             // 
             // lblEstado
@@ -279,12 +282,27 @@
             this.lblId.TabIndex = 44;
             this.lblId.Text = "label1";
             // 
+            // iconCerrar
+            // 
+            this.iconCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconCerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconCerrar.Image")));
+            this.iconCerrar.Location = new System.Drawing.Point(414, 6);
+            this.iconCerrar.Name = "iconCerrar";
+            this.iconCerrar.Size = new System.Drawing.Size(25, 25);
+            this.iconCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconCerrar.TabIndex = 45;
+            this.iconCerrar.TabStop = false;
+            this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
+            // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(443, 495);
             this.ControlBox = false;
+            this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.cbxEstado);
@@ -311,9 +329,11 @@
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.lblNombres);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistroEmpleados";
             this.Text = "RegistroEmpleados";
             this.Load += new System.EventHandler(this.RegistroEmpleados_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +366,6 @@
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.PictureBox iconCerrar;
     }
 }

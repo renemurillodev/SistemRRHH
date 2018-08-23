@@ -96,5 +96,24 @@ namespace SistemaARD.Vistas
             cargos.idEmpl = idEmpleado;
             cargos.Show();
         }
+
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Esta seguro de cerrar?", "ALERTA!!", MessageBoxButtons.YesNo) == DialogResult.Yes){
+                this.Close();
+            }
+        }
+
+        private void btnRegistroEmp_Click(object sender, EventArgs e)
+        {
+            RegistroEmpleados REmpleados = new RegistroEmpleados();
+            AddOwnedForm(REmpleados);
+            REmpleados.TopLevel = false;
+            REmpleados.Dock = DockStyle.Fill;
+            this.Controls.Add(REmpleados);
+            this.Tag = REmpleados;
+            REmpleados.BringToFront();
+            REmpleados.Show();
+        }
     }
 }

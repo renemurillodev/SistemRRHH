@@ -165,8 +165,8 @@
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            this.BarraTitulo.Controls.Add(this.iconRestaurar);
             this.BarraTitulo.Controls.Add(this.iconMinimizar);
+            this.BarraTitulo.Controls.Add(this.iconRestaurar);
             this.BarraTitulo.Controls.Add(this.iconMaximizar);
             this.BarraTitulo.Controls.Add(this.iconCerrar);
             this.BarraTitulo.Controls.Add(this.btnSlide);
@@ -197,7 +197,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMinimizar.Image")));
-            this.iconMinimizar.Location = new System.Drawing.Point(451, 12);
+            this.iconMinimizar.Location = new System.Drawing.Point(482, 12);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(25, 25);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -216,6 +216,7 @@
             this.iconMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMaximizar.TabIndex = 2;
             this.iconMaximizar.TabStop = false;
+            this.iconMaximizar.Visible = false;
             this.iconMaximizar.Click += new System.EventHandler(this.iconMaximizar_Click);
             // 
             // iconCerrar
@@ -403,6 +404,7 @@
             this.Controls.Add(this.Fullcontainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Fullcontainer.ResumeLayout(false);

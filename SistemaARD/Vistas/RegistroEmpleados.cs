@@ -173,5 +173,10 @@ namespace SistemaARD.Vistas
             }
 
         }
+
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

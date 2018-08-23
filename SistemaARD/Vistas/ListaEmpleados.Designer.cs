@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaEmpleados));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,10 @@
             this.btnCargo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
+            this.iconCerrar = new System.Windows.Forms.PictureBox();
+            this.btnRegistroEmp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -167,9 +171,10 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.Location = new System.Drawing.Point(12, 15);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(110, 13);
+            this.lblApellido.Size = new System.Drawing.Size(131, 13);
             this.lblApellido.TabIndex = 1;
             this.lblApellido.Text = "Apellido del empleado";
             // 
@@ -177,7 +182,7 @@
             // 
             this.txtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellido.Location = new System.Drawing.Point(128, 12);
+            this.txtApellido.Location = new System.Drawing.Point(149, 12);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(210, 20);
             this.txtApellido.TabIndex = 2;
@@ -215,12 +220,43 @@
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Visible = false;
             // 
+            // iconCerrar
+            // 
+            this.iconCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconCerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconCerrar.Image")));
+            this.iconCerrar.Location = new System.Drawing.Point(733, 7);
+            this.iconCerrar.Name = "iconCerrar";
+            this.iconCerrar.Size = new System.Drawing.Size(25, 25);
+            this.iconCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconCerrar.TabIndex = 10;
+            this.iconCerrar.TabStop = false;
+            this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
+            // 
+            // btnRegistroEmp
+            // 
+            this.btnRegistroEmp.FlatAppearance.BorderSize = 0;
+            this.btnRegistroEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistroEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistroEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroEmp.Image")));
+            this.btnRegistroEmp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistroEmp.Location = new System.Drawing.Point(15, 48);
+            this.btnRegistroEmp.Name = "btnRegistroEmp";
+            this.btnRegistroEmp.Size = new System.Drawing.Size(202, 58);
+            this.btnRegistroEmp.TabIndex = 11;
+            this.btnRegistroEmp.Text = "Registrar Empleado";
+            this.btnRegistroEmp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistroEmp.UseVisualStyleBackColor = true;
+            this.btnRegistroEmp.Click += new System.EventHandler(this.btnRegistroEmp_Click);
+            // 
             // ListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.btnRegistroEmp);
+            this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.btnCargo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnDetalle);
@@ -232,6 +268,7 @@
             this.Text = "Lista de empleados";
             this.Load += new System.EventHandler(this.ListaEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +294,7 @@
         private System.Windows.Forms.Button btnCargo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.PictureBox iconCerrar;
+        private System.Windows.Forms.Button btnRegistroEmp;
     }
 }

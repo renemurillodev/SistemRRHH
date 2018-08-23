@@ -27,6 +27,7 @@ namespace SistemaARD
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             dashboard();
         }
 
