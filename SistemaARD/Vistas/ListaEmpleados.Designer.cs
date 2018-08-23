@@ -43,6 +43,9 @@
             this.Estado_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.btnCargo = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +73,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(744, 228);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Id
@@ -180,12 +184,46 @@
             this.txtApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido_KeyDown);
             this.txtApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtApellido_KeyUp);
             // 
+            // btnCargo
+            // 
+            this.btnCargo.Location = new System.Drawing.Point(671, 181);
+            this.btnCargo.Name = "btnCargo";
+            this.btnCargo.Size = new System.Drawing.Size(85, 23);
+            this.btnCargo.TabIndex = 9;
+            this.btnCargo.Text = "Asignar cargo";
+            this.btnCargo.UseVisualStyleBackColor = true;
+            this.btnCargo.Visible = false;
+            this.btnCargo.Click += new System.EventHandler(this.btnCargo_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(590, 181);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(509, 181);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnDetalle.TabIndex = 7;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Visible = false;
+            // 
             // ListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.btnCargo);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.dataGridView1);
@@ -216,5 +254,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn N_Isss;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Id;
+        private System.Windows.Forms.Button btnCargo;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }

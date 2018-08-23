@@ -78,6 +78,12 @@
     <Compile Include="Planillas_Jefes.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\AgregarCargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AgregarCargos.Designer.cs">
+      <DependentUpon>AgregarCargos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     <Compile Include="Vistas\TiposDeTelefono.Designer.cs">
       <DependentUpon>TiposDeTelefono.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\AgregarCargos.resx">
+      <DependentUpon>AgregarCargos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

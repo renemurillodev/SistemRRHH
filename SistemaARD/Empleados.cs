@@ -30,6 +30,7 @@ namespace SistemaARD
         public int Id { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
+        public string NombreCompleto { get { return string.Format("{0} {1}", Nombres, Apellidos); } }
         public System.DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public int Genero_Id { get; set; }

@@ -13,6 +13,7 @@ namespace SistemaARD.Vistas
     public partial class ListaEmpleados : Form
     {
         private Empleados empleados = new Empleados();
+        string idEmpleado = "";
         public ListaEmpleados()
         {
             InitializeComponent();
@@ -77,6 +78,23 @@ namespace SistemaARD.Vistas
                 registro.Show();
             }
             
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                idEmpleado = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
+                btnCargo.Visible = true;
+            }
+        }
+
+        private void btnCargo_Click(object sender, EventArgs e)
+        {
+            AgregarCargos cargos = new AgregarCargos();
+            cargos.idEmpl = idEmpleado;
+            cargos.Show();
         }
     }
 }
