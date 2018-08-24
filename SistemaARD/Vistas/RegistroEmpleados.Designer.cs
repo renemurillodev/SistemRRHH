@@ -281,6 +281,7 @@
             this.lblId.Size = new System.Drawing.Size(35, 13);
             this.lblId.TabIndex = 44;
             this.lblId.Text = "label1";
+            this.lblId.Visible = false;
             // 
             // iconCerrar
             // 
