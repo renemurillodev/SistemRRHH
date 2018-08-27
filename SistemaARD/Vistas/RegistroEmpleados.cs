@@ -15,6 +15,8 @@ namespace SistemaARD.Vistas
     {
         private Empleados empleado = new Empleados();
         public string texto = "";
+        public string detalle = "";
+        public string editar = "";
         
         public RegistroEmpleados()
         {
@@ -34,6 +36,10 @@ namespace SistemaARD.Vistas
                 LlenarTextbox();
                 btnRegistrar.Text = "Actualizar";
                 
+            }
+            if(detalle != "")
+            {
+                Deshabilitar();
             }
         }
 
@@ -95,6 +101,24 @@ namespace SistemaARD.Vistas
 
         }
 
+        void Deshabilitar()
+        {
+            txtNombres.Enabled = false;
+            txtApellidos.Enabled = false;
+            dtpFechaNacimiento.Enabled = false;
+            txtDireccion.Enabled = false;
+            cbxGenero.Enabled = false;
+            txtNumeroDui.Enabled = false;
+            txtNumeroNit.Enabled = false;
+            cbxNombreAfp.Enabled = false;
+            txtNup.Enabled = false;
+            txtNumeroIsss.Enabled = false;
+            dtpFechaIngreso.Enabled = false;
+            cbxCargos.Enabled = false;
+            cbxEstado.Enabled = false;
+            btnRegistrar.Visible = false;
+        }
+
         void LlenarTextbox()
         {
             
@@ -113,7 +137,7 @@ namespace SistemaARD.Vistas
                     txtNup.Text = empleado.N_Afp;
                     txtNumeroIsss.Text = empleado.N_Isss;
                     dtpFechaIngreso.Value = empleado.FechaIngreso;
-                cbxCargos.SelectedValue = empleado.Cargo_Id;
+                    cbxCargos.SelectedValue = empleado.Cargo_Id;
                     cbxEstado.SelectedValue = empleado.Estado_Id;
                 }
         }

@@ -44,7 +44,6 @@
             this.Estado_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.btnCargo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
@@ -189,36 +188,27 @@
             this.txtApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido_KeyDown);
             this.txtApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtApellido_KeyUp);
             // 
-            // btnCargo
-            // 
-            this.btnCargo.Location = new System.Drawing.Point(671, 181);
-            this.btnCargo.Name = "btnCargo";
-            this.btnCargo.Size = new System.Drawing.Size(85, 23);
-            this.btnCargo.TabIndex = 9;
-            this.btnCargo.Text = "Asignar cargo";
-            this.btnCargo.UseVisualStyleBackColor = true;
-            this.btnCargo.Visible = false;
-            this.btnCargo.Click += new System.EventHandler(this.btnCargo_Click);
-            // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(590, 181);
+            this.btnEditar.Location = new System.Drawing.Point(681, 181);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Visible = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(509, 181);
+            this.btnDetalle.Location = new System.Drawing.Point(600, 181);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnDetalle.TabIndex = 7;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
             this.btnDetalle.Visible = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // iconCerrar
             // 
@@ -257,7 +247,6 @@
             this.ClientSize = new System.Drawing.Size(770, 450);
             this.Controls.Add(this.btnRegistroEmp);
             this.Controls.Add(this.iconCerrar);
-            this.Controls.Add(this.btnCargo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.txtApellido);
@@ -291,7 +280,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn N_Isss;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Id;
-        private System.Windows.Forms.Button btnCargo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.PictureBox iconCerrar;

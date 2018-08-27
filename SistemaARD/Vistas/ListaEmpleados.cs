@@ -86,7 +86,8 @@ namespace SistemaARD.Vistas
             if (dataGridView1.CurrentRow.Index != -1)
             {
                 idEmpleado = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
-                btnCargo.Visible = true;
+                btnEditar.Visible = true;
+                btnDetalle.Visible = true;
             }
         }
 
@@ -114,6 +115,30 @@ namespace SistemaARD.Vistas
             this.Tag = REmpleados;
             REmpleados.BringToFront();
             REmpleados.Show();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            RegistroEmpleados registro = new RegistroEmpleados();
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                registro.texto = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
+
+
+                registro.Show();
+            }
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            RegistroEmpleados registro = new RegistroEmpleados();
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                registro.texto = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
+
+                registro.detalle = "true";
+                registro.Show();
+            }
         }
     }
 }
