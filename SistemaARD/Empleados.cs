@@ -18,19 +18,17 @@ namespace SistemaARD
         public Empleados()
         {
             this.Aguinaldos = new HashSet<Aguinaldos>();
-            this.CargosEmpleados = new HashSet<CargosEmpleados>();
             this.CorreosEmpleados = new HashSet<CorreosEmpleados>();
             this.Indemnizaciones = new HashSet<Indemnizaciones>();
+            this.Planillas_Jefes = new HashSet<Planillas_Jefes>();
             this.PlanillasProduccion = new HashSet<PlanillasProduccion>();
             this.PlanillasVentas = new HashSet<PlanillasVentas>();
             this.TelefonosEmpleados = new HashSet<TelefonosEmpleados>();
-            this.Planillas_Jefes = new HashSet<Planillas_Jefes>();
         }
     
         public int Id { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
-        public string NombreCompleto { get { return string.Format("{0} {1}", Nombres, Apellidos); } }
         public System.DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
         public int Genero_Id { get; set; }
@@ -40,13 +38,13 @@ namespace SistemaARD
         public string N_Afp { get; set; }
         public string N_Isss { get; set; }
         public System.DateTime FechaIngreso { get; set; }
+        public int Cargo_Id { get; set; }
         public int Estado_Id { get; set; }
     
         public virtual Afps Afps { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Aguinaldos> Aguinaldos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CargosEmpleados> CargosEmpleados { get; set; }
+        public virtual Cargos Cargos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CorreosEmpleados> CorreosEmpleados { get; set; }
         public virtual Estados Estados { get; set; }
@@ -54,12 +52,12 @@ namespace SistemaARD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Indemnizaciones> Indemnizaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Planillas_Jefes> Planillas_Jefes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlanillasProduccion> PlanillasProduccion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlanillasVentas> PlanillasVentas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TelefonosEmpleados> TelefonosEmpleados { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Planillas_Jefes> Planillas_Jefes { get; set; }
     }
 }

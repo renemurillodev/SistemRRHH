@@ -92,9 +92,9 @@ namespace SistemaARD.Vistas
 
         private void btnCargo_Click(object sender, EventArgs e)
         {
-            AgregarCargos cargos = new AgregarCargos();
-            cargos.idEmpl = idEmpleado;
-            cargos.Show();
+            //AgregarCargos cargos = new AgregarCargos();
+            //cargos.idEmpl = idEmpleado;
+            //cargos.Show();
         }
 
         private void iconCerrar_Click(object sender, EventArgs e)

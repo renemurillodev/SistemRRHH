@@ -17,7 +17,7 @@ namespace SistemaARD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cargos()
         {
-            this.CargosEmpleados = new HashSet<CargosEmpleados>();
+            this.Empleados = new HashSet<Empleados>();
         }
     
         public int Id { get; set; }
@@ -26,6 +26,6 @@ namespace SistemaARD
     
         public virtual Departamentos Departamentos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CargosEmpleados> CargosEmpleados { get; set; }
+        public virtual ICollection<Empleados> Empleados { get; set; }
     }
 }

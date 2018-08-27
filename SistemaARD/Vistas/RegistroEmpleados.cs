@@ -27,6 +27,7 @@ namespace SistemaARD.Vistas
             CargarGeneros();
             CargarAfps();
             CargarEstados();
+            CargarCargos();
             lblId.Text = texto;
             if(texto != "")
             {
@@ -82,6 +83,18 @@ namespace SistemaARD.Vistas
 
         }
 
+        void CargarCargos()
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                cbxCargos.DataSource = db.Cargos.ToList<Cargos>();
+
+                cbxCargos.DisplayMember = "Nombre";
+                cbxCargos.ValueMember = "Id";
+            }
+
+        }
+
         void LlenarTextbox()
         {
             
@@ -100,6 +113,7 @@ namespace SistemaARD.Vistas
                     txtNup.Text = empleado.N_Afp;
                     txtNumeroIsss.Text = empleado.N_Isss;
                     dtpFechaIngreso.Value = empleado.FechaIngreso;
+                cbxCargos.SelectedValue = empleado.Cargo_Id;
                     cbxEstado.SelectedValue = empleado.Estado_Id;
                 }
         }
@@ -126,6 +140,7 @@ namespace SistemaARD.Vistas
                     empleado.N_Nit = txtNumeroNit.Text;
 
                     empleado.FechaIngreso = dtpFechaIngreso.Value;
+                empleado.Cargo_Id = Convert.ToInt32(cbxCargos.SelectedValue);
                     empleado.Estado_Id = Convert.ToInt32(cbxEstado.SelectedValue);
 
                 using (DBEntities db = new DBEntities())

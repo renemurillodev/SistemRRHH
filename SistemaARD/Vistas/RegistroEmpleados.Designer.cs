@@ -56,12 +56,14 @@
             this.lblNombres = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.cbxCargos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(350, 460);
+            this.btnRegistrar.Location = new System.Drawing.Point(350, 494);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 43;
@@ -72,7 +74,7 @@
             // cbxEstado
             // 
             this.cbxEstado.FormattingEnabled = true;
-            this.cbxEstado.Location = new System.Drawing.Point(178, 460);
+            this.cbxEstado.Location = new System.Drawing.Point(178, 494);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 42;
@@ -160,7 +162,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(55, 460);
+            this.lblEstado.Location = new System.Drawing.Point(55, 494);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 31;
@@ -296,13 +298,32 @@
             this.iconCerrar.TabStop = false;
             this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
             // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(58, 462);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(35, 13);
+            this.lblCargo.TabIndex = 46;
+            this.lblCargo.Text = "Cargo";
+            // 
+            // cbxCargos
+            // 
+            this.cbxCargos.FormattingEnabled = true;
+            this.cbxCargos.Location = new System.Drawing.Point(178, 462);
+            this.cbxCargos.Name = "cbxCargos";
+            this.cbxCargos.Size = new System.Drawing.Size(121, 21);
+            this.cbxCargos.TabIndex = 47;
+            // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(443, 495);
+            this.ClientSize = new System.Drawing.Size(443, 527);
             this.ControlBox = false;
+            this.Controls.Add(this.cbxCargos);
+            this.Controls.Add(this.lblCargo);
             this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnRegistrar);
@@ -368,5 +389,7 @@
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.PictureBox iconCerrar;
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.ComboBox cbxCargos;
     }
 }

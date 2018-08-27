@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="losnacimientosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="losnacimientosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Afps">
           <Key>
             <PropertyRef Name="Id" />
@@ -28,16 +28,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Departamento_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CargosEmpleados">
-          <Key>
-            <PropertyRef Name="Empleado_Id" />
-            <PropertyRef Name="Cargo_Id" />
-          </Key>
-          <Property Name="Empleado_Id" Type="int" Nullable="false" />
-          <Property Name="Cargo_Id" Type="int" Nullable="false" />
-          <Property Name="FechaInicio" Type="date" Nullable="false" />
-          <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="CategoriasIndemnizaciones">
           <Key>
@@ -86,6 +76,7 @@
           <Property Name="N_Afp" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="N_Isss" Type="varchar" MaxLength="9" Nullable="false" />
           <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="Cargo_Id" Type="int" Nullable="false" />
           <Property Name="Estado_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Estados">
@@ -212,30 +203,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CargosEmpleados_Cargos">
-          <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
-          <End Role="CargosEmpleados" Type="Self.CargosEmpleados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cargos">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CargosEmpleados">
-              <PropertyRef Name="Cargo_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CargosEmpleados_Empleados">
-          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
-          <End Role="CargosEmpleados" Type="Self.CargosEmpleados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CargosEmpleados">
-              <PropertyRef Name="Empleado_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CorreosEmpleados_Empleados">
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
           <End Role="CorreosEmpleados" Type="Self.CorreosEmpleados" Multiplicity="*" />
@@ -257,6 +224,18 @@
             </Principal>
             <Dependent Role="Empleados">
               <PropertyRef Name="Afp_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_Cargos">
+          <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cargos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="Cargo_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -396,7 +375,6 @@
           <EntitySet Name="Afps" EntityType="Self.Afps" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Aguinaldos" EntityType="Self.Aguinaldos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CargosEmpleados" EntityType="Self.CargosEmpleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriasIndemnizaciones" EntityType="Self.CategoriasIndemnizaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriasPlanillas" EntityType="Self.CategoriasPlanillas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CorreosEmpleados" EntityType="Self.CorreosEmpleados" Schema="dbo" store:Type="Tables" />
@@ -421,20 +399,16 @@
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Cargos" EntitySet="Cargos" />
           </AssociationSet>
-          <AssociationSet Name="FK_CargosEmpleados_Cargos" Association="Self.FK_CargosEmpleados_Cargos">
-            <End Role="Cargos" EntitySet="Cargos" />
-            <End Role="CargosEmpleados" EntitySet="CargosEmpleados" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CargosEmpleados_Empleados" Association="Self.FK_CargosEmpleados_Empleados">
-            <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="CargosEmpleados" EntitySet="CargosEmpleados" />
-          </AssociationSet>
           <AssociationSet Name="FK_CorreosEmpleados_Empleados" Association="Self.FK_CorreosEmpleados_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="CorreosEmpleados" EntitySet="CorreosEmpleados" />
           </AssociationSet>
           <AssociationSet Name="FK_Empleados_Afps" Association="Self.FK_Empleados_Afps">
             <End Role="Afps" EntitySet="Afps" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_Cargos" Association="Self.FK_Empleados_Cargos">
+            <End Role="Cargos" EntitySet="Cargos" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
           <AssociationSet Name="FK_Empleados_Estados" Association="Self.FK_Empleados_Estados">
@@ -482,7 +456,8 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="losnacimientosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -512,19 +487,7 @@
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Departamento_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Departamentos" Relationship="Self.FK_Cargos_Departamentos" FromRole="Cargos" ToRole="Departamentos" />
-          <NavigationProperty Name="CargosEmpleados" Relationship="Self.FK_CargosEmpleados_Cargos" FromRole="Cargos" ToRole="CargosEmpleados" />
-        </EntityType>
-        <EntityType Name="CargosEmpleados">
-          <Key>
-            <PropertyRef Name="Empleado_Id" />
-            <PropertyRef Name="Cargo_Id" />
-          </Key>
-          <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
-          <Property Name="Cargo_Id" Type="Int32" Nullable="false" />
-          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Cargos" Relationship="Self.FK_CargosEmpleados_Cargos" FromRole="CargosEmpleados" ToRole="Cargos" />
-          <NavigationProperty Name="Empleados" Relationship="Self.FK_CargosEmpleados_Empleados" FromRole="CargosEmpleados" ToRole="Empleados" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Cargos" FromRole="Cargos" ToRole="Empleados" />
         </EntityType>
         <EntityType Name="CategoriasIndemnizaciones">
           <Key>
@@ -577,18 +540,19 @@
           <Property Name="N_Afp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="N_Isss" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cargo_Id" Type="Int32" Nullable="false" />
           <Property Name="Estado_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Afps" Relationship="Self.FK_Empleados_Afps" FromRole="Empleados" ToRole="Afps" />
           <NavigationProperty Name="Aguinaldos" Relationship="Self.FK_Aguinaldos_Empleados" FromRole="Empleados" ToRole="Aguinaldos" />
-          <NavigationProperty Name="CargosEmpleados" Relationship="Self.FK_CargosEmpleados_Empleados" FromRole="Empleados" ToRole="CargosEmpleados" />
+          <NavigationProperty Name="Cargos" Relationship="Self.FK_Empleados_Cargos" FromRole="Empleados" ToRole="Cargos" />
           <NavigationProperty Name="CorreosEmpleados" Relationship="Self.FK_CorreosEmpleados_Empleados" FromRole="Empleados" ToRole="CorreosEmpleados" />
           <NavigationProperty Name="Estados" Relationship="Self.FK_Empleados_Estados" FromRole="Empleados" ToRole="Estados" />
           <NavigationProperty Name="Generos" Relationship="Self.FK_Empleados_Generos" FromRole="Empleados" ToRole="Generos" />
           <NavigationProperty Name="Indemnizaciones" Relationship="Self.FK_Indemnizaciones_Empleados" FromRole="Empleados" ToRole="Indemnizaciones" />
+          <NavigationProperty Name="Planillas_Jefes" Relationship="Self.FK_Planillas_Jefes_Empleados" FromRole="Empleados" ToRole="Planillas_Jefes" />
           <NavigationProperty Name="PlanillasProduccion" Relationship="Self.FK_PlanillasProduccion_Empleados" FromRole="Empleados" ToRole="PlanillasProduccion" />
           <NavigationProperty Name="PlanillasVentas" Relationship="Self.FK_PlanillasVentas_Empleados" FromRole="Empleados" ToRole="PlanillasVentas" />
           <NavigationProperty Name="TelefonosEmpleados" Relationship="Self.FK_TelefonosEmpleados_Empleados" FromRole="Empleados" ToRole="TelefonosEmpleados" />
-          <NavigationProperty Name="Planillas_Jefes" Relationship="losnacimientosModel.FK_Planillas_Jefes_Empleados" FromRole="Empleados" ToRole="Planillas_Jefes" />
         </EntityType>
         <EntityType Name="Estados">
           <Key>
@@ -617,6 +581,17 @@
           <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CategoriasIndemnizaciones" Relationship="Self.FK_Indemnizaciones_CategoriasIndemnizaciones" FromRole="Indemnizaciones" ToRole="CategoriasIndemnizaciones" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Indemnizaciones_Empleados" FromRole="Indemnizaciones" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="Planillas_Jefes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
+          <Property Name="Anticipos" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Salario_quincenal" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Planillas_Jefes_Empleados" FromRole="Planillas_Jefes" ToRole="Empleados" />
         </EntityType>
         <EntityType Name="PlanillasProduccion">
           <Key>
@@ -728,27 +703,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CargosEmpleados_Cargos">
+        <Association Name="FK_Empleados_Cargos">
           <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
-          <End Role="CargosEmpleados" Type="Self.CargosEmpleados" Multiplicity="*" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cargos">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="CargosEmpleados">
+            <Dependent Role="Empleados">
               <PropertyRef Name="Cargo_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CargosEmpleados_Empleados">
-          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
-          <End Role="CargosEmpleados" Type="Self.CargosEmpleados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="CargosEmpleados">
-              <PropertyRef Name="Empleado_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -824,9 +787,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Planillas_Jefes_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Planillas_Jefes" Type="Self.Planillas_Jefes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Planillas_Jefes">
+              <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PlanillasProduccion_Empleados">
-          <End Type="Self.Empleados" Multiplicity="1" Role="Empleados" />
-          <End Type="Self.PlanillasProduccion" Multiplicity="*" Role="PlanillasProduccion" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="PlanillasProduccion" Type="Self.PlanillasProduccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Empleados">
               <PropertyRef Name="Id" />
@@ -888,7 +863,6 @@
           <EntitySet Name="Afps" EntityType="Self.Afps" />
           <EntitySet Name="Aguinaldos" EntityType="Self.Aguinaldos" />
           <EntitySet Name="Cargos" EntityType="Self.Cargos" />
-          <EntitySet Name="CargosEmpleados" EntityType="Self.CargosEmpleados" />
           <EntitySet Name="CategoriasIndemnizaciones" EntityType="Self.CategoriasIndemnizaciones" />
           <EntitySet Name="CategoriasPlanillas" EntityType="Self.CategoriasPlanillas" />
           <EntitySet Name="CorreosEmpleados" EntityType="Self.CorreosEmpleados" />
@@ -897,6 +871,7 @@
           <EntitySet Name="Estados" EntityType="Self.Estados" />
           <EntitySet Name="Generos" EntityType="Self.Generos" />
           <EntitySet Name="Indemnizaciones" EntityType="Self.Indemnizaciones" />
+          <EntitySet Name="Planillas_Jefes" EntityType="Self.Planillas_Jefes" />
           <EntitySet Name="PlanillasProduccion" EntityType="Self.PlanillasProduccion" />
           <EntitySet Name="PlanillasVentas" EntityType="Self.PlanillasVentas" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
@@ -916,13 +891,9 @@
             <End Role="Departamentos" EntitySet="Departamentos" />
             <End Role="Cargos" EntitySet="Cargos" />
           </AssociationSet>
-          <AssociationSet Name="FK_CargosEmpleados_Cargos" Association="Self.FK_CargosEmpleados_Cargos">
+          <AssociationSet Name="FK_Empleados_Cargos" Association="Self.FK_Empleados_Cargos">
             <End Role="Cargos" EntitySet="Cargos" />
-            <End Role="CargosEmpleados" EntitySet="CargosEmpleados" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CargosEmpleados_Empleados" Association="Self.FK_CargosEmpleados_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="CargosEmpleados" EntitySet="CargosEmpleados" />
           </AssociationSet>
           <AssociationSet Name="FK_Indemnizaciones_CategoriasIndemnizaciones" Association="Self.FK_Indemnizaciones_CategoriasIndemnizaciones">
             <End Role="CategoriasIndemnizaciones" EntitySet="CategoriasIndemnizaciones" />
@@ -948,9 +919,13 @@
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Indemnizaciones" EntitySet="Indemnizaciones" />
           </AssociationSet>
+          <AssociationSet Name="FK_Planillas_Jefes_Empleados" Association="Self.FK_Planillas_Jefes_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Planillas_Jefes" EntitySet="Planillas_Jefes" />
+          </AssociationSet>
           <AssociationSet Name="FK_PlanillasProduccion_Empleados" Association="Self.FK_PlanillasProduccion_Empleados">
-            <End EntitySet="Empleados" Role="Empleados" />
-            <End EntitySet="PlanillasProduccion" Role="PlanillasProduccion" />
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="PlanillasProduccion" EntitySet="PlanillasProduccion" />
           </AssociationSet>
           <AssociationSet Name="FK_PlanillasVentas_Empleados" Association="Self.FK_PlanillasVentas_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
@@ -968,35 +943,7 @@
             <End Role="TiposTelefonos" EntitySet="TiposTelefonos" />
             <End Role="TelefonosEmpleados" EntitySet="TelefonosEmpleados" />
           </AssociationSet>
-          <EntitySet Name="Planillas_Jefes" EntityType="losnacimientosModel.Planillas_Jefes" />
-          <AssociationSet Name="FK_Planillas_Jefes_Empleados" Association="losnacimientosModel.FK_Planillas_Jefes_Empleados">
-            <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="Planillas_Jefes" EntitySet="Planillas_Jefes" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Planillas_Jefes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
-          <Property Name="Anticipos" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
-          <Property Name="Salario_quincenal" Type="Decimal" Nullable="false" Precision="4" Scale="2" />
-          <NavigationProperty Name="Empleados" Relationship="losnacimientosModel.FK_Planillas_Jefes_Empleados" FromRole="Planillas_Jefes" ToRole="Empleados" />
-        </EntityType>
-        <Association Name="FK_Planillas_Jefes_Empleados">
-          <End Type="losnacimientosModel.Empleados" Role="Empleados" Multiplicity="1" />
-          <End Type="losnacimientosModel.Planillas_Jefes" Role="Planillas_Jefes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Planillas_Jefes">
-              <PropertyRef Name="Empleado_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1027,16 +974,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Departamento_Id" ColumnName="Departamento_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CargosEmpleados">
-            <EntityTypeMapping TypeName="losnacimientosModel.CargosEmpleados">
-              <MappingFragment StoreEntitySet="CargosEmpleados">
-                <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
-                <ScalarProperty Name="Cargo_Id" ColumnName="Cargo_Id" />
-                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1089,6 +1026,7 @@
                 <ScalarProperty Name="N_Afp" ColumnName="N_Afp" />
                 <ScalarProperty Name="N_Isss" ColumnName="N_Isss" />
                 <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Cargo_Id" ColumnName="Cargo_Id" />
                 <ScalarProperty Name="Estado_Id" ColumnName="Estado_Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1117,6 +1055,17 @@
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Categoria_Id" ColumnName="Categoria_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Planillas_Jefes">
+            <EntityTypeMapping TypeName="losnacimientosModel.Planillas_Jefes">
+              <MappingFragment StoreEntitySet="Planillas_Jefes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+                <ScalarProperty Name="Anticipos" ColumnName="Anticipos" />
+                <ScalarProperty Name="Salario_quincenal" ColumnName="Salario_quincenal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1189,17 +1138,6 @@
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Rol_Id" ColumnName="Rol_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Planillas_Jefes">
-            <EntityTypeMapping TypeName="losnacimientosModel.Planillas_Jefes">
-              <MappingFragment StoreEntitySet="Planillas_Jefes">
-                <ScalarProperty Name="Salario_quincenal" ColumnName="Salario_quincenal" />
-                <ScalarProperty Name="Anticipos" ColumnName="Anticipos" />
-                <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
