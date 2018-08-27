@@ -40,6 +40,8 @@
         <AssociationConnector Association="losnacimientosModel.FK_TelefonosEmpleados_Empleados" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_Usuarios_Roles" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_TelefonosEmpleados_TiposTelefonos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="losnacimientosModel.Reportes" Width="1.5" PointX="7.5" PointY="21.5" />
+        <AssociationConnector Association="losnacimientosModel.FK_Reportes_Empleados" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

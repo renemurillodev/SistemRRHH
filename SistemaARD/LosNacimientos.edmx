@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="losnacimientosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="losnacimientosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Afps">
           <Key>
             <PropertyRef Name="Id" />
@@ -135,6 +135,18 @@
           <Property Name="Anticipos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reportes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado_Id" Type="int" Nullable="false" />
+          <Property Name="Sueldo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pago_Afp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pago_Isss" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pago_Renta" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -335,6 +347,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Reportes_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reportes">
+              <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TelefonosEmpleados_Empleados">
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
           <End Role="TelefonosEmpleados" Type="Self.TelefonosEmpleados" Multiplicity="*" />
@@ -386,6 +410,7 @@
           <EntitySet Name="Planillas_Jefes" EntityType="Self.Planillas_Jefes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlanillasProduccion" EntityType="Self.PlanillasProduccion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlanillasVentas" EntityType="Self.PlanillasVentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TelefonosEmpleados" EntityType="Self.TelefonosEmpleados" Schema="dbo" store:Type="Tables" />
@@ -443,6 +468,10 @@
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="PlanillasVentas" EntitySet="PlanillasVentas" />
           </AssociationSet>
+          <AssociationSet Name="FK_Reportes_Empleados" Association="Self.FK_Reportes_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Reportes" EntitySet="Reportes" />
+          </AssociationSet>
           <AssociationSet Name="FK_TelefonosEmpleados_Empleados" Association="Self.FK_TelefonosEmpleados_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="TelefonosEmpleados" EntitySet="TelefonosEmpleados" />
@@ -456,8 +485,7 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="losnacimientosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -553,6 +581,7 @@
           <NavigationProperty Name="PlanillasProduccion" Relationship="Self.FK_PlanillasProduccion_Empleados" FromRole="Empleados" ToRole="PlanillasProduccion" />
           <NavigationProperty Name="PlanillasVentas" Relationship="Self.FK_PlanillasVentas_Empleados" FromRole="Empleados" ToRole="PlanillasVentas" />
           <NavigationProperty Name="TelefonosEmpleados" Relationship="Self.FK_TelefonosEmpleados_Empleados" FromRole="Empleados" ToRole="TelefonosEmpleados" />
+          <NavigationProperty Name="Reportes" Relationship="losnacimientosModel.FK_Reportes_Empleados" FromRole="Empleados" ToRole="Reportes" />
         </EntityType>
         <EntityType Name="Estados">
           <Key>
@@ -943,7 +972,37 @@
             <End Role="TiposTelefonos" EntitySet="TiposTelefonos" />
             <End Role="TelefonosEmpleados" EntitySet="TelefonosEmpleados" />
           </AssociationSet>
+          <EntitySet Name="Reportes" EntityType="losnacimientosModel.Reportes" />
+          <AssociationSet Name="FK_Reportes_Empleados" Association="losnacimientosModel.FK_Reportes_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Reportes" EntitySet="Reportes" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Reportes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sueldo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Pago_Afp" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Pago_Isss" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Pago_Renta" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Empleados" Relationship="losnacimientosModel.FK_Reportes_Empleados" FromRole="Reportes" ToRole="Empleados" />
+        </EntityType>
+        <Association Name="FK_Reportes_Empleados">
+          <End Type="losnacimientosModel.Empleados" Role="Empleados" Multiplicity="1" />
+          <End Type="losnacimientosModel.Reportes" Role="Reportes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reportes">
+              <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1138,6 +1197,19 @@
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Rol_Id" ColumnName="Rol_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reportes">
+            <EntityTypeMapping TypeName="losnacimientosModel.Reportes">
+              <MappingFragment StoreEntitySet="Reportes">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Pago_Renta" ColumnName="Pago_Renta" />
+                <ScalarProperty Name="Pago_Isss" ColumnName="Pago_Isss" />
+                <ScalarProperty Name="Pago_Afp" ColumnName="Pago_Afp" />
+                <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+                <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

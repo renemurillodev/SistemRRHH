@@ -111,6 +111,9 @@
     <Compile Include="Planillas_Jefes.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Reportes.cs">
+      <DependentUpon>LosNacimientos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Roles.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
