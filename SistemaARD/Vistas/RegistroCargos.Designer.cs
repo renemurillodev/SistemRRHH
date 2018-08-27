@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroCargos));
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cbxDepartamento = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblDepartamento = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.iconCerrar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -78,19 +81,36 @@
             this.lblNombre.TabIndex = 5;
             this.lblNombre.Text = "Nombre del cargo";
             // 
+            // iconCerrar
+            // 
+            this.iconCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconCerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconCerrar.Image")));
+            this.iconCerrar.Location = new System.Drawing.Point(733, 9);
+            this.iconCerrar.Name = "iconCerrar";
+            this.iconCerrar.Size = new System.Drawing.Size(25, 25);
+            this.iconCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconCerrar.TabIndex = 10;
+            this.iconCerrar.TabStop = false;
+            this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
+            // 
             // RegistroCargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 168);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.cbxDepartamento);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblDepartamento);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistroCargos";
             this.Text = "RegistroCargos";
             this.Load += new System.EventHandler(this.RegistroCargos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,5 +123,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblDepartamento;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.PictureBox iconCerrar;
     }
 }

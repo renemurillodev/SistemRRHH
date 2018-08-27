@@ -53,5 +53,10 @@ namespace SistemaARD.Vistas
                 cbxDepartamento.Text = "";
             }
         }
+
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -120,5 +120,15 @@ namespace SistemaARD
         {
             AbrirFormInPanel(new ListaEmpleados());
         }
+
+        private void btnCargos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new RegistroCargos());
+        }
+
+        private void btnDepartamentos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new RegistroDepartamentos());
+        }
     }
 }

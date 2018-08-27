@@ -39,21 +39,25 @@
             this.lblDiaFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMaximizar = new System.Windows.Forms.PictureBox();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnDepartamentos = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnCargos = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnIndemnizaciones = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnAguinaldo = new System.Windows.Forms.Button();
             this.btnPlanilla = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
@@ -61,8 +65,8 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
@@ -178,6 +182,19 @@
             this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
+            // iconMinimizar
+            // 
+            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMinimizar.Image")));
+            this.iconMinimizar.Location = new System.Drawing.Point(482, 12);
+            this.iconMinimizar.Name = "iconMinimizar";
+            this.iconMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconMinimizar.TabIndex = 3;
+            this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
+            // 
             // iconRestaurar
             // 
             this.iconRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -191,19 +208,6 @@
             this.iconRestaurar.TabStop = false;
             this.iconRestaurar.Visible = false;
             this.iconRestaurar.Click += new System.EventHandler(this.iconRestaurar_Click);
-            // 
-            // iconMinimizar
-            // 
-            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("iconMinimizar.Image")));
-            this.iconMinimizar.Location = new System.Drawing.Point(482, 12);
-            this.iconMinimizar.Name = "iconMinimizar";
-            this.iconMinimizar.Size = new System.Drawing.Size(25, 25);
-            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconMinimizar.TabIndex = 3;
-            this.iconMinimizar.TabStop = false;
-            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // iconMaximizar
             // 
@@ -247,15 +251,19 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.MenuVertical.Controls.Add(this.panel8);
+            this.MenuVertical.Controls.Add(this.btnDepartamentos);
+            this.MenuVertical.Controls.Add(this.panel7);
+            this.MenuVertical.Controls.Add(this.btnCargos);
             this.MenuVertical.Controls.Add(this.panel4);
             this.MenuVertical.Controls.Add(this.btnEmpleados);
             this.MenuVertical.Controls.Add(this.panel5);
             this.MenuVertical.Controls.Add(this.panel3);
             this.MenuVertical.Controls.Add(this.panel2);
             this.MenuVertical.Controls.Add(this.panel1);
-            this.MenuVertical.Controls.Add(this.button5);
-            this.MenuVertical.Controls.Add(this.button3);
-            this.MenuVertical.Controls.Add(this.button4);
+            this.MenuVertical.Controls.Add(this.btnIndemnizaciones);
+            this.MenuVertical.Controls.Add(this.btnReportes);
+            this.MenuVertical.Controls.Add(this.btnAguinaldo);
             this.MenuVertical.Controls.Add(this.btnPlanilla);
             this.MenuVertical.Controls.Add(this.imgLogo);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
@@ -264,10 +272,60 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 600);
             this.MenuVertical.TabIndex = 1;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
+            this.panel8.Location = new System.Drawing.Point(0, 265);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 45);
+            this.panel8.TabIndex = 15;
+            // 
+            // btnDepartamentos
+            // 
+            this.btnDepartamentos.FlatAppearance.BorderSize = 0;
+            this.btnDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepartamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepartamentos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDepartamentos.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartamentos.Image")));
+            this.btnDepartamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepartamentos.Location = new System.Drawing.Point(3, 265);
+            this.btnDepartamentos.Name = "btnDepartamentos";
+            this.btnDepartamentos.Size = new System.Drawing.Size(247, 45);
+            this.btnDepartamentos.TabIndex = 16;
+            this.btnDepartamentos.Text = "DEPARTAMENTOS";
+            this.btnDepartamentos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDepartamentos.UseVisualStyleBackColor = true;
+            this.btnDepartamentos.Click += new System.EventHandler(this.btnDepartamentos_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
+            this.panel7.Location = new System.Drawing.Point(0, 217);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 45);
+            this.panel7.TabIndex = 13;
+            // 
+            // btnCargos
+            // 
+            this.btnCargos.FlatAppearance.BorderSize = 0;
+            this.btnCargos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargos.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCargos.Image = ((System.Drawing.Image)(resources.GetObject("btnCargos.Image")));
+            this.btnCargos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargos.Location = new System.Drawing.Point(3, 217);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Size = new System.Drawing.Size(247, 45);
+            this.btnCargos.TabIndex = 14;
+            this.btnCargos.Text = "CARGOS";
+            this.btnCargos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCargos.UseVisualStyleBackColor = true;
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel4.Location = new System.Drawing.Point(0, 217);
+            this.panel4.Location = new System.Drawing.Point(0, 169);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 45);
             this.panel4.TabIndex = 10;
@@ -280,18 +338,19 @@
             this.btnEmpleados.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(3, 217);
+            this.btnEmpleados.Location = new System.Drawing.Point(3, 169);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(247, 45);
             this.btnEmpleados.TabIndex = 12;
             this.btnEmpleados.Text = "EMPLEADOS";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(0, 169);
+            this.panel5.Location = new System.Drawing.Point(0, 313);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 45);
             this.panel5.TabIndex = 11;
@@ -299,7 +358,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(0, 265);
+            this.panel3.Location = new System.Drawing.Point(0, 361);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 45);
             this.panel3.TabIndex = 9;
@@ -307,7 +366,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel2.Location = new System.Drawing.Point(0, 313);
+            this.panel2.Location = new System.Drawing.Point(1, 457);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 45);
             this.panel2.TabIndex = 8;
@@ -315,55 +374,58 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel1.Location = new System.Drawing.Point(0, 361);
+            this.panel1.Location = new System.Drawing.Point(1, 409);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 45);
             this.panel1.TabIndex = 3;
             // 
-            // button5
+            // btnIndemnizaciones
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 361);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(246, 45);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "INDEMNIZACIÓN";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnIndemnizaciones.FlatAppearance.BorderSize = 0;
+            this.btnIndemnizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIndemnizaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIndemnizaciones.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnIndemnizaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnIndemnizaciones.Image")));
+            this.btnIndemnizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIndemnizaciones.Location = new System.Drawing.Point(4, 409);
+            this.btnIndemnizaciones.Name = "btnIndemnizaciones";
+            this.btnIndemnizaciones.Size = new System.Drawing.Size(246, 45);
+            this.btnIndemnizaciones.TabIndex = 7;
+            this.btnIndemnizaciones.Text = "INDEMNIZACIÓN";
+            this.btnIndemnizaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIndemnizaciones.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnReportes
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 313);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 45);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "REPORTES";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(4, 457);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(247, 45);
+            this.btnReportes.TabIndex = 6;
+            this.btnReportes.Text = "REPORTES";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportes.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnAguinaldo
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 265);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(247, 45);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "AGUINALDOS";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAguinaldo.FlatAppearance.BorderSize = 0;
+            this.btnAguinaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAguinaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAguinaldo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAguinaldo.Image = ((System.Drawing.Image)(resources.GetObject("btnAguinaldo.Image")));
+            this.btnAguinaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAguinaldo.Location = new System.Drawing.Point(3, 361);
+            this.btnAguinaldo.Name = "btnAguinaldo";
+            this.btnAguinaldo.Size = new System.Drawing.Size(247, 45);
+            this.btnAguinaldo.TabIndex = 5;
+            this.btnAguinaldo.Text = "AGUINALDOS";
+            this.btnAguinaldo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAguinaldo.UseVisualStyleBackColor = true;
             // 
             // btnPlanilla
             // 
@@ -373,11 +435,12 @@
             this.btnPlanilla.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnPlanilla.Image = ((System.Drawing.Image)(resources.GetObject("btnPlanilla.Image")));
             this.btnPlanilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlanilla.Location = new System.Drawing.Point(3, 169);
+            this.btnPlanilla.Location = new System.Drawing.Point(3, 313);
             this.btnPlanilla.Name = "btnPlanilla";
             this.btnPlanilla.Size = new System.Drawing.Size(247, 45);
             this.btnPlanilla.TabIndex = 3;
             this.btnPlanilla.Text = "PLANILLA";
+            this.btnPlanilla.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPlanilla.UseVisualStyleBackColor = true;
             this.btnPlanilla.Click += new System.EventHandler(this.btnPlanilla_Click);
             // 
@@ -412,8 +475,8 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
@@ -445,12 +508,16 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnIndemnizaciones;
+        private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnAguinaldo;
         private System.Windows.Forms.Button btnPlanilla;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Timer HoraFecha;
         private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnCargos;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnDepartamentos;
     }
 }

@@ -98,5 +98,10 @@ namespace SistemaARD.Vistas
             Clear();
             LlenarDataGrid();
         }
+
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
