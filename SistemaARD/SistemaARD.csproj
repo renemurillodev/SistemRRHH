@@ -129,6 +129,12 @@
     <Compile Include="Usuarios.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\AdministracionPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AdministracionPlanilla.Designer.cs">
+      <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     <Compile Include="Vistas\TiposDeTelefono.Designer.cs">
       <DependentUpon>TiposDeTelefono.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\AdministracionPlanilla.resx">
+      <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,6 +13,7 @@ namespace SistemaARD.Vistas
     public partial class RegistroDepartamentos : Form
     {
         Departamentos dptos = new Departamentos();
+        string idDepartamento = "";
         public RegistroDepartamentos()
         {
             InitializeComponent();
@@ -20,7 +21,17 @@ namespace SistemaARD.Vistas
 
         private void RegistroDepartamentos_Load(object sender, EventArgs e)
         {
+            btnAdministrar.Visible = false;
+            LlenarDataGrid();
+        }
 
+        void LlenarDataGrid()
+        {
+            dataGridView1.AutoGenerateColumns = false;
+            using (DBEntities db = new DBEntities())
+            {
+                dataGridView1.DataSource = db.Departamentos.ToList<Departamentos>();
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -39,12 +50,30 @@ namespace SistemaARD.Vistas
                 }
                 MessageBox.Show("Departamento almacenado con éxito");
                 txtNombre.Text = "";
+                LlenarDataGrid();
             }
         }
 
         private void iconCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                idDepartamento = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
+                btnAdministrar.Visible = true;
+            }
+            
+        }
+
+        private void btnAdministrar_Click(object sender, EventArgs e)
+        {
+            AdministracionPlanilla admonplanilla = new AdministracionPlanilla();
+            admonplanilla.idDepto = idDepartamento;
+            admonplanilla.Show();
         }
     }
 }

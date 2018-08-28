@@ -33,7 +33,12 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdministrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -75,12 +80,56 @@
             this.iconCerrar.TabStop = false;
             this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre});
+            this.dataGridView1.Location = new System.Drawing.Point(15, 151);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(271, 150);
+            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // btnAdministrar
+            // 
+            this.btnAdministrar.Location = new System.Drawing.Point(211, 122);
+            this.btnAdministrar.Name = "btnAdministrar";
+            this.btnAdministrar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdministrar.TabIndex = 8;
+            this.btnAdministrar.Text = "Administrar";
+            this.btnAdministrar.UseVisualStyleBackColor = true;
+            this.btnAdministrar.Visible = false;
+            this.btnAdministrar.Click += new System.EventHandler(this.btnAdministrar_Click);
+            // 
             // RegistroDepartamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.btnAdministrar);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtNombre);
@@ -90,6 +139,7 @@
             this.Text = "RegistroDepartamentos";
             this.Load += new System.EventHandler(this.RegistroDepartamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +151,9 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.PictureBox iconCerrar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Button btnAdministrar;
     }
 }
