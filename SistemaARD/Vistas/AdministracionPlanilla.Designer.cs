@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionPlanilla));
             this.lblPlanilla = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -36,7 +37,9 @@
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconCerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPlanilla
@@ -70,7 +73,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(344, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 329);
             this.dataGridView1.TabIndex = 2;
             // 
             // Id
@@ -110,18 +113,36 @@
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
             // 
+            // iconCerrar
+            // 
+            this.iconCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconCerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconCerrar.Image")));
+            this.iconCerrar.Location = new System.Drawing.Point(717, 12);
+            this.iconCerrar.Name = "iconCerrar";
+            this.iconCerrar.Size = new System.Drawing.Size(25, 25);
+            this.iconCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconCerrar.TabIndex = 11;
+            this.iconCerrar.TabStop = false;
+            this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
+            // 
             // AdministracionPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.ClientSize = new System.Drawing.Size(754, 411);
+            this.Controls.Add(this.iconCerrar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblPlanilla);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdministracionPlanilla";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdministracionPlanilla";
             this.Load += new System.EventHandler(this.AdministracionPlanilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +158,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.PictureBox iconCerrar;
     }
 }

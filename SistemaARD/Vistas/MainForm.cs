@@ -32,22 +32,47 @@ namespace SistemaARD
         }
 
         //METODO PARA ABRIR FORMULADIO DENTRO DEL PANEL PRINCIPAL
-        private void AbrirFormInPanel(object Formhijo)
+        //private void AbrirFormInPanel(object Formhijo)
+        //{
+        //    //if (this.PanelContenedor.Controls.Count > 0)
+        //    //    this.PanelContenedor.Controls.RemoveAt(0);
+        //    Form fh = Formhijo as Form;
+        //    //fh.TopLevel = false;
+        //    //fh.Dock = DockStyle.Fill;
+        //    this.PanelContenedor.Controls.Add(fh);
+        //    this.PanelContenedor.Tag = fh;
+        //    fh.Show();
+        //}
+
+            //NUEVO METODO PARA ABRIR FORMULARIOS
+            private void AbrirFormulario<MiForm>()where MiForm :Form, new()
         {
-            if (this.PanelContenedor.Controls.Count > 0)
-                this.PanelContenedor.Controls.RemoveAt(0);
-            Form fh = Formhijo as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.PanelContenedor.Controls.Add(fh);
-            this.PanelContenedor.Tag = fh;
-            fh.Show();
+            Form Formulario;
+            Formulario = PanelContenedor.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la coleccion el formulario
+            //Si el formulario/Instancia no existe
+            if (Formulario == null)
+            {
+                Formulario = new MiForm();
+                Formulario.TopLevel = false;
+                Formulario.Dock = DockStyle.Fill;
+                PanelContenedor.Controls.Add(Formulario);
+                PanelContenedor.Tag = Formulario;
+                Formulario.Show();
+                Formulario.BringToFront();
+            }
+            else
+            {
+                Formulario.BringToFront();
+            }
         }
+
+
 
         //Mostrar Dashboard al iniciar la vista principal
         private void dashboard()
         {
-            AbrirFormInPanel(new Dashboard());
+            //AbrirFormInPanel(new Dashboard());
+            //MessageBox.Show("Cerrando instancia");
         }
 
         //Hora y Fecha batta inferior
@@ -113,22 +138,26 @@ namespace SistemaARD
         //BOTONES PARA ABRIR CADA FORMULARIO EN EL PANEL
         private void btnPlanilla_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FPlanillas());
+            //AbrirFormInPanel(new FPlanillas());
+            AbrirFormulario<FPlanillas>();
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new ListaEmpleados());
+            //AbrirFormInPanel(new ListaEmpleados());
+            AbrirFormulario<ListaEmpleados>();
         }
 
         private void btnCargos_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new RegistroCargos());
+            //AbrirFormInPanel(new RegistroCargos());
+            AbrirFormulario<RegistroCargos>();
         }
 
         private void btnDepartamentos_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new RegistroDepartamentos());
+            //AbrirFormInPanel(new RegistroDepartamentos());
+            AbrirFormulario<RegistroDepartamentos>();
         }
     }
 }

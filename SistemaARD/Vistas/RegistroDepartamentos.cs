@@ -73,6 +73,13 @@ namespace SistemaARD.Vistas
         {
             AdministracionPlanilla admonplanilla = new AdministracionPlanilla();
             admonplanilla.idDepto = idDepartamento;
+
+            AddOwnedForm(admonplanilla);
+            admonplanilla.TopLevel = false;
+            admonplanilla.Dock = DockStyle.Fill;
+            this.Controls.Add(admonplanilla);
+            this.Tag = admonplanilla;
+            admonplanilla.BringToFront();
             admonplanilla.Show();
         }
     }

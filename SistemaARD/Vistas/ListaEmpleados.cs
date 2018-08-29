@@ -125,13 +125,24 @@ namespace SistemaARD.Vistas
                 registro.texto = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
 
 
+                AddOwnedForm(registro);
+                registro.TopLevel = false;
+                registro.Dock = DockStyle.Fill;
+                this.Controls.Add(registro);
+                this.Tag = registro;
+                registro.BringToFront();
                 registro.Show();
+
+                
             }
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             RegistroEmpleados registro = new RegistroEmpleados();
+
+
+
             if (dataGridView1.CurrentRow.Index != -1)
             {
                 registro.texto = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
@@ -139,6 +150,15 @@ namespace SistemaARD.Vistas
                 registro.detalle = "true";
                 registro.Show();
             }
+
+            
+            AddOwnedForm(registro);
+            registro.TopLevel = false;
+            registro.Dock = DockStyle.Fill;
+            this.Controls.Add(registro);
+            this.Tag = registro;
+            registro.BringToFront();
+            registro.Show();
         }
     }
 }
