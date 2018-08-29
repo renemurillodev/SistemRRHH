@@ -132,6 +132,7 @@
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Pago_diario" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Dias_laborados" Type="int" Nullable="false" />
+          <Property Name="Horas_extra" Type="int" />
           <Property Name="Anticipos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
@@ -647,6 +648,7 @@
           <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CategoriasPlanillas" Relationship="Self.FK_PlanillasVentas_CategoriasPlanillas" FromRole="PlanillasVentas" ToRole="CategoriasPlanillas" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_PlanillasVentas_Empleados" FromRole="PlanillasVentas" ToRole="Empleados" />
+          <Property Name="Horas_extra" Type="Int32" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -1143,6 +1145,7 @@
           <EntitySetMapping Name="PlanillasVentas">
             <EntityTypeMapping TypeName="losnacimientosModel.PlanillasVentas">
               <MappingFragment StoreEntitySet="PlanillasVentas">
+                <ScalarProperty Name="Horas_extra" ColumnName="Horas_extra" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
                 <ScalarProperty Name="Pago_diario" ColumnName="Pago_diario" />

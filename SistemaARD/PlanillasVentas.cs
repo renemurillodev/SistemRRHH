@@ -21,6 +21,7 @@ namespace SistemaARD
         public decimal Anticipos { get; set; }
         public System.DateTime Fecha { get; set; }
         public int Categoria_Id { get; set; }
+        public Nullable<int> Horas_extra { get; set; }
     
         public virtual CategoriasPlanillas CategoriasPlanillas { get; set; }
         public virtual Empleados Empleados { get; set; }
