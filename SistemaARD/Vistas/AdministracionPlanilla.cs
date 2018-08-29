@@ -14,6 +14,10 @@ namespace SistemaARD.Vistas
     {
         public string idDepto = "";
         string nDepto = "";
+        string idEmpleado = "";
+        PlanillasVentas planillaVentas = new PlanillasVentas();
+        Reportes reporte = new Reportes();
+        Clases.CalculoPlanilla calculoSalario = new Clases.CalculoPlanilla();
         public AdministracionPlanilla()
         {
             InitializeComponent();
@@ -24,6 +28,13 @@ namespace SistemaARD.Vistas
             
             BuscarDepto();
             CargarDataGrid();
+            if(textBox1.Text == "Ventas")
+            {
+                lblDiasLaborados.Visible = true;
+                lblPagoDiario.Visible = true;
+                txtDiasLaborados.Visible = true;
+                txtPagoDiario.Visible = true;
+            }
         }
 
         void BuscarDepto()
@@ -64,6 +75,63 @@ namespace SistemaARD.Vistas
         private void iconCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblAnticipos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                idEmpleado = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
+                string nombres = Convert.ToString(dataGridView1.CurrentRow.Cells["Nombres"].Value);
+                string apellidos = Convert.ToString(dataGridView1.CurrentRow.Cells["Apellidos"].Value);
+                txtEmpleado.Text = string.Format("{0} {1}", nombres, apellidos);
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "Ventas")
+            {
+                //Registrar en tabla PlanillaVentas
+                planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
+                planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
+                planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
+                planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
+                planillaVentas.Fecha = dtpFecha.Value;
+                planillaVentas.Categoria_Id = 1;
+
+                //Registrar en tabla Reportes 
+
+                var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
+                var afp = sueldo * Convert.ToDecimal(0.0725);
+                var isss = sueldo * Convert.ToDecimal(0.03);
+                var sueldoPostRetenciones = sueldo - (afp + isss);
+                reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
+                reporte.Sueldo = sueldo;
+                reporte.Pago_Afp = afp;
+                reporte.Pago_Isss = isss;
+
+                using (DBEntities db = new DBEntities())
+                {
+                    try
+                    {
+                        db.PlanillasVentas.Add(planillaVentas);
+                        db.SaveChanges();
+                        MessageBox.Show("Pago registrado");
+                        txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("Algo salió mal");
+                    }
+                }
+            }
         }
     }
 

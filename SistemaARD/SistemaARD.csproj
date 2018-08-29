@@ -69,6 +69,7 @@
     <Compile Include="CategoriasPlanillas.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clases\CalculoPlanilla.cs" />
     <Compile Include="CorreosEmpleados.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
@@ -173,6 +174,12 @@
     <Compile Include="Vistas\RegistroCargos.Designer.cs">
       <DependentUpon>RegistroCargos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\RegistroCategoriaPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RegistroCategoriaPlanilla.Designer.cs">
+      <DependentUpon>RegistroCategoriaPlanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\RegistroDepartamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RegistroCargos.resx">
       <DependentUpon>RegistroCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RegistroCategoriaPlanilla.resx">
+      <DependentUpon>RegistroCategoriaPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RegistroDepartamentos.resx">
       <DependentUpon>RegistroDepartamentos.cs</DependentUpon>
