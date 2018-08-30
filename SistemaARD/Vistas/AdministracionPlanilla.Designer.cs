@@ -56,6 +56,8 @@
             this.chbAfp = new System.Windows.Forms.CheckBox();
             this.chbIsss = new System.Windows.Forms.CheckBox();
             this.lblRetenciones = new System.Windows.Forms.Label();
+            this.lblHorasExtra = new System.Windows.Forms.Label();
+            this.txtHorasExtra = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.SuspendLayout();
@@ -302,12 +304,30 @@
             this.lblRetenciones.TabIndex = 29;
             this.lblRetenciones.Text = "Aplicar retenciones";
             // 
+            // lblHorasExtra
+            // 
+            this.lblHorasExtra.AutoSize = true;
+            this.lblHorasExtra.Location = new System.Drawing.Point(582, 242);
+            this.lblHorasExtra.Name = "lblHorasExtra";
+            this.lblHorasExtra.Size = new System.Drawing.Size(61, 13);
+            this.lblHorasExtra.TabIndex = 30;
+            this.lblHorasExtra.Text = "Horas extra";
+            // 
+            // txtHorasExtra
+            // 
+            this.txtHorasExtra.Location = new System.Drawing.Point(660, 239);
+            this.txtHorasExtra.Name = "txtHorasExtra";
+            this.txtHorasExtra.Size = new System.Drawing.Size(44, 20);
+            this.txtHorasExtra.TabIndex = 31;
+            // 
             // AdministracionPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(754, 411);
+            this.Controls.Add(this.txtHorasExtra);
+            this.Controls.Add(this.lblHorasExtra);
             this.Controls.Add(this.lblRetenciones);
             this.Controls.Add(this.chbIsss);
             this.Controls.Add(this.chbAfp);
@@ -371,5 +391,7 @@
         private System.Windows.Forms.CheckBox chbAfp;
         private System.Windows.Forms.CheckBox chbIsss;
         private System.Windows.Forms.Label lblRetenciones;
+        private System.Windows.Forms.Label lblHorasExtra;
+        private System.Windows.Forms.TextBox txtHorasExtra;
     }
 }

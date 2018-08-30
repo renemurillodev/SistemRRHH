@@ -61,11 +61,10 @@ namespace SistemaARD.Vistas
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentRow.Index != -1)
-            {
+            
                 idDepartamento = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
                 btnAdministrar.Visible = true;
-            }
+            
             
         }
 

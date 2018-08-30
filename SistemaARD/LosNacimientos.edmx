@@ -111,7 +111,7 @@
           <Property Name="Fecha" Type="date" Nullable="false" />
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Anticipos" Type="decimal" Precision="4" Scale="2" Nullable="false" />
-          <Property Name="Salario_quincenal" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Salario_quincenal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="PlanillasProduccion">
           <Key>
@@ -300,18 +300,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Planillas_Jefes_Empleados">
-          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
-          <End Role="Planillas_Jefes" Type="Self.Planillas_Jefes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Planillas_Jefes">
-              <PropertyRef Name="Empleado_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PlanillasProduccion_Empleados">
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
           <End Role="PlanillasProduccion" Type="Self.PlanillasProduccion" Multiplicity="*" />
@@ -344,18 +332,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PlanillasVentas">
-              <PropertyRef Name="Empleado_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Reportes_Empleados">
-          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
-          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleados">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Reportes">
               <PropertyRef Name="Empleado_Id" />
             </Dependent>
           </ReferentialConstraint>
@@ -453,10 +429,6 @@
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Indemnizaciones" EntitySet="Indemnizaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK_Planillas_Jefes_Empleados" Association="Self.FK_Planillas_Jefes_Empleados">
-            <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="Planillas_Jefes" EntitySet="Planillas_Jefes" />
-          </AssociationSet>
           <AssociationSet Name="FK_PlanillasProduccion_Empleados" Association="Self.FK_PlanillasProduccion_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="PlanillasProduccion" EntitySet="PlanillasProduccion" />
@@ -468,10 +440,6 @@
           <AssociationSet Name="FK_PlanillasVentas_Empleados" Association="Self.FK_PlanillasVentas_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="PlanillasVentas" EntitySet="PlanillasVentas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reportes_Empleados" Association="Self.FK_Reportes_Empleados">
-            <End Role="Empleados" EntitySet="Empleados" />
-            <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
           <AssociationSet Name="FK_TelefonosEmpleados_Empleados" Association="Self.FK_TelefonosEmpleados_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
@@ -620,7 +588,7 @@
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
           <Property Name="Anticipos" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
-          <Property Name="Salario_quincenal" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Salario_quincenal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Planillas_Jefes_Empleados" FromRole="Planillas_Jefes" ToRole="Empleados" />
         </EntityType>
         <EntityType Name="PlanillasProduccion">
