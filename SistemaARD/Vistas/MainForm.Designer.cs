@@ -148,7 +148,7 @@
             this.lblDiaFecha.AutoSize = true;
             this.lblDiaFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.lblDiaFecha.Location = new System.Drawing.Point(329, 35);
+            this.lblDiaFecha.Location = new System.Drawing.Point(364, 35);
             this.lblDiaFecha.Name = "lblDiaFecha";
             this.lblDiaFecha.Size = new System.Drawing.Size(46, 16);
             this.lblDiaFecha.TabIndex = 7;
