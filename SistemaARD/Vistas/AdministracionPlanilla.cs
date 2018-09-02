@@ -391,7 +391,20 @@ namespace SistemaARD.Vistas
             }
         }
 
-        
+        private void txtAnticipos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHorasLaboradas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPagoHora_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class LlenarPlanilla

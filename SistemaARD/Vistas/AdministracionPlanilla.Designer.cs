@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionPlanilla));
-            this.lblPlanilla = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +37,6 @@
             this.Cargo_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
-            this.lblEmpleado = new System.Windows.Forms.Label();
             this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.lblPagoHora = new System.Windows.Forms.Label();
             this.txtPagoHora = new System.Windows.Forms.TextBox();
@@ -55,34 +53,41 @@
             this.txtDiasLaborados = new System.Windows.Forms.TextBox();
             this.chbAfp = new System.Windows.Forms.CheckBox();
             this.chbIsss = new System.Windows.Forms.CheckBox();
-            this.lblRetenciones = new System.Windows.Forms.Label();
             this.lblHorasExtra = new System.Windows.Forms.Label();
             this.txtHorasExtra = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblPlanilla
-            // 
-            this.lblPlanilla.AutoSize = true;
-            this.lblPlanilla.Location = new System.Drawing.Point(27, 16);
-            this.lblPlanilla.Name = "lblPlanilla";
-            this.lblPlanilla.Size = new System.Drawing.Size(55, 13);
-            this.lblPlanilla.TabIndex = 0;
-            this.lblPlanilla.Text = "Planilla de";
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(88, 13);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.textBox1.Location = new System.Drawing.Point(6, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
+            this.textBox1.Size = new System.Drawing.Size(150, 23);
             this.textBox1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -90,10 +95,10 @@
             this.Apellidos,
             this.Cargo_Id,
             this.Cargo});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 70);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(344, 329);
+            this.dataGridView1.Size = new System.Drawing.Size(462, 251);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -139,7 +144,7 @@
             this.iconCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconCerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconCerrar.Image")));
-            this.iconCerrar.Location = new System.Drawing.Point(717, 12);
+            this.iconCerrar.Location = new System.Drawing.Point(832, 12);
             this.iconCerrar.Name = "iconCerrar";
             this.iconCerrar.Size = new System.Drawing.Size(25, 25);
             this.iconCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,104 +152,119 @@
             this.iconCerrar.TabStop = false;
             this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
             // 
-            // lblEmpleado
-            // 
-            this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.Location = new System.Drawing.Point(418, 102);
-            this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(54, 13);
-            this.lblEmpleado.TabIndex = 12;
-            this.lblEmpleado.Text = "Empleado";
-            // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(515, 95);
+            this.txtEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtEmpleado.Location = new System.Drawing.Point(6, 20);
             this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.Size = new System.Drawing.Size(212, 20);
+            this.txtEmpleado.Size = new System.Drawing.Size(288, 23);
             this.txtEmpleado.TabIndex = 13;
             // 
             // lblPagoHora
             // 
             this.lblPagoHora.AutoSize = true;
-            this.lblPagoHora.Location = new System.Drawing.Point(418, 154);
+            this.lblPagoHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagoHora.Location = new System.Drawing.Point(18, 26);
             this.lblPagoHora.Name = "lblPagoHora";
-            this.lblPagoHora.Size = new System.Drawing.Size(74, 13);
+            this.lblPagoHora.Size = new System.Drawing.Size(87, 13);
             this.lblPagoHora.TabIndex = 14;
             this.lblPagoHora.Text = "Pago por hora";
             // 
             // txtPagoHora
             // 
-            this.txtPagoHora.Location = new System.Drawing.Point(515, 150);
+            this.txtPagoHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtPagoHora.Location = new System.Drawing.Point(108, 21);
             this.txtPagoHora.Name = "txtPagoHora";
-            this.txtPagoHora.Size = new System.Drawing.Size(43, 20);
+            this.txtPagoHora.Size = new System.Drawing.Size(43, 23);
             this.txtPagoHora.TabIndex = 15;
+            this.txtPagoHora.TextChanged += new System.EventHandler(this.txtPagoHora_TextChanged);
             // 
             // lblHorasLaboradas
             // 
             this.lblHorasLaboradas.AutoSize = true;
-            this.lblHorasLaboradas.Location = new System.Drawing.Point(418, 203);
+            this.lblHorasLaboradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorasLaboradas.Location = new System.Drawing.Point(6, 29);
             this.lblHorasLaboradas.Name = "lblHorasLaboradas";
-            this.lblHorasLaboradas.Size = new System.Drawing.Size(84, 13);
+            this.lblHorasLaboradas.Size = new System.Drawing.Size(99, 13);
             this.lblHorasLaboradas.TabIndex = 16;
             this.lblHorasLaboradas.Text = "Horas laboradas";
             // 
             // txtHorasLaboradas
             // 
-            this.txtHorasLaboradas.Location = new System.Drawing.Point(515, 196);
+            this.txtHorasLaboradas.Location = new System.Drawing.Point(108, 26);
             this.txtHorasLaboradas.Name = "txtHorasLaboradas";
-            this.txtHorasLaboradas.Size = new System.Drawing.Size(43, 20);
+            this.txtHorasLaboradas.Size = new System.Drawing.Size(43, 21);
             this.txtHorasLaboradas.TabIndex = 17;
+            this.txtHorasLaboradas.TextChanged += new System.EventHandler(this.txtHorasLaboradas_TextChanged);
             // 
             // lblAnticipos
             // 
             this.lblAnticipos.AutoSize = true;
-            this.lblAnticipos.Location = new System.Drawing.Point(418, 253);
+            this.lblAnticipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnticipos.Location = new System.Drawing.Point(46, 28);
             this.lblAnticipos.Name = "lblAnticipos";
-            this.lblAnticipos.Size = new System.Drawing.Size(50, 13);
+            this.lblAnticipos.Size = new System.Drawing.Size(59, 13);
             this.lblAnticipos.TabIndex = 18;
             this.lblAnticipos.Text = "Anticipos";
             this.lblAnticipos.Click += new System.EventHandler(this.lblAnticipos_Click);
             // 
             // txtAnticipos
             // 
-            this.txtAnticipos.Location = new System.Drawing.Point(515, 246);
+            this.txtAnticipos.Location = new System.Drawing.Point(108, 26);
             this.txtAnticipos.Name = "txtAnticipos";
-            this.txtAnticipos.Size = new System.Drawing.Size(43, 20);
+            this.txtAnticipos.Size = new System.Drawing.Size(43, 21);
             this.txtAnticipos.TabIndex = 19;
+            this.txtAnticipos.TextChanged += new System.EventHandler(this.txtAnticipos_TextChanged);
             // 
             // lblFecha
             // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(418, 302);
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(555, 333);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(37, 13);
+            this.lblFecha.Size = new System.Drawing.Size(42, 13);
             this.lblFecha.TabIndex = 20;
             this.lblFecha.Text = "Fecha";
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(515, 302);
+            this.dtpFecha.Location = new System.Drawing.Point(603, 327);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(198, 20);
             this.dtpFecha.TabIndex = 21;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(515, 370);
+            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrar.Location = new System.Drawing.Point(671, 353);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
             this.btnRegistrar.TabIndex = 22;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // lblPagoDiario
             // 
             this.lblPagoDiario.AutoSize = true;
-            this.lblPagoDiario.Location = new System.Drawing.Point(582, 153);
+            this.lblPagoDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagoDiario.Location = new System.Drawing.Point(185, 26);
             this.lblPagoDiario.Name = "lblPagoDiario";
-            this.lblPagoDiario.Size = new System.Drawing.Size(60, 13);
+            this.lblPagoDiario.Size = new System.Drawing.Size(71, 13);
             this.lblPagoDiario.TabIndex = 23;
             this.lblPagoDiario.Text = "Pago diario";
             this.lblPagoDiario.Visible = false;
@@ -252,35 +272,38 @@
             // lblDiasLaborados
             // 
             this.lblDiasLaborados.AutoSize = true;
-            this.lblDiasLaborados.Location = new System.Drawing.Point(582, 196);
+            this.lblDiasLaborados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiasLaborados.Location = new System.Drawing.Point(163, 29);
             this.lblDiasLaborados.Name = "lblDiasLaborados";
-            this.lblDiasLaborados.Size = new System.Drawing.Size(79, 13);
+            this.lblDiasLaborados.Size = new System.Drawing.Size(93, 13);
             this.lblDiasLaborados.TabIndex = 24;
             this.lblDiasLaborados.Text = "Días laborados";
             this.lblDiasLaborados.Visible = false;
             // 
             // txtPagoDiario
             // 
-            this.txtPagoDiario.Location = new System.Drawing.Point(660, 150);
+            this.txtPagoDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtPagoDiario.Location = new System.Drawing.Point(262, 21);
             this.txtPagoDiario.Name = "txtPagoDiario";
-            this.txtPagoDiario.Size = new System.Drawing.Size(44, 20);
+            this.txtPagoDiario.Size = new System.Drawing.Size(44, 23);
             this.txtPagoDiario.TabIndex = 25;
             this.txtPagoDiario.Visible = false;
             // 
             // txtDiasLaborados
             // 
-            this.txtDiasLaborados.Location = new System.Drawing.Point(660, 193);
+            this.txtDiasLaborados.Location = new System.Drawing.Point(262, 26);
             this.txtDiasLaborados.Name = "txtDiasLaborados";
-            this.txtDiasLaborados.Size = new System.Drawing.Size(44, 20);
+            this.txtDiasLaborados.Size = new System.Drawing.Size(44, 21);
             this.txtDiasLaborados.TabIndex = 26;
             this.txtDiasLaborados.Visible = false;
             // 
             // chbAfp
             // 
             this.chbAfp.AutoSize = true;
-            this.chbAfp.Location = new System.Drawing.Point(421, 61);
+            this.chbAfp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbAfp.Location = new System.Drawing.Point(10, 26);
             this.chbAfp.Name = "chbAfp";
-            this.chbAfp.Size = new System.Drawing.Size(46, 17);
+            this.chbAfp.Size = new System.Drawing.Size(49, 17);
             this.chbAfp.TabIndex = 27;
             this.chbAfp.Text = "AFP";
             this.chbAfp.UseVisualStyleBackColor = true;
@@ -288,68 +311,146 @@
             // chbIsss
             // 
             this.chbIsss.AutoSize = true;
-            this.chbIsss.Location = new System.Drawing.Point(493, 61);
+            this.chbIsss.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbIsss.Location = new System.Drawing.Point(82, 26);
             this.chbIsss.Name = "chbIsss";
-            this.chbIsss.Size = new System.Drawing.Size(50, 17);
+            this.chbIsss.Size = new System.Drawing.Size(54, 17);
             this.chbIsss.TabIndex = 28;
             this.chbIsss.Text = "ISSS";
             this.chbIsss.UseVisualStyleBackColor = true;
             // 
-            // lblRetenciones
-            // 
-            this.lblRetenciones.AutoSize = true;
-            this.lblRetenciones.Location = new System.Drawing.Point(418, 24);
-            this.lblRetenciones.Name = "lblRetenciones";
-            this.lblRetenciones.Size = new System.Drawing.Size(97, 13);
-            this.lblRetenciones.TabIndex = 29;
-            this.lblRetenciones.Text = "Aplicar retenciones";
-            // 
             // lblHorasExtra
             // 
             this.lblHorasExtra.AutoSize = true;
-            this.lblHorasExtra.Location = new System.Drawing.Point(582, 242);
+            this.lblHorasExtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorasExtra.Location = new System.Drawing.Point(184, 26);
             this.lblHorasExtra.Name = "lblHorasExtra";
-            this.lblHorasExtra.Size = new System.Drawing.Size(61, 13);
+            this.lblHorasExtra.Size = new System.Drawing.Size(72, 13);
             this.lblHorasExtra.TabIndex = 30;
             this.lblHorasExtra.Text = "Horas extra";
             // 
             // txtHorasExtra
             // 
-            this.txtHorasExtra.Location = new System.Drawing.Point(660, 239);
+            this.txtHorasExtra.Location = new System.Drawing.Point(262, 23);
             this.txtHorasExtra.Name = "txtHorasExtra";
-            this.txtHorasExtra.Size = new System.Drawing.Size(44, 20);
+            this.txtHorasExtra.Size = new System.Drawing.Size(44, 21);
             this.txtHorasExtra.TabIndex = 31;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(474, 52);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Planilla de";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(12, 70);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(474, 277);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lista de empleados";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.chbAfp);
+            this.groupBox3.Controls.Add(this.chbIsss);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.Location = new System.Drawing.Point(495, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(310, 60);
+            this.groupBox3.TabIndex = 34;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Aplicar retenciones";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.txtEmpleado);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox4.Location = new System.Drawing.Point(495, 70);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(310, 60);
+            this.groupBox4.TabIndex = 35;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Empleado";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.lblPagoHora);
+            this.groupBox5.Controls.Add(this.txtPagoHora);
+            this.groupBox5.Controls.Add(this.lblPagoDiario);
+            this.groupBox5.Controls.Add(this.txtPagoDiario);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox5.Location = new System.Drawing.Point(495, 129);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(310, 60);
+            this.groupBox5.TabIndex = 36;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Pagos";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.lblHorasLaboradas);
+            this.groupBox6.Controls.Add(this.txtHorasLaboradas);
+            this.groupBox6.Controls.Add(this.lblDiasLaborados);
+            this.groupBox6.Controls.Add(this.txtDiasLaborados);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox6.Location = new System.Drawing.Point(495, 192);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox6.Size = new System.Drawing.Size(310, 60);
+            this.groupBox6.TabIndex = 37;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Dias y horas laborados";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.lblAnticipos);
+            this.groupBox7.Controls.Add(this.txtAnticipos);
+            this.groupBox7.Controls.Add(this.lblHorasExtra);
+            this.groupBox7.Controls.Add(this.txtHorasExtra);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.groupBox7.Location = new System.Drawing.Point(495, 255);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(310, 60);
+            this.groupBox7.TabIndex = 38;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Anticipos y Horas extras";
             // 
             // AdministracionPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(754, 411);
-            this.Controls.Add(this.txtHorasExtra);
-            this.Controls.Add(this.lblHorasExtra);
-            this.Controls.Add(this.lblRetenciones);
-            this.Controls.Add(this.chbIsss);
-            this.Controls.Add(this.chbAfp);
-            this.Controls.Add(this.txtDiasLaborados);
-            this.Controls.Add(this.txtPagoDiario);
-            this.Controls.Add(this.lblDiasLaborados);
-            this.Controls.Add(this.lblPagoDiario);
+            this.ClientSize = new System.Drawing.Size(869, 422);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.txtAnticipos);
-            this.Controls.Add(this.lblAnticipos);
-            this.Controls.Add(this.txtHorasLaboradas);
-            this.Controls.Add(this.lblHorasLaboradas);
-            this.Controls.Add(this.txtPagoHora);
-            this.Controls.Add(this.lblPagoHora);
-            this.Controls.Add(this.txtEmpleado);
-            this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.iconCerrar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblPlanilla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdministracionPlanilla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -357,14 +458,25 @@
             this.Load += new System.EventHandler(this.AdministracionPlanilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPlanilla;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
@@ -373,7 +485,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.PictureBox iconCerrar;
-        private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.Label lblPagoHora;
         private System.Windows.Forms.TextBox txtPagoHora;
@@ -390,8 +501,14 @@
         private System.Windows.Forms.TextBox txtDiasLaborados;
         private System.Windows.Forms.CheckBox chbAfp;
         private System.Windows.Forms.CheckBox chbIsss;
-        private System.Windows.Forms.Label lblRetenciones;
         private System.Windows.Forms.Label lblHorasExtra;
         private System.Windows.Forms.TextBox txtHorasExtra;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox7;
     }
 }

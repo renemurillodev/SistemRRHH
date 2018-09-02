@@ -144,11 +144,11 @@
             // 
             // lblDiaFecha
             // 
-            this.lblDiaFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDiaFecha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblDiaFecha.AutoSize = true;
             this.lblDiaFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.lblDiaFecha.Location = new System.Drawing.Point(364, 35);
+            this.lblDiaFecha.Location = new System.Drawing.Point(312, 12);
             this.lblDiaFecha.Name = "lblDiaFecha";
             this.lblDiaFecha.Size = new System.Drawing.Size(46, 16);
             this.lblDiaFecha.TabIndex = 7;
@@ -160,7 +160,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.lblHora.Location = new System.Drawing.Point(451, 9);
+            this.lblHora.Location = new System.Drawing.Point(459, 35);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(79, 20);
             this.lblHora.TabIndex = 6;
