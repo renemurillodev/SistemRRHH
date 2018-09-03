@@ -86,6 +86,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
@@ -101,7 +103,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(462, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(399, 251);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -160,7 +162,7 @@
             this.txtEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtEmpleado.Location = new System.Drawing.Point(6, 20);
             this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.Size = new System.Drawing.Size(288, 23);
+            this.txtEmpleado.Size = new System.Drawing.Size(192, 23);
             this.txtEmpleado.TabIndex = 13;
             // 
             // lblPagoHora
@@ -176,7 +178,7 @@
             // txtPagoHora
             // 
             this.txtPagoHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtPagoHora.Location = new System.Drawing.Point(108, 21);
+            this.txtPagoHora.Location = new System.Drawing.Point(109, 21);
             this.txtPagoHora.Name = "txtPagoHora";
             this.txtPagoHora.Size = new System.Drawing.Size(43, 23);
             this.txtPagoHora.TabIndex = 15;
@@ -194,7 +196,7 @@
             // 
             // txtHorasLaboradas
             // 
-            this.txtHorasLaboradas.Location = new System.Drawing.Point(108, 26);
+            this.txtHorasLaboradas.Location = new System.Drawing.Point(108, 25);
             this.txtHorasLaboradas.Name = "txtHorasLaboradas";
             this.txtHorasLaboradas.Size = new System.Drawing.Size(43, 21);
             this.txtHorasLaboradas.TabIndex = 17;
@@ -202,9 +204,11 @@
             // 
             // lblAnticipos
             // 
+            this.lblAnticipos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnticipos.AutoSize = true;
             this.lblAnticipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnticipos.Location = new System.Drawing.Point(46, 28);
+            this.lblAnticipos.Location = new System.Drawing.Point(5, 28);
             this.lblAnticipos.Name = "lblAnticipos";
             this.lblAnticipos.Size = new System.Drawing.Size(59, 13);
             this.lblAnticipos.TabIndex = 18;
@@ -213,7 +217,8 @@
             // 
             // txtAnticipos
             // 
-            this.txtAnticipos.Location = new System.Drawing.Point(108, 26);
+            this.txtAnticipos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAnticipos.Location = new System.Drawing.Point(65, 26);
             this.txtAnticipos.Name = "txtAnticipos";
             this.txtAnticipos.Size = new System.Drawing.Size(43, 21);
             this.txtAnticipos.TabIndex = 19;
@@ -225,7 +230,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(555, 333);
+            this.lblFecha.Location = new System.Drawing.Point(510, 333);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(42, 13);
             this.lblFecha.TabIndex = 20;
@@ -237,7 +242,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(603, 327);
+            this.dtpFecha.Location = new System.Drawing.Point(558, 327);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(198, 20);
             this.dtpFecha.TabIndex = 21;
@@ -252,7 +257,7 @@
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(671, 353);
+            this.btnRegistrar.Location = new System.Drawing.Point(626, 353);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
             this.btnRegistrar.TabIndex = 22;
@@ -265,7 +270,7 @@
             // 
             this.lblPagoDiario.AutoSize = true;
             this.lblPagoDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagoDiario.Location = new System.Drawing.Point(185, 26);
+            this.lblPagoDiario.Location = new System.Drawing.Point(15, 26);
             this.lblPagoDiario.Name = "lblPagoDiario";
             this.lblPagoDiario.Size = new System.Drawing.Size(71, 13);
             this.lblPagoDiario.TabIndex = 23;
@@ -276,7 +281,7 @@
             // 
             this.lblDiasLaborados.AutoSize = true;
             this.lblDiasLaborados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiasLaborados.Location = new System.Drawing.Point(163, 29);
+            this.lblDiasLaborados.Location = new System.Drawing.Point(8, 27);
             this.lblDiasLaborados.Name = "lblDiasLaborados";
             this.lblDiasLaborados.Size = new System.Drawing.Size(93, 13);
             this.lblDiasLaborados.TabIndex = 24;
@@ -286,7 +291,7 @@
             // txtPagoDiario
             // 
             this.txtPagoDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtPagoDiario.Location = new System.Drawing.Point(262, 21);
+            this.txtPagoDiario.Location = new System.Drawing.Point(108, 21);
             this.txtPagoDiario.Name = "txtPagoDiario";
             this.txtPagoDiario.Size = new System.Drawing.Size(44, 23);
             this.txtPagoDiario.TabIndex = 25;
@@ -294,7 +299,7 @@
             // 
             // txtDiasLaborados
             // 
-            this.txtDiasLaborados.Location = new System.Drawing.Point(262, 26);
+            this.txtDiasLaborados.Location = new System.Drawing.Point(107, 24);
             this.txtDiasLaborados.Name = "txtDiasLaborados";
             this.txtDiasLaborados.Size = new System.Drawing.Size(44, 21);
             this.txtDiasLaborados.TabIndex = 26;
@@ -324,9 +329,11 @@
             // 
             // lblHorasExtra
             // 
+            this.lblHorasExtra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHorasExtra.AutoSize = true;
             this.lblHorasExtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorasExtra.Location = new System.Drawing.Point(184, 26);
+            this.lblHorasExtra.Location = new System.Drawing.Point(114, 30);
             this.lblHorasExtra.Name = "lblHorasExtra";
             this.lblHorasExtra.Size = new System.Drawing.Size(72, 13);
             this.lblHorasExtra.TabIndex = 30;
@@ -334,18 +341,21 @@
             // 
             // txtHorasExtra
             // 
-            this.txtHorasExtra.Location = new System.Drawing.Point(262, 23);
+            this.txtHorasExtra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtHorasExtra.Location = new System.Drawing.Point(187, 27);
             this.txtHorasExtra.Name = "txtHorasExtra";
             this.txtHorasExtra.Size = new System.Drawing.Size(44, 21);
             this.txtHorasExtra.TabIndex = 31;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(474, 52);
+            this.groupBox1.Size = new System.Drawing.Size(411, 52);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Planilla de";
@@ -356,7 +366,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(474, 277);
+            this.groupBox2.Size = new System.Drawing.Size(411, 277);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de empleados";
@@ -368,9 +378,9 @@
             this.groupBox3.Controls.Add(this.chbAfp);
             this.groupBox3.Controls.Add(this.chbIsss);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox3.Location = new System.Drawing.Point(495, 12);
+            this.groupBox3.Location = new System.Drawing.Point(429, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(310, 60);
+            this.groupBox3.Size = new System.Drawing.Size(353, 60);
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Aplicar retenciones";
@@ -381,9 +391,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.txtEmpleado);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox4.Location = new System.Drawing.Point(495, 70);
+            this.groupBox4.Location = new System.Drawing.Point(429, 70);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(310, 60);
+            this.groupBox4.Size = new System.Drawing.Size(353, 60);
             this.groupBox4.TabIndex = 35;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empleado";
@@ -397,9 +407,9 @@
             this.groupBox5.Controls.Add(this.lblPagoDiario);
             this.groupBox5.Controls.Add(this.txtPagoDiario);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox5.Location = new System.Drawing.Point(495, 129);
+            this.groupBox5.Location = new System.Drawing.Point(429, 129);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(310, 60);
+            this.groupBox5.Size = new System.Drawing.Size(353, 60);
             this.groupBox5.TabIndex = 36;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pagos";
@@ -413,10 +423,10 @@
             this.groupBox6.Controls.Add(this.lblDiasLaborados);
             this.groupBox6.Controls.Add(this.txtDiasLaborados);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox6.Location = new System.Drawing.Point(495, 192);
+            this.groupBox6.Location = new System.Drawing.Point(429, 192);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox6.Size = new System.Drawing.Size(310, 60);
+            this.groupBox6.Size = new System.Drawing.Size(353, 60);
             this.groupBox6.TabIndex = 37;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Dias y horas laborados";
@@ -430,9 +440,9 @@
             this.groupBox7.Controls.Add(this.lblHorasExtra);
             this.groupBox7.Controls.Add(this.txtHorasExtra);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.groupBox7.Location = new System.Drawing.Point(495, 255);
+            this.groupBox7.Location = new System.Drawing.Point(429, 255);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(310, 60);
+            this.groupBox7.Size = new System.Drawing.Size(353, 60);
             this.groupBox7.TabIndex = 38;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Anticipos y Horas extras";

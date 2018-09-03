@@ -30,12 +30,50 @@ namespace SistemaARD.Vistas
             
             BuscarDepto();
             CargarDataGrid();
-            if(textBox1.Text == "Ventas" || textBox1.Text == "Transporte" || textBox1.Text == "Mantenimiento")
+            if(textBox1.Text == "Ventas" || textBox1.Text == "Transporte")
             {
                 lblDiasLaborados.Visible = true;
                 lblPagoDiario.Visible = true;
                 txtDiasLaborados.Visible = true;
                 txtPagoDiario.Visible = true;
+                txtPagoHora.Visible = false;
+                txtHorasLaboradas.Visible = false;
+                lblPagoHora.Visible = false;
+                lblHorasLaboradas.Visible = false;
+                lblHorasExtra.Visible = false;
+                txtHorasExtra.Visible = false;
+            }else if (textBox1.Text == "Mantenimiento")
+            {
+                lblDiasLaborados.Visible = true;
+                lblPagoDiario.Visible = true;
+                txtDiasLaborados.Visible = true;
+                txtPagoDiario.Visible = true;
+                txtPagoHora.Visible = false;
+                txtHorasLaboradas.Visible = false;
+                lblPagoHora.Visible = false;
+                lblHorasLaboradas.Visible = false;
+                lblHorasExtra.Visible = true;
+                txtHorasExtra.Visible = true;
+            }
+            else if (textBox1.Text == "Administración")
+            {
+                lblDiasLaborados.Visible = false;
+                lblPagoDiario.Visible = false;
+                txtDiasLaborados.Visible = false;
+                txtPagoDiario.Visible = false;
+                txtPagoHora.Visible = false;
+                txtHorasLaboradas.Visible = false;
+                lblPagoHora.Visible = false;
+                lblHorasLaboradas.Visible = false;
+                lblHorasExtra.Visible = false;
+                txtHorasExtra.Visible = false;
+                lblAnticipos.Visible = true;
+                txtAnticipos.Visible = true;
+            }
+            else
+            {
+                lblHorasExtra.Visible = false;
+                txtHorasExtra.Visible = false;
             }
         }
 
@@ -145,6 +183,8 @@ namespace SistemaARD.Vistas
                         db.SaveChanges();
                         MessageBox.Show("Pago registrado");
                         txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
+                        chbAfp.Checked = false;
+                        chbIsss.Checked = false;
                     }
                     catch (Exception ex)
                     {
@@ -201,6 +241,8 @@ namespace SistemaARD.Vistas
                         db.SaveChanges();
                         MessageBox.Show("Pago registrado");
                         txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
+                        chbAfp.Checked = false;
+                        chbIsss.Checked = false;
                     }
                     catch (Exception ex)
                     {
@@ -258,6 +300,8 @@ namespace SistemaARD.Vistas
                         db.SaveChanges();
                         MessageBox.Show("Pago registrado");
                         txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
+                        chbAfp.Checked = false;
+                        chbIsss.Checked = false;
                     }
                     catch (Exception ex)
                     {
@@ -269,15 +313,15 @@ namespace SistemaARD.Vistas
             {
                 //Registrar en tabla PlanillaVentas
                 planillaProduccion.Empleado_Id = Convert.ToInt32(idEmpleado);
-                planillaProduccion.Pago_hora = Convert.ToDecimal(txtPagoDiario.Text);
-                planillaProduccion.Horas_laboradas = Convert.ToInt32(txtDiasLaborados.Text);
+                planillaProduccion.Pago_hora = Convert.ToDecimal(txtPagoHora.Text);
+                planillaProduccion.Horas_laboradas = Convert.ToInt32(txtHorasLaboradas.Text);
                 planillaProduccion.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
                 planillaProduccion.Fecha = dtpFecha.Value;
                 
 
                 //Registrar en tabla Reportes 
 
-                var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
+                var sueldo = Convert.ToDecimal(txtPagoHora.Text) * Convert.ToDecimal(txtHorasLaboradas.Text);
                 var afp = sueldo * Convert.ToDecimal(0.0725);
                 var isss = sueldo * Convert.ToDecimal(0.03);
                 var sueldoPostRetenciones = sueldo - (afp + isss);
@@ -314,6 +358,8 @@ namespace SistemaARD.Vistas
                         db.SaveChanges();
                         MessageBox.Show("Pago registrado");
                         txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
+                        chbAfp.Checked = false;
+                        chbIsss.Checked = false;
                     }
                     catch (Exception ex)
                     {
@@ -369,6 +415,8 @@ namespace SistemaARD.Vistas
                         db.SaveChanges();
                         MessageBox.Show("Pago registrado");
                         txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
+                        chbAfp.Checked = false;
+                        chbIsss.Checked = false;
                     }
                     catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
                     {
