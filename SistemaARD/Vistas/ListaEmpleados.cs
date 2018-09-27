@@ -160,5 +160,10 @@ namespace SistemaARD.Vistas
             registro.BringToFront();
             registro.Show();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            CargarGrid();
+        }
     }
 }
