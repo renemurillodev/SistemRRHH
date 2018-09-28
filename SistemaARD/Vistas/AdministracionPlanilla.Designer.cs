@@ -62,6 +62,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnAguinaldo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -448,12 +449,23 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Anticipos y Horas extras";
             // 
+            // btnAguinaldo
+            // 
+            this.btnAguinaldo.Location = new System.Drawing.Point(429, 375);
+            this.btnAguinaldo.Name = "btnAguinaldo";
+            this.btnAguinaldo.Size = new System.Drawing.Size(141, 23);
+            this.btnAguinaldo.TabIndex = 39;
+            this.btnAguinaldo.Text = "Generar Aguinaldo";
+            this.btnAguinaldo.UseVisualStyleBackColor = true;
+            this.btnAguinaldo.Click += new System.EventHandler(this.btnAguinaldo_Click);
+            // 
             // AdministracionPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(869, 422);
+            this.Controls.Add(this.btnAguinaldo);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -524,5 +536,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnAguinaldo;
     }
 }

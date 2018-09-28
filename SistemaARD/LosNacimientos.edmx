@@ -17,9 +17,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Monto" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="SalarioDiario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AniosTrabajados" Type="int" Nullable="false" />
+          <Property Name="DiasTrabajados" Type="int" />
+          <Property Name="DiasPagar" Type="int" />
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
-          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Categoria_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Cargos">
           <Key>
@@ -28,6 +32,14 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Departamento_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoriasAguinaldos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <EntityType Name="CategoriasIndemnizaciones">
           <Key>
@@ -67,7 +79,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombres" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="Apellidos" Type="varchar" MaxLength="60" Nullable="false" />
-          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="Genero_Id" Type="int" Nullable="false" />
           <Property Name="N_Dui" Type="varchar" MaxLength="10" Nullable="false" />
@@ -75,7 +87,7 @@
           <Property Name="Afp_Id" Type="int" Nullable="false" />
           <Property Name="N_Afp" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="N_Isss" Type="varchar" MaxLength="9" Nullable="false" />
-          <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
           <Property Name="Cargo_Id" Type="int" Nullable="false" />
           <Property Name="Estado_Id" Type="int" Nullable="false" />
         </EntityType>
@@ -100,7 +112,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Monto" Type="decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Planillas_Jefes">
@@ -108,7 +120,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Anticipos" Type="decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="Salario_quincenal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -122,7 +134,7 @@
           <Property Name="Pago_hora" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Horas_laboradas" Type="int" Nullable="false" />
           <Property Name="Anticipos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="PlanillasVentas">
           <Key>
@@ -132,10 +144,10 @@
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Pago_diario" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Dias_laborados" Type="int" Nullable="false" />
-          <Property Name="Horas_extra" Type="int" />
           <Property Name="Anticipos" Type="decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
+          <Property Name="Horas_extra" Type="int" />
         </EntityType>
         <EntityType Name="Reportes">
           <Key>
@@ -147,7 +159,7 @@
           <Property Name="Pago_Afp" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Pago_Isss" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Pago_Renta" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -192,6 +204,18 @@
           <Property Name="Password" Type="varbinary" MaxLength="250" Nullable="false" />
           <Property Name="Rol_Id" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Aguinaldos_CategoriasAguinaldos">
+          <End Role="CategoriasAguinaldos" Type="Self.CategoriasAguinaldos" Multiplicity="1" />
+          <End Role="Aguinaldos" Type="Self.Aguinaldos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriasAguinaldos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aguinaldos">
+              <PropertyRef Name="Categoria_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Aguinaldos_Empleados">
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
           <End Role="Aguinaldos" Type="Self.Aguinaldos" Multiplicity="*" />
@@ -300,6 +324,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Planillas_Jefes_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Planillas_Jefes" Type="Self.Planillas_Jefes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Planillas_Jefes">
+              <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PlanillasProduccion_Empleados">
           <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
           <End Role="PlanillasProduccion" Type="Self.PlanillasProduccion" Multiplicity="*" />
@@ -332,6 +368,18 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="PlanillasVentas">
+              <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reportes_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reportes">
               <PropertyRef Name="Empleado_Id" />
             </Dependent>
           </ReferentialConstraint>
@@ -376,6 +424,7 @@
           <EntitySet Name="Afps" EntityType="Self.Afps" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Aguinaldos" EntityType="Self.Aguinaldos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoriasAguinaldos" EntityType="Self.CategoriasAguinaldos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriasIndemnizaciones" EntityType="Self.CategoriasIndemnizaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriasPlanillas" EntityType="Self.CategoriasPlanillas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CorreosEmpleados" EntityType="Self.CorreosEmpleados" Schema="dbo" store:Type="Tables" />
@@ -393,6 +442,10 @@
           <EntitySet Name="TelefonosEmpleados" EntityType="Self.TelefonosEmpleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposTelefonos" EntityType="Self.TiposTelefonos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Aguinaldos_CategoriasAguinaldos" Association="Self.FK_Aguinaldos_CategoriasAguinaldos">
+            <End Role="CategoriasAguinaldos" EntitySet="CategoriasAguinaldos" />
+            <End Role="Aguinaldos" EntitySet="Aguinaldos" />
+          </AssociationSet>
           <AssociationSet Name="FK_Aguinaldos_Empleados" Association="Self.FK_Aguinaldos_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Aguinaldos" EntitySet="Aguinaldos" />
@@ -429,6 +482,10 @@
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Indemnizaciones" EntitySet="Indemnizaciones" />
           </AssociationSet>
+          <AssociationSet Name="FK_Planillas_Jefes_Empleados" Association="Self.FK_Planillas_Jefes_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Planillas_Jefes" EntitySet="Planillas_Jefes" />
+          </AssociationSet>
           <AssociationSet Name="FK_PlanillasProduccion_Empleados" Association="Self.FK_PlanillasProduccion_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="PlanillasProduccion" EntitySet="PlanillasProduccion" />
@@ -440,6 +497,10 @@
           <AssociationSet Name="FK_PlanillasVentas_Empleados" Association="Self.FK_PlanillasVentas_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="PlanillasVentas" EntitySet="PlanillasVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reportes_Empleados" Association="Self.FK_Reportes_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
           <AssociationSet Name="FK_TelefonosEmpleados_Empleados" Association="Self.FK_TelefonosEmpleados_Empleados">
             <End Role="Empleados" EntitySet="Empleados" />
@@ -471,10 +532,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Monto" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Aguinaldos_Empleados" FromRole="Aguinaldos" ToRole="Empleados" />
+          <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoriasAguinaldos" Relationship="losnacimientosModel.FK_Aguinaldos_CategoriasAguinaldos" FromRole="Aguinaldos" ToRole="CategoriasAguinaldos" />
+          <Property Name="SalarioDiario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="AniosTrabajados" Type="Int32" Nullable="false" />
+          <Property Name="DiasTrabajados" Type="Int32" />
+          <Property Name="DiasPagar" Type="Int32" />
         </EntityType>
         <EntityType Name="Cargos">
           <Key>
@@ -528,7 +594,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombres" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellidos" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Direccion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Genero_Id" Type="Int32" Nullable="false" />
           <Property Name="N_Dui" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
@@ -536,7 +602,7 @@
           <Property Name="Afp_Id" Type="Int32" Nullable="false" />
           <Property Name="N_Afp" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="N_Isss" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Cargo_Id" Type="Int32" Nullable="false" />
           <Property Name="Estado_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Afps" Relationship="Self.FK_Empleados_Afps" FromRole="Empleados" ToRole="Afps" />
@@ -575,7 +641,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
           <Property Name="Monto" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CategoriasIndemnizaciones" Relationship="Self.FK_Indemnizaciones_CategoriasIndemnizaciones" FromRole="Indemnizaciones" ToRole="CategoriasIndemnizaciones" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Indemnizaciones_Empleados" FromRole="Indemnizaciones" ToRole="Empleados" />
@@ -585,7 +651,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
           <Property Name="Anticipos" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
           <Property Name="Salario_quincenal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
@@ -600,7 +666,7 @@
           <Property Name="Pago_hora" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Horas_laboradas" Type="Int32" Nullable="false" />
           <Property Name="Anticipos" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_PlanillasProduccion_Empleados" FromRole="PlanillasProduccion" ToRole="Empleados" />
         </EntityType>
         <EntityType Name="PlanillasVentas">
@@ -612,7 +678,7 @@
           <Property Name="Pago_diario" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Dias_laborados" Type="Int32" Nullable="false" />
           <Property Name="Anticipos" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CategoriasPlanillas" Relationship="Self.FK_PlanillasVentas_CategoriasPlanillas" FromRole="PlanillasVentas" ToRole="CategoriasPlanillas" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_PlanillasVentas_Empleados" FromRole="PlanillasVentas" ToRole="Empleados" />
@@ -947,6 +1013,11 @@
             <End Role="Empleados" EntitySet="Empleados" />
             <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
+          <EntitySet Name="CategoriasAguinaldos" EntityType="losnacimientosModel.CategoriasAguinaldos" />
+          <AssociationSet Name="FK_Aguinaldos_CategoriasAguinaldos" Association="losnacimientosModel.FK_Aguinaldos_CategoriasAguinaldos">
+            <End Role="CategoriasAguinaldos" EntitySet="CategoriasAguinaldos" />
+            <End Role="Aguinaldos" EntitySet="Aguinaldos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reportes">
           <Key>
@@ -958,7 +1029,7 @@
           <Property Name="Pago_Afp" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Pago_Isss" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Pago_Renta" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Empleados" Relationship="losnacimientosModel.FK_Reportes_Empleados" FromRole="Reportes" ToRole="Empleados" />
         </EntityType>
         <Association Name="FK_Reportes_Empleados">
@@ -970,6 +1041,27 @@
             </Principal>
             <Dependent Role="Reportes">
               <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CategoriasAguinaldos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Aguinaldos" Relationship="losnacimientosModel.FK_Aguinaldos_CategoriasAguinaldos" FromRole="CategoriasAguinaldos" ToRole="Aguinaldos" />
+        </EntityType>
+        <Association Name="FK_Aguinaldos_CategoriasAguinaldos">
+          <End Type="losnacimientosModel.CategoriasAguinaldos" Role="CategoriasAguinaldos" Multiplicity="1" />
+          <End Type="losnacimientosModel.Aguinaldos" Role="Aguinaldos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriasAguinaldos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aguinaldos">
+              <PropertyRef Name="Categoria_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -990,8 +1082,12 @@
           <EntitySetMapping Name="Aguinaldos">
             <EntityTypeMapping TypeName="losnacimientosModel.Aguinaldos">
               <MappingFragment StoreEntitySet="Aguinaldos">
+                <ScalarProperty Name="DiasPagar" ColumnName="DiasPagar" />
+                <ScalarProperty Name="DiasTrabajados" ColumnName="DiasTrabajados" />
+                <ScalarProperty Name="AniosTrabajados" ColumnName="AniosTrabajados" />
+                <ScalarProperty Name="SalarioDiario" ColumnName="SalarioDiario" />
+                <ScalarProperty Name="Categoria_Id" ColumnName="Categoria_Id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Monto" ColumnName="Monto" />
                 <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
               </MappingFragment>
@@ -1180,6 +1276,15 @@
                 <ScalarProperty Name="Pago_Afp" ColumnName="Pago_Afp" />
                 <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
                 <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriasAguinaldos">
+            <EntityTypeMapping TypeName="losnacimientosModel.CategoriasAguinaldos">
+              <MappingFragment StoreEntitySet="CategoriasAguinaldos">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

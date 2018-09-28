@@ -12,18 +12,19 @@ namespace SistemaARD
     using System;
     using System.Collections.Generic;
     
-    public partial class Aguinaldos
+    public partial class CategoriasAguinaldos
     {
-        public int Id { get; set; }
-        public int Empleado_Id { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public int Categoria_Id { get; set; }
-        public decimal SalarioDiario { get; set; }
-        public int AniosTrabajados { get; set; }
-        public Nullable<int> DiasTrabajados { get; set; }
-        public Nullable<int> DiasPagar { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CategoriasAguinaldos()
+        {
+            this.Aguinaldos = new HashSet<Aguinaldos>();
+        }
     
-        public virtual Empleados Empleados { get; set; }
-        public virtual CategoriasAguinaldos CategoriasAguinaldos { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Aguinaldos> Aguinaldos { get; set; }
     }
 }

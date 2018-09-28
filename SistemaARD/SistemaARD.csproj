@@ -63,6 +63,9 @@
     <Compile Include="Cargos.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
+    <Compile Include="CategoriasAguinaldos.cs">
+      <DependentUpon>LosNacimientos.tt</DependentUpon>
+    </Compile>
     <Compile Include="CategoriasIndemnizaciones.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
@@ -136,12 +139,6 @@
     <Compile Include="Vistas\AdministracionPlanilla.Designer.cs">
       <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Aguinaldos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\Aguinaldos.Designer.cs">
-      <DependentUpon>Aguinaldos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,9 +209,6 @@
     </Compile>
     <EmbeddedResource Include="Vistas\AdministracionPlanilla.resx">
       <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Aguinaldos.resx">
-      <DependentUpon>Aguinaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
