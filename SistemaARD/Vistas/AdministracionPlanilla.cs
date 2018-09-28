@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace SistemaARD.Vistas
 {
@@ -461,77 +464,92 @@ namespace SistemaARD.Vistas
 
         private void btnAguinaldo_Click(object sender, EventArgs e)
         {
-            Aguinaldos agui = new Aguinaldos();
-                
-            if(textBox1.Text == "Ventas")
+            if (textBox1.Text == "Ventas")
             {
-                agui.Categoria_Id = 3;
-            }else if(textBox1.Text == "Transporte")
+                try
+                {
+                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                    SqlConnection cnn = new SqlConnection(con);
+                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoVentas", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cnn.Open();
+                    cmd.ExecuteScalar();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else if (textBox1.Text == "Transporte")
             {
-                agui.Categoria_Id = 1;
+                try
+                {
+                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                    SqlConnection cnn = new SqlConnection(con);
+                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoTransporte", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cnn.Open();
+                    cmd.ExecuteScalar();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             else if (textBox1.Text == "Producción")
             {
-                agui.Categoria_Id = 2;
+                try
+                {
+                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                    SqlConnection cnn = new SqlConnection(con);
+                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoProduccion", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cnn.Open();
+                    cmd.ExecuteScalar();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             else if (textBox1.Text == "Mantenimiento")
             {
-                agui.Categoria_Id = 4;
+                try
+                {
+                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                    SqlConnection cnn = new SqlConnection(con);
+                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoMantenimiento", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cnn.Open();
+                    cmd.ExecuteScalar();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             else if (textBox1.Text == "Administración")
             {
-                agui.Categoria_Id = 5;
-            }
-
-            agui.SalarioDiario = Convert.ToDecimal(10.25);
-            agui.Fecha = DateTime.Now;
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                agui.Empleado_Id = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
-                using (DBEntities db = new DBEntities())
+                try
                 {
-                    var usuario = db.Empleados.Find(agui.Empleado_Id);
-                    var dias = (DateTime.Now - usuario.FechaIngreso).TotalDays;
-                    var anios = (int)Math.Floor(dias / 365);
-                    agui.AniosTrabajados = Convert.ToInt32(anios);
-
-                    if(anios > 1 && anios < 3)
-                    {
-                        agui.DiasPagar = 15;
-                    }else if(anios > 3 && anios < 10)
-                    {
-                        agui.DiasPagar = 19;
-                    }else if(anios > 10)
-                    {
-                        agui.DiasPagar = 21;
-                    }else if(anios < 1)
-                    {
-                        agui.DiasTrabajados = Convert.ToInt32(dias);
-                    }
-                    try
-                    {
-                        db.Aguinaldos.Add(agui);
-                        db.SaveChanges();
-                    }
-                    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                    {
-                        Exception raise = dbEx;
-                        foreach (var validationErrors in dbEx.EntityValidationErrors)
-                        {
-                            foreach (var validationError in validationErrors.ValidationErrors)
-                            {
-                                string message = string.Format("{0}:{1}",
-                                    validationErrors.Entry.Entity.ToString(),
-                                    validationError.ErrorMessage);
-                                // raise a new exception nesting
-                                // the current instance as InnerException
-                                raise = new InvalidOperationException(message, raise);
-                            }
-                        }
-                        throw raise;
-                    }
+                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                    SqlConnection cnn = new SqlConnection(con);
+                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoAdministracion", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cnn.Open();
+                    cmd.ExecuteScalar();
+                    cnn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
                 }
             }
+
         }
     }
 
