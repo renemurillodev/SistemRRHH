@@ -171,6 +171,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\MostrarAguinaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\MostrarAguinaldos.Designer.cs">
+      <DependentUpon>MostrarAguinaldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\RegistroCargos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\MostrarAguinaldos.resx">
+      <DependentUpon>MostrarAguinaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RegistroCargos.resx">
       <DependentUpon>RegistroCargos.cs</DependentUpon>

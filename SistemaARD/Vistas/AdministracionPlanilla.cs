@@ -110,6 +110,7 @@ namespace SistemaARD.Vistas
                 {
                     dataGridView1.AutoGenerateColumns = false;
                     var empleados = db.Database.SqlQuery<LlenarPlanilla>(string.Format("SELECT dbo.Empleados.Id as Id, dbo.Empleados.Nombres as Nombres, dbo.Empleados.Apellidos as Apellidos, dbo.Empleados.Cargo_Id as Cargo_Id, dbo.Cargos.Nombre as Cargo FROM dbo.Empleados INNER JOIN dbo.Cargos ON dbo.Empleados.Cargo_Id = dbo.Cargos.Id INNER JOIN dbo.Departamentos ON dbo.Departamentos.Id = dbo.Cargos.Departamento_Id WHERE dbo.Departamentos.Nombre = '{0}'", nDepto)).ToList();
+                    
                     dataGridView1.DataSource = empleados;
                 }
             }
@@ -464,17 +465,18 @@ namespace SistemaARD.Vistas
 
         private void btnAguinaldo_Click(object sender, EventArgs e)
         {
+            string con = "Data Source =.; Initial catalog = losnacimientos; Integrated security = True;";
+            SqlConnection cnn = new SqlConnection(con);
             if (textBox1.Text == "Ventas")
             {
                 try
                 {
-                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-                    SqlConnection cnn = new SqlConnection(con);
                     SqlCommand cmd = new SqlCommand("InsertarAguinaldoVentas", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cnn.Open();
                     cmd.ExecuteScalar();
                     cnn.Close();
+                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                 }
                 catch (Exception ex)
                 {
@@ -485,13 +487,12 @@ namespace SistemaARD.Vistas
             {
                 try
                 {
-                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-                    SqlConnection cnn = new SqlConnection(con);
                     SqlCommand cmd = new SqlCommand("InsertarAguinaldoTransporte", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cnn.Open();
                     cmd.ExecuteScalar();
                     cnn.Close();
+                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                 }
                 catch (Exception ex)
                 {
@@ -502,13 +503,12 @@ namespace SistemaARD.Vistas
             {
                 try
                 {
-                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-                    SqlConnection cnn = new SqlConnection(con);
                     SqlCommand cmd = new SqlCommand("InsertarAguinaldoProduccion", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cnn.Open();
                     cmd.ExecuteScalar();
                     cnn.Close();
+                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                 }
                 catch (Exception ex)
                 {
@@ -519,13 +519,12 @@ namespace SistemaARD.Vistas
             {
                 try
                 {
-                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-                    SqlConnection cnn = new SqlConnection(con);
                     SqlCommand cmd = new SqlCommand("InsertarAguinaldoMantenimiento", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cnn.Open();
                     cmd.ExecuteScalar();
                     cnn.Close();
+                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                 }
                 catch (Exception ex)
                 {
@@ -536,13 +535,12 @@ namespace SistemaARD.Vistas
             {
                 try
                 {
-                    string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-                    SqlConnection cnn = new SqlConnection(con);
                     SqlCommand cmd = new SqlCommand("InsertarAguinaldoAdministracion", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cnn.Open();
                     cmd.ExecuteScalar();
                     cnn.Close();
+                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                 }
                 catch (Exception ex)
                 {
