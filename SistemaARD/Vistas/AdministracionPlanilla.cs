@@ -465,7 +465,7 @@ namespace SistemaARD.Vistas
 
         private void btnAguinaldo_Click(object sender, EventArgs e)
         {
-            string con = "Data Source =.; Initial catalog = losnacimientos; Integrated security = True;";
+            string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
             SqlConnection cnn = new SqlConnection(con);
             if (textBox1.Text == "Ventas")
             {
