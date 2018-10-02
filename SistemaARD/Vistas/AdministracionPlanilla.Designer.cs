@@ -63,6 +63,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnAguinaldo = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,6 +73,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -231,7 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(510, 333);
+            this.lblFecha.Location = new System.Drawing.Point(40, 32);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(42, 13);
             this.lblFecha.TabIndex = 20;
@@ -243,14 +245,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(558, 327);
+            this.dtpFecha.Location = new System.Drawing.Point(88, 26);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(198, 20);
             this.dtpFecha.TabIndex = 21;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
@@ -258,7 +259,7 @@
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(626, 353);
+            this.btnRegistrar.Location = new System.Drawing.Point(293, 387);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
             this.btnRegistrar.TabIndex = 22;
@@ -368,7 +369,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(12, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(411, 277);
+            this.groupBox2.Size = new System.Drawing.Size(411, 311);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de empleados";
@@ -451,20 +452,39 @@
             // 
             // btnAguinaldo
             // 
-            this.btnAguinaldo.Location = new System.Drawing.Point(429, 375);
+            this.btnAguinaldo.FlatAppearance.BorderSize = 0;
+            this.btnAguinaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAguinaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAguinaldo.Image = ((System.Drawing.Image)(resources.GetObject("btnAguinaldo.Image")));
+            this.btnAguinaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAguinaldo.Location = new System.Drawing.Point(157, 387);
             this.btnAguinaldo.Name = "btnAguinaldo";
-            this.btnAguinaldo.Size = new System.Drawing.Size(141, 23);
+            this.btnAguinaldo.Size = new System.Drawing.Size(130, 45);
             this.btnAguinaldo.TabIndex = 39;
             this.btnAguinaldo.Text = "Generar Aguinaldo";
+            this.btnAguinaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAguinaldo.UseVisualStyleBackColor = true;
             this.btnAguinaldo.Click += new System.EventHandler(this.btnAguinaldo_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox8.Controls.Add(this.dtpFecha);
+            this.groupBox8.Controls.Add(this.lblFecha);
+            this.groupBox8.Location = new System.Drawing.Point(429, 321);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(353, 60);
+            this.groupBox8.TabIndex = 32;
+            this.groupBox8.TabStop = false;
             // 
             // AdministracionPlanilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(869, 422);
+            this.ClientSize = new System.Drawing.Size(869, 502);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.btnAguinaldo);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -474,8 +494,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.iconCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdministracionPlanilla";
@@ -497,8 +515,9 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -537,5 +556,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btnAguinaldo;
+        private System.Windows.Forms.GroupBox groupBox8;
     }
 }

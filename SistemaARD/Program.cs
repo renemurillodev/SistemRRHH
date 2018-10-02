@@ -16,7 +16,7 @@ namespace SistemaARD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vistas.MostrarAguinaldos());
+            Application.Run(new MainForm());
         }
     }
 }

@@ -426,6 +426,7 @@
             this.btnAguinaldo.Text = "AGUINALDOS";
             this.btnAguinaldo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAguinaldo.UseVisualStyleBackColor = true;
+            this.btnAguinaldo.Click += new System.EventHandler(this.btnAguinaldo_Click);
             // 
             // btnPlanilla
             // 

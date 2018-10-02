@@ -34,18 +34,18 @@ namespace SistemaARD
         //METODO PARA ABRIR FORMULADIO DENTRO DEL PANEL PRINCIPAL
         //private void AbrirFormInPanel(object Formhijo)
         //{
-        //    //if (this.PanelContenedor.Controls.Count > 0)
-        //    //    this.PanelContenedor.Controls.RemoveAt(0);
+        //    if (this.PanelContenedor.Controls.Count > 0)
+        //        this.PanelContenedor.Controls.RemoveAt(0);
         //    Form fh = Formhijo as Form;
-        //    //fh.TopLevel = false;
-        //    //fh.Dock = DockStyle.Fill;
+        //    fh.TopLevel = false;
+        //    fh.Dock = DockStyle.Fill;
         //    this.PanelContenedor.Controls.Add(fh);
         //    this.PanelContenedor.Tag = fh;
         //    fh.Show();
         //}
 
-            //NUEVO METODO PARA ABRIR FORMULARIOS
-            private void AbrirFormulario<MiForm>()where MiForm :Form, new()
+        //NUEVO METODO PARA ABRIR FORMULARIOS
+        private void AbrirFormulario<MiForm>()where MiForm :Form, new()
         {
             Form Formulario;
             Formulario = PanelContenedor.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la coleccion el formulario
@@ -158,6 +158,13 @@ namespace SistemaARD
         {
             //AbrirFormInPanel(new RegistroDepartamentos());
             AbrirFormulario<RegistroDepartamentos>();
+        }
+
+        private void btnAguinaldo_Click(object sender, EventArgs e)
+        {
+            MostrarAguinaldos mostraraguinaldos = new MostrarAguinaldos();
+            //this.Hide();
+            mostraraguinaldos.Show();
         }
     }
 }

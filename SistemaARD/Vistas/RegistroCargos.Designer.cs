@@ -47,7 +47,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(133, 130);
+            this.btnRegistrar.Location = new System.Drawing.Point(485, 71);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
             this.btnRegistrar.TabIndex = 9;
@@ -60,7 +60,7 @@
             // 
             this.cbxDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cbxDepartamento.FormattingEnabled = true;
-            this.cbxDepartamento.Location = new System.Drawing.Point(133, 78);
+            this.cbxDepartamento.Location = new System.Drawing.Point(448, 31);
             this.cbxDepartamento.Name = "cbxDepartamento";
             this.cbxDepartamento.Size = new System.Drawing.Size(167, 24);
             this.cbxDepartamento.TabIndex = 8;
@@ -77,7 +77,7 @@
             // 
             this.lblDepartamento.AutoSize = true;
             this.lblDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.lblDepartamento.Location = new System.Drawing.Point(9, 78);
+            this.lblDepartamento.Location = new System.Drawing.Point(324, 31);
             this.lblDepartamento.Name = "lblDepartamento";
             this.lblDepartamento.Size = new System.Drawing.Size(98, 17);
             this.lblDepartamento.TabIndex = 6;
@@ -98,7 +98,7 @@
             this.iconCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconCerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconCerrar.Image")));
-            this.iconCerrar.Location = new System.Drawing.Point(733, 9);
+            this.iconCerrar.Location = new System.Drawing.Point(776, 9);
             this.iconCerrar.Name = "iconCerrar";
             this.iconCerrar.Size = new System.Drawing.Size(25, 25);
             this.iconCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,6 +108,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.lblDepartamento);
             this.groupBox1.Controls.Add(this.btnRegistrar);
@@ -116,7 +118,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(12, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 190);
+            this.groupBox1.Size = new System.Drawing.Size(789, 190);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignación de cargos";
@@ -136,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(770, 450);
+            this.ClientSize = new System.Drawing.Size(813, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.iconCerrar);

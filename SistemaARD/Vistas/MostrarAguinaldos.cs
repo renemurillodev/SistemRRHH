@@ -28,6 +28,7 @@ namespace SistemaARD.Vistas
 
         private void MostrarAguinaldos_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             CargarCombo();
         }
 
@@ -305,6 +306,15 @@ namespace SistemaARD.Vistas
             }
         }
 
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 
         
