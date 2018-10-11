@@ -465,89 +465,94 @@ namespace SistemaARD.Vistas
 
         private void btnAguinaldo_Click(object sender, EventArgs e)
         {
-            string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-            SqlConnection cnn = new SqlConnection(con);
-            if (textBox1.Text == "Ventas")
+            DialogResult dialog;
+            dialog = MessageBox.Show("¿Seguro que desea generar aguinaldo para este departamento?", "Genrar aguinaldo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
             {
-                try
+                string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                SqlConnection cnn = new SqlConnection(con);
+                if (textBox1.Text == "Ventas")
                 {
-                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoVentas", cnn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cnn.Open();
-                    cmd.ExecuteScalar();
-                    cnn.Close();
-                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoVentas", cnn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cnn.Open();
+                        cmd.ExecuteScalar();
+                        cnn.Close();
+                        MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+                else if (textBox1.Text == "Transporte")
                 {
-                    MessageBox.Show(ex.ToString());
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoTransporte", cnn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cnn.Open();
+                        cmd.ExecuteScalar();
+                        cnn.Close();
+                        MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-            }
-            else if (textBox1.Text == "Transporte")
-            {
-                try
+                else if (textBox1.Text == "Producción")
                 {
-                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoTransporte", cnn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cnn.Open();
-                    cmd.ExecuteScalar();
-                    cnn.Close();
-                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoProduccion", cnn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cnn.Open();
+                        cmd.ExecuteScalar();
+                        cnn.Close();
+                        MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+                else if (textBox1.Text == "Mantenimiento")
                 {
-                    MessageBox.Show(ex.ToString());
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoMantenimiento", cnn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cnn.Open();
+                        cmd.ExecuteScalar();
+                        cnn.Close();
+                        MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-            }
-            else if (textBox1.Text == "Producción")
-            {
-                try
+                else if (textBox1.Text == "Administración")
                 {
-                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoProduccion", cnn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cnn.Open();
-                    cmd.ExecuteScalar();
-                    cnn.Close();
-                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoAdministracion", cnn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cnn.Open();
+                        cmd.ExecuteScalar();
+                        cnn.Close();
+                        MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-            else if (textBox1.Text == "Mantenimiento")
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoMantenimiento", cnn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cnn.Open();
-                    cmd.ExecuteScalar();
-                    cnn.Close();
-                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-            else if (textBox1.Text == "Administración")
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("InsertarAguinaldoAdministracion", cnn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cnn.Open();
-                    cmd.ExecuteScalar();
-                    cnn.Close();
-                    MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
 
+            }
         }
     }
 
