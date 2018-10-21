@@ -37,8 +37,14 @@
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtgCargos = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Departamento_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCargos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -133,12 +139,62 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Cargos";
             // 
+            // dtgCargos
+            // 
+            this.dtgCargos.AllowUserToAddRows = false;
+            this.dtgCargos.AllowUserToDeleteRows = false;
+            this.dtgCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Departamento_Id,
+            this.Departamento});
+            this.dtgCargos.Location = new System.Drawing.Point(21, 256);
+            this.dtgCargos.Name = "dtgCargos";
+            this.dtgCargos.ReadOnly = true;
+            this.dtgCargos.Size = new System.Drawing.Size(248, 150);
+            this.dtgCargos.TabIndex = 12;
+            this.dtgCargos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCargos_CellDoubleClick);
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 41;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Departamento_Id
+            // 
+            this.Departamento_Id.DataPropertyName = "Departamento_Id";
+            this.Departamento_Id.HeaderText = "Departamento_Id";
+            this.Departamento_Id.Name = "Departamento_Id";
+            this.Departamento_Id.ReadOnly = true;
+            this.Departamento_Id.Visible = false;
+            // 
+            // Departamento
+            // 
+            this.Departamento.DataPropertyName = "Departamento";
+            this.Departamento.HeaderText = "Departamento";
+            this.Departamento.Name = "Departamento";
+            this.Departamento.ReadOnly = true;
+            // 
             // RegistroCargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(813, 450);
+            this.Controls.Add(this.dtgCargos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.iconCerrar);
@@ -149,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCargos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +221,10 @@
         private System.Windows.Forms.PictureBox iconCerrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dtgCargos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
     }
 }

@@ -464,6 +464,7 @@
             this.btnAguinaldo.Text = "Generar Aguinaldo";
             this.btnAguinaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAguinaldo.UseVisualStyleBackColor = true;
+            this.btnAguinaldo.Visible = false;
             this.btnAguinaldo.Click += new System.EventHandler(this.btnAguinaldo_Click);
             // 
             // groupBox8

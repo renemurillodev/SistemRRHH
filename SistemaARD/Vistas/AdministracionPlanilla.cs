@@ -78,6 +78,10 @@ namespace SistemaARD.Vistas
                 lblHorasExtra.Visible = false;
                 txtHorasExtra.Visible = false;
             }
+            if(DateTime.Now.Month == 12)
+            {
+                btnAguinaldo.Visible = true;
+            }
         }
 
         void BuscarDepto()
@@ -469,7 +473,7 @@ namespace SistemaARD.Vistas
             dialog = MessageBox.Show("¿Seguro que desea generar aguinaldo para este departamento?", "Genrar aguinaldo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
-                string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+                string con = "Data Source =.; Initial catalog = losnacimientos; Integrated security = True;";
                 SqlConnection cnn = new SqlConnection(con);
                 if (textBox1.Text == "Ventas")
                 {
