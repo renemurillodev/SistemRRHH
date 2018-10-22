@@ -113,6 +113,7 @@
             this.txtNumeroIsss.Name = "txtNumeroIsss";
             this.txtNumeroIsss.Size = new System.Drawing.Size(121, 23);
             this.txtNumeroIsss.TabIndex = 39;
+            this.txtNumeroIsss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroIsss_KeyPress);
             // 
             // txtNup
             // 
@@ -122,6 +123,7 @@
             this.txtNup.Name = "txtNup";
             this.txtNup.Size = new System.Drawing.Size(121, 23);
             this.txtNup.TabIndex = 38;
+            this.txtNup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNup_KeyPress);
             // 
             // txtNumeroNit
             // 
@@ -131,6 +133,7 @@
             this.txtNumeroNit.Name = "txtNumeroNit";
             this.txtNumeroNit.Size = new System.Drawing.Size(121, 23);
             this.txtNumeroNit.TabIndex = 37;
+            this.txtNumeroNit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroNit_KeyPress);
             // 
             // txtNumeroDui
             // 
@@ -140,6 +143,7 @@
             this.txtNumeroDui.Name = "txtNumeroDui";
             this.txtNumeroDui.Size = new System.Drawing.Size(121, 23);
             this.txtNumeroDui.TabIndex = 36;
+            this.txtNumeroDui.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroDui_KeyPress);
             // 
             // cbxGenero
             // 
@@ -158,6 +162,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(200, 20);
             this.txtDireccion.TabIndex = 33;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtApellidos
             // 
@@ -167,6 +172,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(200, 20);
             this.txtApellidos.TabIndex = 32;
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombres
             // 
@@ -176,6 +182,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(200, 20);
             this.txtNombres.TabIndex = 34;
+            this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
             // lblEstado
             // 

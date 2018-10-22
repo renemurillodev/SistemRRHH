@@ -366,7 +366,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel2.Location = new System.Drawing.Point(1, 457);
+            this.panel2.Location = new System.Drawing.Point(0, 457);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 45);
             this.panel2.TabIndex = 8;
@@ -374,7 +374,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel1.Location = new System.Drawing.Point(1, 409);
+            this.panel1.Location = new System.Drawing.Point(0, 409);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 45);
             this.panel1.TabIndex = 3;

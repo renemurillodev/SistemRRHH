@@ -186,6 +186,7 @@
             this.txtPagoHora.Size = new System.Drawing.Size(43, 23);
             this.txtPagoHora.TabIndex = 15;
             this.txtPagoHora.TextChanged += new System.EventHandler(this.txtPagoHora_TextChanged);
+            this.txtPagoHora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagoHora_KeyPress);
             // 
             // lblHorasLaboradas
             // 
@@ -203,7 +204,8 @@
             this.txtHorasLaboradas.Name = "txtHorasLaboradas";
             this.txtHorasLaboradas.Size = new System.Drawing.Size(43, 21);
             this.txtHorasLaboradas.TabIndex = 17;
-            this.txtHorasLaboradas.TextChanged += new System.EventHandler(this.txtHorasLaboradas_TextChanged);
+            this.txtHorasLaboradas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHorasLaboradas_KeyDown);
+            this.txtHorasLaboradas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHorasLaboradas_KeyPress);
             // 
             // lblAnticipos
             // 
@@ -226,6 +228,7 @@
             this.txtAnticipos.Size = new System.Drawing.Size(43, 21);
             this.txtAnticipos.TabIndex = 19;
             this.txtAnticipos.TextChanged += new System.EventHandler(this.txtAnticipos_TextChanged);
+            this.txtAnticipos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnticipos_KeyPress);
             // 
             // lblFecha
             // 
@@ -298,6 +301,7 @@
             this.txtPagoDiario.Size = new System.Drawing.Size(44, 23);
             this.txtPagoDiario.TabIndex = 25;
             this.txtPagoDiario.Visible = false;
+            this.txtPagoDiario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPagoDiario_KeyPress);
             // 
             // txtDiasLaborados
             // 
@@ -306,6 +310,7 @@
             this.txtDiasLaborados.Size = new System.Drawing.Size(44, 21);
             this.txtDiasLaborados.TabIndex = 26;
             this.txtDiasLaborados.Visible = false;
+            this.txtDiasLaborados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiasLaborados_KeyPress);
             // 
             // chbAfp
             // 
@@ -348,6 +353,7 @@
             this.txtHorasExtra.Name = "txtHorasExtra";
             this.txtHorasExtra.Size = new System.Drawing.Size(44, 21);
             this.txtHorasExtra.TabIndex = 31;
+            this.txtHorasExtra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHorasExtra_KeyPress);
             // 
             // groupBox1
             // 

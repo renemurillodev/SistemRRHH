@@ -14,7 +14,7 @@ namespace SistemaARD.Vistas
     public partial class MostrarAguinaldos : Form
     {
         int nuevo = 0;
-        static string con = "Data Source =.; Initial catalog = losnacimientos; Integrated security = True;";
+        static string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
         SqlConnection cnn = new SqlConnection(con);
         decimal salarioDiario = 0;
         int diasPagar = 0;
