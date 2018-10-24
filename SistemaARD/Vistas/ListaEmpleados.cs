@@ -193,7 +193,6 @@ namespace SistemaARD.Vistas
             GenerarContratos contrato = new GenerarContratos();
             contrato.Id = Convert.ToInt32(idEmpleado);
             contrato.Show();
-            this.Hide();
         }
     }
 }

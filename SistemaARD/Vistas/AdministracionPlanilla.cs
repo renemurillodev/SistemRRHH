@@ -479,11 +479,14 @@ namespace SistemaARD.Vistas
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoVentas", cnn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cnn.Open();
-                        cmd.ExecuteScalar();
-                        cnn.Close();
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Database.Connection.Open();
+                            System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                            cmd.CommandText = "InsertarAguinaldoVentas";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteScalar();
+                        }
                         MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                     }
                     catch (Exception ex)
