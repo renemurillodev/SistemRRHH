@@ -88,6 +88,7 @@ namespace SistemaARD.Vistas
                 idEmpleado = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
                 btnEditar.Visible = true;
                 btnDetalle.Visible = true;
+                btnContrato.Visible = true;
             }
         }
 
@@ -185,6 +186,14 @@ namespace SistemaARD.Vistas
                 e.Handled = true;
             }
             
+        }
+
+        private void btnContrato_Click(object sender, EventArgs e)
+        {
+            GenerarContratos contrato = new GenerarContratos();
+            contrato.Id = Convert.ToInt32(idEmpleado);
+            contrato.Show();
+            this.Hide();
         }
     }
 }

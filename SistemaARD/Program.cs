@@ -18,5 +18,7 @@ namespace SistemaARD
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+
+        //Vistas.GenerarContratos()
     }
 }

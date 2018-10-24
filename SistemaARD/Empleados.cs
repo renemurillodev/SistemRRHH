@@ -41,6 +41,8 @@ namespace SistemaARD
         public System.DateTime FechaIngreso { get; set; }
         public int Cargo_Id { get; set; }
         public int Estado_Id { get; set; }
+        public string NombreCompleto { get { return string.Format("{0} {1}", Nombres, Apellidos); } }
+        public int Edad { get { return (Convert.ToInt32(DateTime.Now.Year - FechaNacimiento.Year)); } }
     
         public virtual Afps Afps { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
