@@ -14,7 +14,7 @@ namespace SistemaARD.Vistas
     public partial class MostrarAguinaldos : Form
     {
         int nuevo = 0;
-        static string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
+        static string con = "Data Source =.; Initial catalog = losnacimientos; Integrated security = True;";
         SqlConnection cnn = new SqlConnection(con);
         decimal salarioDiario = 0;
         int diasPagar = 0;
@@ -46,7 +46,7 @@ namespace SistemaARD.Vistas
         {
             if(nuevo != 0)
             {
-                dataGridView1.Columns.RemoveAt(8);
+                dataGridView1.Columns.RemoveAt(9);
             }
             try
             {
@@ -83,14 +83,14 @@ namespace SistemaARD.Vistas
 
                 totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
 
-                dataGridView1.Rows[i].Cells[8].Value = "$" + totalPagar;
+                dataGridView1.Rows[i].Cells[9].Value = "$" + totalPagar;
 
             }
            
         }
         void LlenarAguinaldoVentas()
         {
-            dataGridView1.Columns.RemoveAt(8);
+            dataGridView1.Columns.RemoveAt(9);
             try
             {
                 SqlCommand cmd = new SqlCommand("ListarAguinaldosVentas", cnn);
@@ -130,7 +130,7 @@ namespace SistemaARD.Vistas
 
                 
 
-                dataGridView1.Rows[i].Cells[8].Value = "$" + Math.Round(totalPagar, 2);
+                dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
             nuevo = 1;
@@ -138,7 +138,7 @@ namespace SistemaARD.Vistas
 
         void LlenarAguinaldoMantenimiento()
         {
-            dataGridView1.Columns.RemoveAt(8);
+            dataGridView1.Columns.RemoveAt(9);
             try
             {
                 SqlCommand cmd = new SqlCommand("ListarAguinaldosMantenimiento", cnn);
@@ -178,7 +178,7 @@ namespace SistemaARD.Vistas
 
 
 
-                dataGridView1.Rows[i].Cells[8].Value = "$" + Math.Round(totalPagar, 2);
+                dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
             nuevo = 1;
@@ -186,7 +186,7 @@ namespace SistemaARD.Vistas
 
         void LlenarAguinaldoTransporte()
         {
-            dataGridView1.Columns.RemoveAt(8);
+            dataGridView1.Columns.RemoveAt(9);
             try
             {
                 SqlCommand cmd = new SqlCommand("ListarAguinaldosTransporte", cnn);
@@ -226,7 +226,7 @@ namespace SistemaARD.Vistas
 
 
 
-                dataGridView1.Rows[i].Cells[8].Value = "$" + Math.Round(totalPagar, 2);
+                dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
             nuevo = 1;
@@ -234,7 +234,7 @@ namespace SistemaARD.Vistas
 
         void LlenarAguinaldoProduccion()
         {
-            dataGridView1.Columns.RemoveAt(8);
+            dataGridView1.Columns.RemoveAt(9);
             try
             {
                 SqlCommand cmd = new SqlCommand("ListarAguinaldosProduccion", cnn);
@@ -274,7 +274,7 @@ namespace SistemaARD.Vistas
 
 
 
-                dataGridView1.Rows[i].Cells[8].Value = "$" + Math.Round(totalPagar, 2);
+                dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
             nuevo = 1;

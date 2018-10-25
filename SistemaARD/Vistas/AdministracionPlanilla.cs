@@ -473,8 +473,6 @@ namespace SistemaARD.Vistas
             dialog = MessageBox.Show("¿Seguro que desea generar aguinaldo para este departamento?", "Genrar aguinaldo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
-                string con = "Data Source =.\\SQLEXPRESS; Initial catalog = losnacimientos; Integrated security = True;";
-                SqlConnection cnn = new SqlConnection(con);
                 if (textBox1.Text == "Ventas")
                 {
                     try
@@ -486,6 +484,7 @@ namespace SistemaARD.Vistas
                             cmd.CommandText = "InsertarAguinaldoVentas";
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.ExecuteScalar();
+                            db.Database.Connection.Close();
                         }
                         MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                     }
@@ -498,11 +497,16 @@ namespace SistemaARD.Vistas
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoTransporte", cnn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cnn.Open();
-                        cmd.ExecuteScalar();
-                        cnn.Close();
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Database.Connection.Open();
+                            System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                            cmd.CommandText = "InsertarAguinaldoTransporte";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteScalar();
+                            db.Database.Connection.Close();
+                        }
+                        
                         MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                     }
                     catch (Exception ex)
@@ -514,11 +518,15 @@ namespace SistemaARD.Vistas
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoProduccion", cnn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cnn.Open();
-                        cmd.ExecuteScalar();
-                        cnn.Close();
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Database.Connection.Open();
+                            System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                            cmd.CommandText = "InsertarAguinaldoProduccion";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteScalar();
+                            db.Database.Connection.Close();
+                        }
                         MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                     }
                     catch (Exception ex)
@@ -530,11 +538,15 @@ namespace SistemaARD.Vistas
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoMantenimiento", cnn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cnn.Open();
-                        cmd.ExecuteScalar();
-                        cnn.Close();
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Database.Connection.Open();
+                            System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                            cmd.CommandText = "InsertarAguinaldoMantenimiento";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteScalar();
+                            db.Database.Connection.Close();
+                        }
                         MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                     }
                     catch (Exception ex)
@@ -546,11 +558,15 @@ namespace SistemaARD.Vistas
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("InsertarAguinaldoAdministracion", cnn);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cnn.Open();
-                        cmd.ExecuteScalar();
-                        cnn.Close();
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Database.Connection.Open();
+                            System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                            cmd.CommandText = "InsertarAguinaldoAdministracion";
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.ExecuteScalar();
+                            db.Database.Connection.Close();
+                        }
                         MessageBox.Show(String.Format("Aguinaldo generado correctamente para el departamento de {0}", textBox1.Text));
                     }
                     catch (Exception ex)
