@@ -59,6 +59,8 @@
             this.lblCargo = new System.Windows.Forms.Label();
             this.cbxCargos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -361,6 +363,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtSalario);
+            this.groupBox1.Controls.Add(this.lblSalario);
             this.groupBox1.Controls.Add(this.lblNombres);
             this.groupBox1.Controls.Add(this.iconCerrar);
             this.groupBox1.Controls.Add(this.cbxCargos);
@@ -398,6 +402,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del empleado";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Location = new System.Drawing.Point(368, 352);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(112, 15);
+            this.lblSalario.TabIndex = 48;
+            this.lblSalario.Text = "Salario mensual";
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(498, 352);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(100, 21);
+            this.txtSalario.TabIndex = 49;
             // 
             // RegistroEmpleados
             // 
@@ -449,5 +469,7 @@
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.ComboBox cbxCargos;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.Label lblSalario;
     }
 }

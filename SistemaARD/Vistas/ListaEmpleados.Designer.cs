@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaEmpleados));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N_Dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N_Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Afp_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N_Afp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N_Isss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -57,6 +45,19 @@
             this.btnContrato = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.N_Dui = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.N_Nit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Afp_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.N_Afp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.N_Isss = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -74,14 +75,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -95,115 +96,28 @@
             this.N_Afp,
             this.N_Isss,
             this.FechaIngreso,
-            this.Estado_Id});
+            this.Estado_Id,
+            this.Salario});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(0, 26);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(757, 202);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.DataPropertyName = "Apellidos";
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // FechaNacimiento
-            // 
-            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
-            this.FechaNacimiento.HeaderText = "Fecha de nacimiento";
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            this.FechaNacimiento.Visible = false;
-            // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "Direccion";
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // N_Dui
-            // 
-            this.N_Dui.DataPropertyName = "N_Dui";
-            this.N_Dui.HeaderText = "DUI";
-            this.N_Dui.Name = "N_Dui";
-            this.N_Dui.ReadOnly = true;
-            // 
-            // N_Nit
-            // 
-            this.N_Nit.DataPropertyName = "N_Nit";
-            this.N_Nit.HeaderText = "NIT";
-            this.N_Nit.Name = "N_Nit";
-            this.N_Nit.ReadOnly = true;
-            // 
-            // Afp_Id
-            // 
-            this.Afp_Id.DataPropertyName = "Afp_Id";
-            this.Afp_Id.HeaderText = "AFP";
-            this.Afp_Id.Name = "Afp_Id";
-            this.Afp_Id.ReadOnly = true;
-            this.Afp_Id.Visible = false;
-            // 
-            // N_Afp
-            // 
-            this.N_Afp.DataPropertyName = "N_Afp";
-            this.N_Afp.HeaderText = "NUP";
-            this.N_Afp.Name = "N_Afp";
-            this.N_Afp.ReadOnly = true;
-            // 
-            // N_Isss
-            // 
-            this.N_Isss.DataPropertyName = "N_Isss";
-            this.N_Isss.HeaderText = "ISSS";
-            this.N_Isss.Name = "N_Isss";
-            this.N_Isss.ReadOnly = true;
-            // 
-            // FechaIngreso
-            // 
-            this.FechaIngreso.DataPropertyName = "FechaIngreso";
-            this.FechaIngreso.HeaderText = "Fecha de ingreso";
-            this.FechaIngreso.Name = "FechaIngreso";
-            this.FechaIngreso.ReadOnly = true;
-            // 
-            // Estado_Id
-            // 
-            this.Estado_Id.DataPropertyName = "Estado_Id";
-            this.Estado_Id.HeaderText = "Estado";
-            this.Estado_Id.Name = "Estado_Id";
-            this.Estado_Id.ReadOnly = true;
-            this.Estado_Id.Visible = false;
             // 
             // lblApellido
             // 
@@ -381,6 +295,102 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de empleados";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.DataPropertyName = "Apellidos";
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "Fecha de nacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            this.FechaNacimiento.Visible = false;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "Direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // N_Dui
+            // 
+            this.N_Dui.DataPropertyName = "N_Dui";
+            this.N_Dui.HeaderText = "DUI";
+            this.N_Dui.Name = "N_Dui";
+            this.N_Dui.ReadOnly = true;
+            // 
+            // N_Nit
+            // 
+            this.N_Nit.DataPropertyName = "N_Nit";
+            this.N_Nit.HeaderText = "NIT";
+            this.N_Nit.Name = "N_Nit";
+            this.N_Nit.ReadOnly = true;
+            // 
+            // Afp_Id
+            // 
+            this.Afp_Id.DataPropertyName = "Afp_Id";
+            this.Afp_Id.HeaderText = "AFP";
+            this.Afp_Id.Name = "Afp_Id";
+            this.Afp_Id.ReadOnly = true;
+            this.Afp_Id.Visible = false;
+            // 
+            // N_Afp
+            // 
+            this.N_Afp.DataPropertyName = "N_Afp";
+            this.N_Afp.HeaderText = "NUP";
+            this.N_Afp.Name = "N_Afp";
+            this.N_Afp.ReadOnly = true;
+            // 
+            // N_Isss
+            // 
+            this.N_Isss.DataPropertyName = "N_Isss";
+            this.N_Isss.HeaderText = "ISSS";
+            this.N_Isss.Name = "N_Isss";
+            this.N_Isss.ReadOnly = true;
+            // 
+            // FechaIngreso
+            // 
+            this.FechaIngreso.DataPropertyName = "FechaIngreso";
+            this.FechaIngreso.HeaderText = "Fecha de ingreso";
+            this.FechaIngreso.Name = "FechaIngreso";
+            this.FechaIngreso.ReadOnly = true;
+            // 
+            // Estado_Id
+            // 
+            this.Estado_Id.DataPropertyName = "Estado_Id";
+            this.Estado_Id.HeaderText = "Estado";
+            this.Estado_Id.Name = "Estado_Id";
+            this.Estado_Id.ReadOnly = true;
+            this.Estado_Id.Visible = false;
+            // 
+            // Salario
+            // 
+            this.Salario.DataPropertyName = "Salario";
+            this.Salario.HeaderText = "Salario";
+            this.Salario.Name = "Salario";
+            this.Salario.ReadOnly = true;
+            this.Salario.Visible = false;
+            // 
             // ListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +421,17 @@
         #endregion
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.PictureBox iconCerrar;
+        private System.Windows.Forms.Button btnRegistroEmp;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnContrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
@@ -423,16 +444,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn N_Isss;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Id;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.PictureBox iconCerrar;
-        private System.Windows.Forms.Button btnRegistroEmp;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnContrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Salario;
     }
 }

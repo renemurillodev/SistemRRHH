@@ -139,6 +139,7 @@ namespace SistemaARD.Vistas
                     dtpFechaIngreso.Value = empleado.FechaIngreso;
                     cbxCargos.SelectedValue = empleado.Cargo_Id;
                     cbxEstado.SelectedValue = empleado.Estado_Id;
+                    txtSalario.Text = Convert.ToString(empleado.Salario);
                 }
         }
 
@@ -164,7 +165,8 @@ namespace SistemaARD.Vistas
                     empleado.N_Nit = txtNumeroNit.Text;
 
                     empleado.FechaIngreso = dtpFechaIngreso.Value;
-                empleado.Cargo_Id = Convert.ToInt32(cbxCargos.SelectedValue);
+                    empleado.Salario = Convert.ToDecimal(txtSalario.Text);
+                    empleado.Cargo_Id = Convert.ToInt32(cbxCargos.SelectedValue);
                     empleado.Estado_Id = Convert.ToInt32(cbxEstado.SelectedValue);
 
                 using (DBEntities db = new DBEntities())

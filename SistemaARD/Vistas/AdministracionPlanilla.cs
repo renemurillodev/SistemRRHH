@@ -470,7 +470,7 @@ namespace SistemaARD.Vistas
         private void btnAguinaldo_Click(object sender, EventArgs e)
         {
             DialogResult dialog;
-            dialog = MessageBox.Show("¿Seguro que desea generar aguinaldo para este departamento?", "Genrar aguinaldo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            dialog = MessageBox.Show("¿Seguro que desea generar aguinaldo para este departamento?", "Generar aguinaldo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog == DialogResult.Yes)
             {
                 if (textBox1.Text == "Ventas")

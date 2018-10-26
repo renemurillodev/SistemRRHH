@@ -129,6 +129,7 @@ namespace SistemaARD.Vistas
                 txtIsss.Text = empleado.N_Isss;
                 txtAFP.Text = empleado.N_Afp;
                 txtCargo.Text = empleado.Cargos.Nombre;
+                txtSalario.Text = Convert.ToString(empleado.Salario);
             }
         }
 

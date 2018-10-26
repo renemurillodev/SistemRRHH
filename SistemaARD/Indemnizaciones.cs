@@ -16,9 +16,10 @@ namespace SistemaARD
     {
         public int Id { get; set; }
         public int Empleado_Id { get; set; }
-        public decimal Monto { get; set; }
         public System.DateTime Fecha { get; set; }
         public int Categoria_Id { get; set; }
+        public int Anios_Pendiente { get; set; }
+        public int Dias_Pendiente { get; set; }
     
         public virtual CategoriasIndemnizaciones CategoriasIndemnizaciones { get; set; }
         public virtual Empleados Empleados { get; set; }

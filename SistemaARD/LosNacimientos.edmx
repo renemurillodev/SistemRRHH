@@ -17,13 +17,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Categoria_Id" Type="int" Nullable="false" />
           <Property Name="SalarioDiario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="AniosTrabajados" Type="int" Nullable="false" />
           <Property Name="DiasTrabajados" Type="int" />
           <Property Name="DiasPagar" Type="int" />
-          <Property Name="Empleado_Id" Type="int" Nullable="false" />
-          <Property Name="Categoria_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Cargos">
           <Key>
@@ -90,6 +90,7 @@
           <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
           <Property Name="Cargo_Id" Type="int" Nullable="false" />
           <Property Name="Estado_Id" Type="int" Nullable="false" />
+          <Property Name="Salario" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Estados">
           <Key>
@@ -111,9 +112,10 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
-          <Property Name="Monto" Type="decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
+          <Property Name="Anios_Pendiente" Type="int" Nullable="false" />
+          <Property Name="Dias_Pendiente" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Planillas_Jefes">
           <Key>
@@ -617,6 +619,7 @@
           <NavigationProperty Name="PlanillasVentas" Relationship="Self.FK_PlanillasVentas_Empleados" FromRole="Empleados" ToRole="PlanillasVentas" />
           <NavigationProperty Name="TelefonosEmpleados" Relationship="Self.FK_TelefonosEmpleados_Empleados" FromRole="Empleados" ToRole="TelefonosEmpleados" />
           <NavigationProperty Name="Reportes" Relationship="losnacimientosModel.FK_Reportes_Empleados" FromRole="Empleados" ToRole="Reportes" />
+          <Property Name="Salario" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Estados">
           <Key>
@@ -640,11 +643,12 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Empleado_Id" Type="Int32" Nullable="false" />
-          <Property Name="Monto" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CategoriasIndemnizaciones" Relationship="Self.FK_Indemnizaciones_CategoriasIndemnizaciones" FromRole="Indemnizaciones" ToRole="CategoriasIndemnizaciones" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Indemnizaciones_Empleados" FromRole="Indemnizaciones" ToRole="Empleados" />
+          <Property Name="Anios_Pendiente" Type="Int32" Nullable="false" />
+          <Property Name="Dias_Pendiente" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Planillas_Jefes">
           <Key>
@@ -1139,6 +1143,7 @@
           <EntitySetMapping Name="Empleados">
             <EntityTypeMapping TypeName="losnacimientosModel.Empleados">
               <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
@@ -1175,9 +1180,10 @@
           <EntitySetMapping Name="Indemnizaciones">
             <EntityTypeMapping TypeName="losnacimientosModel.Indemnizaciones">
               <MappingFragment StoreEntitySet="Indemnizaciones">
+                <ScalarProperty Name="Dias_Pendiente" ColumnName="Dias_Pendiente" />
+                <ScalarProperty Name="Anios_Pendiente" ColumnName="Anios_Pendiente" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
-                <ScalarProperty Name="Monto" ColumnName="Monto" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Categoria_Id" ColumnName="Categoria_Id" />
               </MappingFragment>
