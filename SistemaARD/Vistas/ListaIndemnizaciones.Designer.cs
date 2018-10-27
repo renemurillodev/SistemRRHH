@@ -36,6 +36,9 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.cbxDepartamento = new System.Windows.Forms.ComboBox();
+            this.lblRetenciones = new System.Windows.Forms.Label();
+            this.lblTotalPago = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +56,11 @@
             // lblTotalPagoLiquido
             // 
             this.lblTotalPagoLiquido.AutoSize = true;
-            this.lblTotalPagoLiquido.Location = new System.Drawing.Point(33, 407);
+            this.lblTotalPagoLiquido.Location = new System.Drawing.Point(439, 407);
             this.lblTotalPagoLiquido.Name = "lblTotalPagoLiquido";
-            this.lblTotalPagoLiquido.Size = new System.Drawing.Size(31, 13);
+            this.lblTotalPagoLiquido.Size = new System.Drawing.Size(68, 13);
             this.lblTotalPagoLiquido.TabIndex = 1;
-            this.lblTotalPagoLiquido.Text = "Total";
+            this.lblTotalPagoLiquido.Text = "Total Liquido";
             // 
             // dtpDesde
             // 
@@ -113,11 +116,47 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // cbxDepartamento
+            // 
+            this.cbxDepartamento.FormattingEnabled = true;
+            this.cbxDepartamento.Items.AddRange(new object[] {
+            "Todos",
+            "Administración",
+            "Mantenimiento",
+            "Producción",
+            "Ventas",
+            "Transporte"});
+            this.cbxDepartamento.Location = new System.Drawing.Point(29, 76);
+            this.cbxDepartamento.Name = "cbxDepartamento";
+            this.cbxDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.cbxDepartamento.TabIndex = 8;
+            // 
+            // lblRetenciones
+            // 
+            this.lblRetenciones.AutoSize = true;
+            this.lblRetenciones.Location = new System.Drawing.Point(214, 407);
+            this.lblRetenciones.Name = "lblRetenciones";
+            this.lblRetenciones.Size = new System.Drawing.Size(89, 13);
+            this.lblRetenciones.TabIndex = 9;
+            this.lblRetenciones.Text = "Total retenciones";
+            // 
+            // lblTotalPago
+            // 
+            this.lblTotalPago.AutoSize = true;
+            this.lblTotalPago.Location = new System.Drawing.Point(6, 407);
+            this.lblTotalPago.Name = "lblTotalPago";
+            this.lblTotalPago.Size = new System.Drawing.Size(58, 13);
+            this.lblTotalPago.TabIndex = 10;
+            this.lblTotalPago.Text = "Total pago";
+            // 
             // ListaIndemnizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 450);
+            this.Controls.Add(this.lblTotalPago);
+            this.Controls.Add(this.lblRetenciones);
+            this.Controls.Add(this.cbxDepartamento);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.btnGenerar);
@@ -145,5 +184,8 @@
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.ComboBox cbxDepartamento;
+        private System.Windows.Forms.Label lblRetenciones;
+        private System.Windows.Forms.Label lblTotalPago;
     }
 }
