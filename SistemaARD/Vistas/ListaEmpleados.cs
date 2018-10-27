@@ -194,5 +194,7 @@ namespace SistemaARD.Vistas
             contrato.Id = Convert.ToInt32(idEmpleado);
             contrato.Show();
         }
+
+       
     }
 }
