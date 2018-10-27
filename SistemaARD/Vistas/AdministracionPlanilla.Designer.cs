@@ -180,6 +180,7 @@
             // 
             // txtPagoHora
             // 
+            this.txtPagoHora.Enabled = false;
             this.txtPagoHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtPagoHora.Location = new System.Drawing.Point(109, 21);
             this.txtPagoHora.Name = "txtPagoHora";
@@ -295,6 +296,7 @@
             // 
             // txtPagoDiario
             // 
+            this.txtPagoDiario.Enabled = false;
             this.txtPagoDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtPagoDiario.Location = new System.Drawing.Point(108, 21);
             this.txtPagoDiario.Name = "txtPagoDiario";

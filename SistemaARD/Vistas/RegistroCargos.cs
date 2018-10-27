@@ -32,13 +32,13 @@ namespace SistemaARD.Vistas
 
         void CargarDataGrid()
         {
-                using (DBEntities db = new DBEntities())
-                {
-                    dtgCargos.AutoGenerateColumns = false;
-                    var cargos = db.Database.SqlQuery<LlenarGridCargos>("SELECT dbo.Cargos.Id as Id, dbo.Cargos.Nombre as Nombre, dbo.Cargos.Departamento_Id as Departamento_Id, dbo.Departamentos.Nombre as Departamento FROM dbo.Cargos INNER JOIN dbo.Departamentos ON dbo.Cargos.Departamento_Id = dbo.Departamentos.Id").ToList();
+            using (DBEntities db = new DBEntities())
+            {
+                dtgCargos.AutoGenerateColumns = false;
+                var cargos = db.Database.SqlQuery<LlenarGridCargos>("SELECT dbo.Cargos.Id as Id, dbo.Cargos.Nombre as Nombre, dbo.Cargos.Departamento_Id as Departamento_Id, dbo.Departamentos.Nombre as Departamento FROM dbo.Cargos INNER JOIN dbo.Departamentos ON dbo.Cargos.Departamento_Id = dbo.Departamentos.Id").ToList();
 
-                    dtgCargos.DataSource = cargos;
-                }
+                dtgCargos.DataSource = cargos;
+            }
         }
 
         private void RegistroCargos_Load(object sender, EventArgs e)

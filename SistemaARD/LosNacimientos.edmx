@@ -116,6 +116,25 @@
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
           <Property Name="Anios_Pendiente" Type="int" Nullable="false" />
           <Property Name="Dias_Pendiente" Type="int" Nullable="false" />
+          <Property Name="Desde" Type="date" Nullable="false" />
+          <Property Name="Hasta" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Modalidad" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Cantidad" Type="decimal" Precision="18" Scale="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagoVacaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado_Id" Type="int" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Monto" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Planillas_Jefes">
           <Key>
@@ -206,6 +225,18 @@
           <Property Name="Password" Type="varbinary" MaxLength="250" Nullable="false" />
           <Property Name="Rol_Id" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK__PagoVacac__Emple__395884C4">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+          <End Role="PagoVacaciones" Type="Self.PagoVacaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagoVacaciones">
+              <PropertyRef Name="Empleado_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Aguinaldos_CategoriasAguinaldos">
           <End Role="CategoriasAguinaldos" Type="Self.CategoriasAguinaldos" Multiplicity="1" />
           <End Role="Aguinaldos" Type="Self.Aguinaldos" Multiplicity="*" />
@@ -435,6 +466,8 @@
           <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Generos" EntityType="Self.Generos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Indemnizaciones" EntityType="Self.Indemnizaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PagoVacaciones" EntityType="Self.PagoVacaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Planillas_Jefes" EntityType="Self.Planillas_Jefes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlanillasProduccion" EntityType="Self.PlanillasProduccion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlanillasVentas" EntityType="Self.PlanillasVentas" Schema="dbo" store:Type="Tables" />
@@ -444,6 +477,10 @@
           <EntitySet Name="TelefonosEmpleados" EntityType="Self.TelefonosEmpleados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TiposTelefonos" EntityType="Self.TiposTelefonos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__PagoVacac__Emple__395884C4" Association="Self.FK__PagoVacac__Emple__395884C4">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="PagoVacaciones" EntitySet="PagoVacaciones" />
+          </AssociationSet>
           <AssociationSet Name="FK_Aguinaldos_CategoriasAguinaldos" Association="Self.FK_Aguinaldos_CategoriasAguinaldos">
             <End Role="CategoriasAguinaldos" EntitySet="CategoriasAguinaldos" />
             <End Role="Aguinaldos" EntitySet="Aguinaldos" />
@@ -620,6 +657,7 @@
           <NavigationProperty Name="TelefonosEmpleados" Relationship="Self.FK_TelefonosEmpleados_Empleados" FromRole="Empleados" ToRole="TelefonosEmpleados" />
           <NavigationProperty Name="Reportes" Relationship="losnacimientosModel.FK_Reportes_Empleados" FromRole="Empleados" ToRole="Reportes" />
           <Property Name="Salario" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="PagoVacaciones" Relationship="losnacimientosModel.FK__PagoVacac__Emple__395884C4" FromRole="Empleados" ToRole="PagoVacaciones" />
         </EntityType>
         <EntityType Name="Estados">
           <Key>
@@ -649,6 +687,8 @@
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Indemnizaciones_Empleados" FromRole="Indemnizaciones" ToRole="Empleados" />
           <Property Name="Anios_Pendiente" Type="Int32" Nullable="false" />
           <Property Name="Dias_Pendiente" Type="Int32" Nullable="false" />
+          <Property Name="Desde" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hasta" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Planillas_Jefes">
           <Key>
@@ -1022,6 +1062,12 @@
             <End Role="CategoriasAguinaldos" EntitySet="CategoriasAguinaldos" />
             <End Role="Aguinaldos" EntitySet="Aguinaldos" />
           </AssociationSet>
+          <EntitySet Name="Pagos" EntityType="losnacimientosModel.Pagos" />
+          <EntitySet Name="PagoVacaciones" EntityType="losnacimientosModel.PagoVacaciones" />
+          <AssociationSet Name="FK__PagoVacac__Emple__395884C4" Association="losnacimientosModel.FK__PagoVacac__Emple__395884C4">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="PagoVacaciones" EntitySet="PagoVacaciones" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Reportes">
           <Key>
@@ -1066,6 +1112,36 @@
             </Principal>
             <Dependent Role="Aguinaldos">
               <PropertyRef Name="Categoria_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pagos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Modalidad" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+        </EntityType>
+        <EntityType Name="PagoVacaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado_Id" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Empleados" Relationship="losnacimientosModel.FK__PagoVacac__Emple__395884C4" FromRole="PagoVacaciones" ToRole="Empleados" />
+        </EntityType>
+        <Association Name="FK__PagoVacac__Emple__395884C4">
+          <End Type="losnacimientosModel.Empleados" Role="Empleados" Multiplicity="0..1" />
+          <End Type="losnacimientosModel.PagoVacaciones" Role="PagoVacaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PagoVacaciones">
+              <PropertyRef Name="Empleado_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1180,6 +1256,8 @@
           <EntitySetMapping Name="Indemnizaciones">
             <EntityTypeMapping TypeName="losnacimientosModel.Indemnizaciones">
               <MappingFragment StoreEntitySet="Indemnizaciones">
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
                 <ScalarProperty Name="Dias_Pendiente" ColumnName="Dias_Pendiente" />
                 <ScalarProperty Name="Anios_Pendiente" ColumnName="Anios_Pendiente" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -1291,6 +1369,25 @@
               <MappingFragment StoreEntitySet="CategoriasAguinaldos">
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pagos">
+            <EntityTypeMapping TypeName="losnacimientosModel.Pagos">
+              <MappingFragment StoreEntitySet="Pagos">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagoVacaciones">
+            <EntityTypeMapping TypeName="losnacimientosModel.PagoVacaciones">
+              <MappingFragment StoreEntitySet="PagoVacaciones">
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Empleado_Id" ColumnName="Empleado_Id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

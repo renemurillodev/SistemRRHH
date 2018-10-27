@@ -28,11 +28,66 @@ namespace SistemaARD.Vistas
             InitializeComponent();
         }
 
+        int VerificarPlanillaJefes()
+        {
+            int res;
+            using (DBEntities db = new DBEntities())
+            {
+                db.Database.Connection.Open();
+                System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                cmd.CommandText = "VerificarPlanillaJefes";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("Fecha", dtpFecha.Value));
+                cmd.Parameters.Add(new SqlParameter("IdEmpleado", int.Parse(idEmpleado)));
+                res = (int)cmd.ExecuteScalar();
+                db.Database.Connection.Close();
+            }
+            return res;
+        }
+
+        int VerificarPlanillaProduccion()
+        {
+            int res;
+            using (DBEntities db = new DBEntities())
+            {
+                db.Database.Connection.Open();
+                System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                cmd.CommandText = "VerificarPlanillaProduccion";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("Fecha", dtpFecha.Value));
+                cmd.Parameters.Add(new SqlParameter("IdEmpleado", int.Parse(idEmpleado)));
+                res = (int)cmd.ExecuteScalar();
+                db.Database.Connection.Close();
+            }
+            return res;
+        }
+
+        int VerificarPlanillaVentas()
+        {
+            int res;
+            using (DBEntities db = new DBEntities())
+            {
+                db.Database.Connection.Open();
+                System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                cmd.CommandText = "VerificarPlanillaVentas";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("Fecha", dtpFecha.Value));
+                cmd.Parameters.Add(new SqlParameter("IdEmpleado", int.Parse(idEmpleado)));
+                res = (int)cmd.ExecuteScalar();
+                db.Database.Connection.Close();
+            }
+            return res;
+        }
+
         private void AdministracionPlanilla_Load(object sender, EventArgs e)
         {
             
             BuscarDepto();
             CargarDataGrid();
+            CargarPagos();
+            txtAnticipos.Text = "0";
+            chbAfp.Checked = true;
+            chbIsss.Checked = true;
             if(textBox1.Text == "Ventas" || textBox1.Text == "Transporte")
             {
                 lblDiasLaborados.Visible = true;
@@ -83,6 +138,24 @@ namespace SistemaARD.Vistas
                 btnAguinaldo.Visible = true;
             }
         }
+
+        void CargarPagos()
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                decimal pagodiario = (from p in db.Pagos
+                              where p.Modalidad == "Día"
+                              select p.Cantidad).FirstOrDefault();
+
+                decimal pagohora = (from p in db.Pagos
+                                    where p.Modalidad == "Hora"
+                                    select p.Cantidad).FirstOrDefault();
+                txtPagoDiario.Text = Convert.ToString(Math.Round(pagodiario, 2));
+                txtPagoHora.Text = Convert.ToString(pagohora);
+            }
+
+        }
+
 
         void BuscarDepto()
         {
@@ -144,306 +217,372 @@ namespace SistemaARD.Vistas
         {
             if(textBox1.Text == "Ventas")
             {
-                //Registrar en tabla PlanillaVentas
-                planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
-                planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
-                planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
-                planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
-                planillaVentas.Fecha = dtpFecha.Value;
-                planillaVentas.Categoria_Id = 1;
-
-                //Registrar en tabla Reportes 
-
-                var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
-                var afp = sueldo * Convert.ToDecimal(0.0725);
-                var isss = sueldo * Convert.ToDecimal(0.03);
-                var sueldoPostRetenciones = sueldo - (afp + isss);
-                reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
-                reporte.Sueldo = sueldo;
-                if (chbAfp.Checked)
+                int resultado = VerificarPlanillaVentas();
+                if(resultado == 0)
                 {
-                    reporte.Pago_Afp = afp;
+                    MessageBox.Show("Este empleado ya ha alcanzado el número máximo de registros por mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                    chbAfp.Checked = true;
+                    chbIsss.Checked = true;
                 }
                 else
                 {
-                    reporte.Pago_Afp = 0;
-                }
+                    //Registrar en tabla PlanillaVentas
+                    planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
+                    planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
+                    planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
+                    planillaVentas.Fecha = dtpFecha.Value;
+                    planillaVentas.Categoria_Id = 1;
 
-                if (chbIsss.Checked)
-                {
-                    reporte.Pago_Isss = isss;
-                }
-                else
-                {
-                    reporte.Pago_Isss = 0;
+                    //Registrar en tabla Reportes 
+
+                    var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
+                    var afp = sueldo * Convert.ToDecimal(0.0725);
+                    var isss = sueldo * Convert.ToDecimal(0.03);
+                    var sueldoPostRetenciones = sueldo - (afp + isss);
+                    reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    reporte.Sueldo = sueldo;
+                    if (chbAfp.Checked)
+                    {
+                        reporte.Pago_Afp = afp;
+                    }
+                    else
+                    {
+                        reporte.Pago_Afp = 0;
+                    }
+
+                    if (chbIsss.Checked)
+                    {
+                        reporte.Pago_Isss = isss;
+                    }
+                    else
+                    {
+                        reporte.Pago_Isss = 0;
+                    }
+
+
+                    reporte.Pago_Renta = 0;
+                    reporte.Fecha = dtpFecha.Value;
+
+                    using (DBEntities db = new DBEntities())
+                    {
+                        try
+                        {
+                            db.PlanillasVentas.Add(planillaVentas);
+                            db.Reportes.Add(reporte);
+                            db.SaveChanges();
+                            MessageBox.Show("Pago registrado");
+                            txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                            chbAfp.Checked = true;
+                            chbIsss.Checked = true;
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show("Algo salió mal");
+                        }
+                    }
                 }
                 
-                
-                reporte.Pago_Renta = 0;
-                reporte.Fecha = dtpFecha.Value;
-
-                using (DBEntities db = new DBEntities())
-                {
-                    try
-                    {
-                        db.PlanillasVentas.Add(planillaVentas);
-                        db.Reportes.Add(reporte);
-                        db.SaveChanges();
-                        MessageBox.Show("Pago registrado");
-                        txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
-                        chbAfp.Checked = false;
-                        chbIsss.Checked = false;
-                    }
-                    catch (Exception ex)
-                    {
-
-                        MessageBox.Show("Algo salió mal");
-                    }
-                }
             }else if (textBox1.Text == "Transporte")
             {
-                //Registrar en tabla PlanillaVentas
-                planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
-                planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
-                planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
-                planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
-                planillaVentas.Fecha = dtpFecha.Value;
-                planillaVentas.Categoria_Id = 3;
-
-                //Registrar en tabla Reportes 
-
-                var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
-                var afp = sueldo * Convert.ToDecimal(0.0725);
-                var isss = sueldo * Convert.ToDecimal(0.03);
-                var sueldoPostRetenciones = sueldo - (afp + isss);
-                reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
-                reporte.Sueldo = sueldo;
-                if (chbAfp.Checked)
+                int resultado = VerificarPlanillaVentas();
+                if (resultado == 0)
                 {
-                    reporte.Pago_Afp = afp;
+                    MessageBox.Show("Este empleado ya ha alcanzado el número máximo de registros por mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                    chbAfp.Checked = true;
+                    chbIsss.Checked = true;
+                    txtAnticipos.Text = "0";
                 }
                 else
                 {
-                    reporte.Pago_Afp = 0;
-                }
+                    //Registrar en tabla PlanillaVenta
+                    planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
+                    planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
+                    planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
+                    planillaVentas.Fecha = dtpFecha.Value;
+                    planillaVentas.Categoria_Id = 3;
 
-                if (chbIsss.Checked)
-                {
-                    reporte.Pago_Isss = isss;
-                }
-                else
-                {
-                    reporte.Pago_Isss = 0;
-                }
+                    //Registrar en tabla Reportes 
 
-
-                reporte.Pago_Renta = 0;
-                reporte.Fecha = dtpFecha.Value;
-
-                using (DBEntities db = new DBEntities())
-                {
-                    try
+                    var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
+                    var afp = sueldo * Convert.ToDecimal(0.0725);
+                    var isss = sueldo * Convert.ToDecimal(0.03);
+                    var sueldoPostRetenciones = sueldo - (afp + isss);
+                    reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    reporte.Sueldo = sueldo;
+                    if (chbAfp.Checked)
                     {
-                        db.PlanillasVentas.Add(planillaVentas);
-                        db.Reportes.Add(reporte);
-                        db.SaveChanges();
-                        MessageBox.Show("Pago registrado");
-                        txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
-                        chbAfp.Checked = false;
-                        chbIsss.Checked = false;
+                        reporte.Pago_Afp = afp;
                     }
-                    catch (Exception ex)
+                    else
                     {
-
-                        MessageBox.Show("Algo salió mal");
+                        reporte.Pago_Afp = 0;
                     }
-                }
+
+                    if (chbIsss.Checked)
+                    {
+                        reporte.Pago_Isss = isss;
+                    }
+                    else
+                    {
+                        reporte.Pago_Isss = 0;
+                    }
+
+
+                    reporte.Pago_Renta = 0;
+                    reporte.Fecha = dtpFecha.Value;
+
+                    using (DBEntities db = new DBEntities())
+                    {
+                        try
+                        {
+                            db.PlanillasVentas.Add(planillaVentas);
+                            db.Reportes.Add(reporte);
+                            db.SaveChanges();
+                            MessageBox.Show("Pago registrado");
+                            txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                            chbAfp.Checked = true;
+                            chbIsss.Checked = true;
+                            txtAnticipos.Text = "0";
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show("Algo salió mal");
+                        }
+                    }
+                }                   
             }else if (textBox1.Text == "Mantenimiento")
             {
-                //Registrar en tabla PlanillaVentas
-                planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
-                planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
-                planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
-                planillaVentas.Horas_extra = Convert.ToInt32(txtHorasExtra.Text);
-                planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
-                planillaVentas.Fecha = dtpFecha.Value;
-                planillaVentas.Categoria_Id = 2;
-
-                //Registrar en tabla Reportes 
-
-                var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
-                var afp = sueldo * Convert.ToDecimal(0.0725);
-                var isss = sueldo * Convert.ToDecimal(0.03);
-                var sueldoPostRetenciones = sueldo - (afp + isss);
-                reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
-                reporte.Sueldo = sueldo;
-                if (chbAfp.Checked)
+                int resultado = VerificarPlanillaVentas();
+                if (resultado == 0)
                 {
-                    reporte.Pago_Afp = afp;
+                    MessageBox.Show("Este empleado ya ha alcanzado el número máximo de registros por mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                    chbAfp.Checked = true;
+                    chbIsss.Checked = true;
+                    txtAnticipos.Text = "0";
                 }
                 else
                 {
-                    reporte.Pago_Afp = 0;
-                }
+                    //Registrar en tabla PlanillaVentas
+                    planillaVentas.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    planillaVentas.Pago_diario = Convert.ToDecimal(txtPagoDiario.Text);
+                    planillaVentas.Dias_laborados = Convert.ToInt32(txtDiasLaborados.Text);
+                    planillaVentas.Horas_extra = Convert.ToInt32(txtHorasExtra.Text);
+                    planillaVentas.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
+                    planillaVentas.Fecha = dtpFecha.Value;
+                    planillaVentas.Categoria_Id = 2;
 
-                if (chbIsss.Checked)
-                {
-                    reporte.Pago_Isss = isss;
-                }
-                else
-                {
-                    reporte.Pago_Isss = 0;
-                }
+                    //Registrar en tabla Reportes 
 
-
-                reporte.Pago_Renta = 0;
-                reporte.Fecha = dtpFecha.Value;
-
-                using (DBEntities db = new DBEntities())
-                {
-                    try
+                    var sueldo = Convert.ToDecimal(txtPagoDiario.Text) * Convert.ToDecimal(txtDiasLaborados.Text);
+                    var afp = sueldo * Convert.ToDecimal(0.0725);
+                    var isss = sueldo * Convert.ToDecimal(0.03);
+                    var sueldoPostRetenciones = sueldo - (afp + isss);
+                    reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    reporte.Sueldo = sueldo;
+                    if (chbAfp.Checked)
                     {
-                        db.PlanillasVentas.Add(planillaVentas);
-                        db.Reportes.Add(reporte);
-                        db.SaveChanges();
-                        MessageBox.Show("Pago registrado");
-                        txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
-                        chbAfp.Checked = false;
-                        chbIsss.Checked = false;
+                        reporte.Pago_Afp = afp;
                     }
-                    catch (Exception ex)
+                    else
                     {
-
-                        MessageBox.Show("Algo salió mal");
+                        reporte.Pago_Afp = 0;
                     }
-                }
+
+                    if (chbIsss.Checked)
+                    {
+                        reporte.Pago_Isss = isss;
+                    }
+                    else
+                    {
+                        reporte.Pago_Isss = 0;
+                    }
+
+
+                    reporte.Pago_Renta = 0;
+                    reporte.Fecha = dtpFecha.Value;
+
+                    using (DBEntities db = new DBEntities())
+                    {
+                        try
+                        {
+                            db.PlanillasVentas.Add(planillaVentas);
+                            db.Reportes.Add(reporte);
+                            db.SaveChanges();
+                            MessageBox.Show("Pago registrado");
+                            txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                            chbAfp.Checked = true;
+                            chbIsss.Checked = true;
+                            txtAnticipos.Text = "0";
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show("Algo salió mal");
+                        }
+                    }
+                }                   
             }else if (textBox1.Text == "Producción")
             {
-                //Registrar en tabla PlanillaVentas
-                planillaProduccion.Empleado_Id = Convert.ToInt32(idEmpleado);
-                planillaProduccion.Pago_hora = Convert.ToDecimal(txtPagoHora.Text);
-                planillaProduccion.Horas_laboradas = Convert.ToInt32(txtHorasLaboradas.Text);
-                planillaProduccion.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
-                planillaProduccion.Fecha = dtpFecha.Value;
+                int resultado = VerificarPlanillaProduccion();
+                if(resultado == 0)
+                {
+                    MessageBox.Show("Este empleado ya ha alcanzado el número máximo de registros por mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                    chbAfp.Checked = true;
+                    chbIsss.Checked = true;
+                    txtAnticipos.Text = "0";
+                }
+                else
+                {
+                    //Registrar en tabla PlanillaProduccion
+                    planillaProduccion.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    planillaProduccion.Pago_hora = Convert.ToDecimal(txtPagoHora.Text);
+                    planillaProduccion.Horas_laboradas = Convert.ToInt32(txtHorasLaboradas.Text);
+                    planillaProduccion.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
+                    planillaProduccion.Fecha = dtpFecha.Value;
+
+
+                    //Registrar en tabla Reportes 
+
+                    var sueldo = Convert.ToDecimal(txtPagoHora.Text) * Convert.ToDecimal(txtHorasLaboradas.Text);
+                    var afp = sueldo * Convert.ToDecimal(0.0725);
+                    var isss = sueldo * Convert.ToDecimal(0.03);
+                    var sueldoPostRetenciones = sueldo - (afp + isss);
+                    reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    reporte.Sueldo = sueldo;
+                    if (chbAfp.Checked)
+                    {
+                        reporte.Pago_Afp = afp;
+                    }
+                    else
+                    {
+                        reporte.Pago_Afp = 0;
+                    }
+
+                    if (chbIsss.Checked)
+                    {
+                        reporte.Pago_Isss = isss;
+                    }
+                    else
+                    {
+                        reporte.Pago_Isss = 0;
+                    }
+
+
+                    reporte.Pago_Renta = 0;
+                    reporte.Fecha = dtpFecha.Value;
+
+                    using (DBEntities db = new DBEntities())
+                    {
+                        try
+                        {
+                            db.PlanillasProduccion.Add(planillaProduccion);
+                            db.Reportes.Add(reporte);
+                            db.SaveChanges();
+                            MessageBox.Show("Pago registrado");
+                            txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                            chbAfp.Checked = true;
+                            chbIsss.Checked = true;
+                            txtAnticipos.Text = "0";
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show("Algo salió mal");
+                        }
+                    }
+                }
                 
-
-                //Registrar en tabla Reportes 
-
-                var sueldo = Convert.ToDecimal(txtPagoHora.Text) * Convert.ToDecimal(txtHorasLaboradas.Text);
-                var afp = sueldo * Convert.ToDecimal(0.0725);
-                var isss = sueldo * Convert.ToDecimal(0.03);
-                var sueldoPostRetenciones = sueldo - (afp + isss);
-                reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
-                reporte.Sueldo = sueldo;
-                if (chbAfp.Checked)
-                {
-                    reporte.Pago_Afp = afp;
-                }
-                else
-                {
-                    reporte.Pago_Afp = 0;
-                }
-
-                if (chbIsss.Checked)
-                {
-                    reporte.Pago_Isss = isss;
-                }
-                else
-                {
-                    reporte.Pago_Isss = 0;
-                }
-
-
-                reporte.Pago_Renta = 0;
-                reporte.Fecha = dtpFecha.Value;
-
-                using (DBEntities db = new DBEntities())
-                {
-                    try
-                    {
-                        db.PlanillasProduccion.Add(planillaProduccion);
-                        db.Reportes.Add(reporte);
-                        db.SaveChanges();
-                        MessageBox.Show("Pago registrado");
-                        txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
-                        chbAfp.Checked = false;
-                        chbIsss.Checked = false;
-                    }
-                    catch (Exception ex)
-                    {
-
-                        MessageBox.Show("Algo salió mal");
-                    }
-                }
             }else if (textBox1.Text == "Administración")
             {
-                //Registrar en tabla PlanillaVentas
-                planillaAdmon.Empleado_Id = Convert.ToInt32(idEmpleado);
-                
-                planillaAdmon.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
-                planillaAdmon.Fecha = dtpFecha.Value;
-                planillaAdmon.Salario_quincenal = Convert.ToDecimal(200);
-
-                //Registrar en tabla Reportes 
-
-                var sueldo = planillaAdmon.Salario_quincenal;
-                var afp = sueldo * Convert.ToDecimal(0.0725);
-                var isss = sueldo * Convert.ToDecimal(0.03);
-                var sueldoPostRetenciones = sueldo - (afp + isss);
-                reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
-                reporte.Sueldo = sueldo;
-                if (chbAfp.Checked)
+                int resultado = VerificarPlanillaJefes();
+                if(resultado == 0)
                 {
-                    reporte.Pago_Afp = afp;
+                    MessageBox.Show("Este empleado ya ha alcanzado el número máximo de registros por mes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                    chbAfp.Checked = true;
+                    chbIsss.Checked = true;
+                    txtAnticipos.Text = "0";
                 }
                 else
                 {
-                    reporte.Pago_Afp = 0;
-                }
+                    //Registrar en tabla PlanillaJefes
+                    planillaAdmon.Empleado_Id = Convert.ToInt32(idEmpleado);
 
-                if (chbIsss.Checked)
-                {
-                    reporte.Pago_Isss = isss;
-                }
-                else
-                {
-                    reporte.Pago_Isss = 0;
-                }
+                    planillaAdmon.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
+                    planillaAdmon.Fecha = dtpFecha.Value;
+                    planillaAdmon.Salario_quincenal = Convert.ToDecimal(200);
 
+                    //Registrar en tabla Reportes 
 
-                reporte.Pago_Renta = 0;
-                reporte.Fecha = dtpFecha.Value;
-
-                using (DBEntities db = new DBEntities())
-                {
-                    try
+                    var sueldo = planillaAdmon.Salario_quincenal;
+                    var afp = sueldo * Convert.ToDecimal(0.0725);
+                    var isss = sueldo * Convert.ToDecimal(0.03);
+                    var sueldoPostRetenciones = sueldo - (afp + isss);
+                    reporte.Empleado_Id = Convert.ToInt32(idEmpleado);
+                    reporte.Sueldo = sueldo;
+                    if (chbAfp.Checked)
                     {
-                        db.Planillas_Jefes.Add(planillaAdmon);
-                        db.Reportes.Add(reporte);
-                        db.SaveChanges();
-                        MessageBox.Show("Pago registrado");
-                        txtAnticipos.Text = txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = txtPagoDiario.Text = txtPagoHora.Text = "";
-                        chbAfp.Checked = false;
-                        chbIsss.Checked = false;
+                        reporte.Pago_Afp = afp;
                     }
-                    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                    else
                     {
-                        Exception raise = dbEx;
-                        foreach (var validationErrors in dbEx.EntityValidationErrors)
+                        reporte.Pago_Afp = 0;
+                    }
+
+                    if (chbIsss.Checked)
+                    {
+                        reporte.Pago_Isss = isss;
+                    }
+                    else
+                    {
+                        reporte.Pago_Isss = 0;
+                    }
+
+
+                    reporte.Pago_Renta = 0;
+                    reporte.Fecha = dtpFecha.Value;
+
+                    using (DBEntities db = new DBEntities())
+                    {
+                        try
                         {
-                            foreach (var validationError in validationErrors.ValidationErrors)
-                            {
-                                string message = string.Format("{0}:{1}",
-                                    validationErrors.Entry.Entity.ToString(),
-                                    validationError.ErrorMessage);
-                                // raise a new exception nesting
-                                // the current instance as InnerException
-                                raise = new InvalidOperationException(message, raise);
-                            }
+                            db.Planillas_Jefes.Add(planillaAdmon);
+                            db.Reportes.Add(reporte);
+                            db.SaveChanges();
+                            MessageBox.Show("Pago registrado");
+                            txtDiasLaborados.Text = txtEmpleado.Text = txtHorasLaboradas.Text = "";
+                            chbAfp.Checked = true;
+                            chbIsss.Checked = true;
+                            txtAnticipos.Text = "0";
                         }
-                        throw raise;
+                        catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                        {
+                            Exception raise = dbEx;
+                            foreach (var validationErrors in dbEx.EntityValidationErrors)
+                            {
+                                foreach (var validationError in validationErrors.ValidationErrors)
+                                {
+                                    string message = string.Format("{0}:{1}",
+                                        validationErrors.Entry.Entity.ToString(),
+                                        validationError.ErrorMessage);
+                                    // raise a new exception nesting
+                                    // the current instance as InnerException
+                                    raise = new InvalidOperationException(message, raise);
+                                }
+                            }
+                            throw raise;
+                        }
                     }
                 }
+                
             }
         }
 
@@ -612,19 +751,19 @@ namespace SistemaARD.Vistas
         {
             if (Char.IsLetter(e.KeyChar))
             {
-                e.Handled = false;
+                e.Handled = true;
             }
             else if (Char.IsSeparator(e.KeyChar))
             {
-                e.Handled = false;
+                e.Handled = true;
             }
             else if (Char.IsControl(e.KeyChar))
             {
-                e.Handled = false;
+                e.Handled = true;
             }
             else
             {
-                e.Handled = true;
+                e.Handled = false;
             }
         }
 

@@ -111,6 +111,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LosNacimientos.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pagos.cs">
+      <DependentUpon>LosNacimientos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagoVacaciones.cs">
+      <DependentUpon>LosNacimientos.tt</DependentUpon>
+    </Compile>
     <Compile Include="PlanillasProduccion.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
@@ -137,6 +143,12 @@
     </Compile>
     <Compile Include="Usuarios.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AdministracionPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AdministracionPagos.Designer.cs">
+      <DependentUpon>AdministracionPagos.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AdministracionPlanilla.cs">
       <SubType>Form</SubType>
@@ -230,6 +242,9 @@
     <Compile Include="Vistas\TiposDeTelefono.Designer.cs">
       <DependentUpon>TiposDeTelefono.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\AdministracionPagos.resx">
+      <DependentUpon>AdministracionPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AdministracionPlanilla.resx">
       <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
     </EmbeddedResource>

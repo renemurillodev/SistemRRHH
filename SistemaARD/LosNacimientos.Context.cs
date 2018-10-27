@@ -46,5 +46,7 @@ namespace SistemaARD
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Reportes> Reportes { get; set; }
         public virtual DbSet<CategoriasAguinaldos> CategoriasAguinaldos { get; set; }
+        public virtual DbSet<Pagos> Pagos { get; set; }
+        public virtual DbSet<PagoVacaciones> PagoVacaciones { get; set; }
     }
 }

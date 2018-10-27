@@ -44,6 +44,9 @@
         <AssociationConnector Association="losnacimientosModel.FK_Reportes_Empleados" />
         <EntityTypeShape EntityType="losnacimientosModel.CategoriasAguinaldos" Width="1.5" PointX="3.375" PointY="3.875" />
         <AssociationConnector Association="losnacimientosModel.FK_Aguinaldos_CategoriasAguinaldos" />
+        <EntityTypeShape EntityType="losnacimientosModel.Pagos" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="losnacimientosModel.PagoVacaciones" Width="1.5" PointX="7.5" PointY="25" />
+        <AssociationConnector Association="losnacimientosModel.FK__PagoVacac__Emple__395884C4" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
