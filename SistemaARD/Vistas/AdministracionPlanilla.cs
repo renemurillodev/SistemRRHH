@@ -352,7 +352,7 @@ namespace SistemaARD.Vistas
                         catch (Exception ex)
                         {
 
-                            MessageBox.Show("Algo salió mal");
+                            throw;
                         }
                     }
                 }                   
@@ -518,7 +518,15 @@ namespace SistemaARD.Vistas
 
                     planillaAdmon.Anticipos = Convert.ToDecimal(txtAnticipos.Text);
                     planillaAdmon.Fecha = dtpFecha.Value;
-                    planillaAdmon.Salario_quincenal = Convert.ToDecimal(200);
+                    decimal salarioMensual = 0;
+                    int idEmp = int.Parse(idEmpleado);
+                    using (DBEntities db = new DBEntities())
+                    {
+                        salarioMensual = (from em in db.Empleados
+                                          where em.Id == idEmp
+                                          select em.Salario).FirstOrDefault();
+                    }
+                    planillaAdmon.Salario_quincenal = Math.Round(salarioMensual / 2, 2);
 
                     //Registrar en tabla Reportes 
 

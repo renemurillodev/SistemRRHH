@@ -20,7 +20,7 @@
           <Property Name="Empleado_Id" Type="int" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Categoria_Id" Type="int" Nullable="false" />
-          <Property Name="SalarioDiario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalarioDiario" Type="decimal" Precision="18" Scale="5" Nullable="false" />
           <Property Name="AniosTrabajados" Type="int" Nullable="false" />
           <Property Name="DiasTrabajados" Type="int" />
           <Property Name="DiasPagar" Type="int" />
@@ -90,7 +90,7 @@
           <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
           <Property Name="Cargo_Id" Type="int" Nullable="false" />
           <Property Name="Estado_Id" Type="int" Nullable="false" />
-          <Property Name="Salario" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Salario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Estados">
           <Key>
@@ -576,7 +576,7 @@
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Aguinaldos_Empleados" FromRole="Aguinaldos" ToRole="Empleados" />
           <Property Name="Categoria_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CategoriasAguinaldos" Relationship="losnacimientosModel.FK_Aguinaldos_CategoriasAguinaldos" FromRole="Aguinaldos" ToRole="CategoriasAguinaldos" />
-          <Property Name="SalarioDiario" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SalarioDiario" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
           <Property Name="AniosTrabajados" Type="Int32" Nullable="false" />
           <Property Name="DiasTrabajados" Type="Int32" />
           <Property Name="DiasPagar" Type="Int32" />
@@ -656,7 +656,7 @@
           <NavigationProperty Name="PlanillasVentas" Relationship="Self.FK_PlanillasVentas_Empleados" FromRole="Empleados" ToRole="PlanillasVentas" />
           <NavigationProperty Name="TelefonosEmpleados" Relationship="Self.FK_TelefonosEmpleados_Empleados" FromRole="Empleados" ToRole="TelefonosEmpleados" />
           <NavigationProperty Name="Reportes" Relationship="losnacimientosModel.FK_Reportes_Empleados" FromRole="Empleados" ToRole="Reportes" />
-          <Property Name="Salario" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Salario" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="PagoVacaciones" Relationship="losnacimientosModel.FK__PagoVacac__Emple__395884C4" FromRole="Empleados" ToRole="PagoVacaciones" />
         </EntityType>
         <EntityType Name="Estados">

@@ -79,10 +79,12 @@ namespace SistemaARD.Vistas
                 {
                     totalPagar = Convert.ToDecimal(((salarioDiario * 15) / 365) * diasTrabajados);
                 }
+                else
+                {
+                    totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
+                }
 
-                totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
-
-                dataGridView1.Rows[i].Cells[9].Value = "$" + totalPagar;
+                dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
            
@@ -126,8 +128,6 @@ namespace SistemaARD.Vistas
                 {
                     totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
                 }
-
-                
 
                 dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
@@ -175,8 +175,6 @@ namespace SistemaARD.Vistas
                     totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
                 }
 
-
-
                 dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
@@ -223,8 +221,6 @@ namespace SistemaARD.Vistas
                     totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
                 }
 
-
-
                 dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 
             }
@@ -270,8 +266,6 @@ namespace SistemaARD.Vistas
                 {
                     totalPagar = Convert.ToDecimal(salarioDiario * diasPagar);
                 }
-
-
 
                 dataGridView1.Rows[i].Cells[9].Value = "$" + Math.Round(totalPagar, 2);
 

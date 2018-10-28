@@ -42,7 +42,7 @@ namespace SistemaARD
         public System.DateTime FechaIngreso { get; set; }
         public int Cargo_Id { get; set; }
         public int Estado_Id { get; set; }
-        public Nullable<decimal> Salario { get; set; }
+        public decimal Salario { get; set; }
 
         public string NombreCompleto { get { return string.Format("{0} {1}", Nombres, Apellidos); } }
         public int Edad { get { return (Convert.ToInt32(DateTime.Now.Year - FechaNacimiento.Year)); } }
