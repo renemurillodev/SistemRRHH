@@ -61,9 +61,9 @@
             // 
             this.cbxDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cbxDepartamento.FormattingEnabled = true;
-            this.cbxDepartamento.Location = new System.Drawing.Point(153, 20);
+            this.cbxDepartamento.Location = new System.Drawing.Point(6, 29);
             this.cbxDepartamento.Name = "cbxDepartamento";
-            this.cbxDepartamento.Size = new System.Drawing.Size(121, 24);
+            this.cbxDepartamento.Size = new System.Drawing.Size(142, 24);
             this.cbxDepartamento.TabIndex = 1;
             this.cbxDepartamento.TextChanged += new System.EventHandler(this.cbxDepartamento_TextChanged);
             // 

@@ -59,16 +59,17 @@
             this.lblCargo = new System.Windows.Forms.Label();
             this.cbxCargos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.lblSalario = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +80,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(277, 463);
+            this.btnRegistrar.Location = new System.Drawing.Point(277, 465);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
             this.btnRegistrar.TabIndex = 43;
@@ -389,6 +390,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.panel7);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel9);
             this.groupBox1.Controls.Add(this.panel8);
@@ -437,6 +439,70 @@
             this.groupBox1.Text = "Datos del empleado";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel4.Location = new System.Drawing.Point(498, 372);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 1);
+            this.panel4.TabIndex = 58;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel9.Location = new System.Drawing.Point(136, 398);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(121, 1);
+            this.panel9.TabIndex = 57;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Location = new System.Drawing.Point(136, 365);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(121, 1);
+            this.panel8.TabIndex = 56;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel6.Location = new System.Drawing.Point(136, 290);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(121, 1);
+            this.panel6.TabIndex = 54;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel5.Location = new System.Drawing.Point(136, 253);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(121, 1);
+            this.panel5.TabIndex = 54;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel3.Location = new System.Drawing.Point(79, 183);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 1);
+            this.panel3.TabIndex = 52;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel2.Location = new System.Drawing.Point(78, 98);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 1);
+            this.panel2.TabIndex = 51;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel1.Location = new System.Drawing.Point(79, 59);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 1);
+            this.panel1.TabIndex = 50;
+            // 
             // txtSalario
             // 
             this.txtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
@@ -455,69 +521,13 @@
             this.lblSalario.TabIndex = 48;
             this.lblSalario.Text = "Salario mensual";
             // 
-            // panel1
+            // panel7
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel1.Location = new System.Drawing.Point(79, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 1);
-            this.panel1.TabIndex = 50;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel2.Location = new System.Drawing.Point(78, 98);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 1);
-            this.panel2.TabIndex = 51;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel3.Location = new System.Drawing.Point(79, 183);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 1);
-            this.panel3.TabIndex = 52;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel5.Location = new System.Drawing.Point(136, 253);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(121, 1);
-            this.panel5.TabIndex = 54;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel6.Location = new System.Drawing.Point(136, 290);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(121, 1);
-            this.panel6.TabIndex = 54;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel8.Location = new System.Drawing.Point(136, 365);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(121, 1);
-            this.panel8.TabIndex = 56;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel9.Location = new System.Drawing.Point(136, 398);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(121, 1);
-            this.panel9.TabIndex = 57;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel4.Location = new System.Drawing.Point(498, 372);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 1);
-            this.panel4.TabIndex = 58;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel7.Location = new System.Drawing.Point(277, 516);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(130, 1);
+            this.panel7.TabIndex = 59;
             // 
             // RegistroEmpleados
             // 
@@ -579,5 +589,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel7;
     }
 }

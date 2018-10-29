@@ -100,7 +100,13 @@ namespace SistemaARD.Vistas
 
         private void AdministracionPagos_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             CargarGrid();
+        }
+
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

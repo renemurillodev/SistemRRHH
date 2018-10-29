@@ -43,6 +43,7 @@
             this.Departamento_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCargos)).BeginInit();
@@ -75,10 +76,12 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNombre.Location = new System.Drawing.Point(133, 31);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(167, 23);
+            this.txtNombre.Size = new System.Drawing.Size(167, 16);
             this.txtNombre.TabIndex = 7;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -119,6 +122,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.panel8);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.lblDepartamento);
             this.groupBox1.Controls.Add(this.btnRegistrar);
@@ -209,6 +213,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado de cargos";
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Location = new System.Drawing.Point(133, 53);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(167, 1);
+            this.panel8.TabIndex = 37;
+            // 
             // RegistroCargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel8;
     }
 }

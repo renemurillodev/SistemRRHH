@@ -22,6 +22,8 @@ namespace SistemaARD.Vistas
 
         private void ListaIndemnizaciones_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
             CargarTodas();
             CalcularPago();
             cbxDepartamento.SelectedIndex = 0;
@@ -454,6 +456,11 @@ namespace SistemaARD.Vistas
                 }
             }
             CalcularPago();
+        }
+
+        private void iconCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

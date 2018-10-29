@@ -59,21 +59,22 @@
             this.lblCargo = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
@@ -137,11 +138,16 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(363, 344);
+            this.btnGenerar.FlatAppearance.BorderSize = 0;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerar.Image")));
+            this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerar.Location = new System.Drawing.Point(308, 333);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerar.Size = new System.Drawing.Size(130, 45);
             this.btnGenerar.TabIndex = 6;
             this.btnGenerar.Text = "Generar";
+            this.btnGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerar.UseVisualStyleBackColor = true;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
@@ -359,6 +365,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.panel14);
             this.groupBox1.Controls.Add(this.panel13);
             this.groupBox1.Controls.Add(this.panel12);
             this.groupBox1.Controls.Add(this.panel11);
@@ -408,6 +415,119 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contrato";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel14.Location = new System.Drawing.Point(308, 384);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(130, 1);
+            this.panel14.TabIndex = 60;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel13.Location = new System.Drawing.Point(201, 176);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(378, 1);
+            this.panel13.TabIndex = 41;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel12.Location = new System.Drawing.Point(673, 56);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(133, 1);
+            this.panel12.TabIndex = 40;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel11.Location = new System.Drawing.Point(673, 95);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(133, 1);
+            this.panel11.TabIndex = 39;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel10.Location = new System.Drawing.Point(468, 49);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(111, 1);
+            this.panel10.TabIndex = 38;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel9.Location = new System.Drawing.Point(468, 88);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(111, 1);
+            this.panel9.TabIndex = 37;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Location = new System.Drawing.Point(469, 129);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(111, 1);
+            this.panel8.TabIndex = 36;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel7.Location = new System.Drawing.Point(469, 222);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(111, 1);
+            this.panel7.TabIndex = 35;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel6.Location = new System.Drawing.Point(135, 326);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(303, 1);
+            this.panel6.TabIndex = 34;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel5.Location = new System.Drawing.Point(133, 284);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(189, 1);
+            this.panel5.TabIndex = 33;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel4.Location = new System.Drawing.Point(135, 225);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(189, 1);
+            this.panel4.TabIndex = 32;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel3.Location = new System.Drawing.Point(135, 135);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(189, 1);
+            this.panel3.TabIndex = 31;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel2.Location = new System.Drawing.Point(135, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(189, 1);
+            this.panel2.TabIndex = 30;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel1.Location = new System.Drawing.Point(135, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(189, 1);
+            this.panel1.TabIndex = 29;
             // 
             // iconMinimizar
             // 
@@ -434,110 +554,6 @@
             this.iconCerrar.TabIndex = 30;
             this.iconCerrar.TabStop = false;
             this.iconCerrar.Click += new System.EventHandler(this.iconCerrar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel1.Location = new System.Drawing.Point(135, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(189, 1);
-            this.panel1.TabIndex = 29;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel2.Location = new System.Drawing.Point(135, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(189, 1);
-            this.panel2.TabIndex = 30;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel3.Location = new System.Drawing.Point(135, 135);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(189, 1);
-            this.panel3.TabIndex = 31;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel4.Location = new System.Drawing.Point(135, 225);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(189, 1);
-            this.panel4.TabIndex = 32;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel5.Location = new System.Drawing.Point(133, 284);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(189, 1);
-            this.panel5.TabIndex = 33;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel6.Location = new System.Drawing.Point(135, 326);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(303, 1);
-            this.panel6.TabIndex = 34;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel7.Location = new System.Drawing.Point(469, 222);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(111, 1);
-            this.panel7.TabIndex = 35;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel8.Location = new System.Drawing.Point(469, 129);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(111, 1);
-            this.panel8.TabIndex = 36;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel9.Location = new System.Drawing.Point(468, 88);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(111, 1);
-            this.panel9.TabIndex = 37;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel10.Location = new System.Drawing.Point(468, 49);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(111, 1);
-            this.panel10.TabIndex = 38;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel11.Location = new System.Drawing.Point(673, 95);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(133, 1);
-            this.panel11.TabIndex = 39;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel12.Location = new System.Drawing.Point(673, 56);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(133, 1);
-            this.panel12.TabIndex = 40;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel13.Location = new System.Drawing.Point(201, 176);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(378, 1);
-            this.panel13.TabIndex = 41;
             // 
             // GenerarContratos
             // 
@@ -607,5 +623,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel14;
     }
 }

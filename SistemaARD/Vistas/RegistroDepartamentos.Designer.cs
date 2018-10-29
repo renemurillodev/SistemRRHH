@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -52,7 +53,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistrar.Location = new System.Drawing.Point(121, 56);
+            this.btnRegistrar.Location = new System.Drawing.Point(121, 59);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
             this.btnRegistrar.TabIndex = 5;
@@ -63,10 +64,12 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNombre.Location = new System.Drawing.Point(70, 27);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(181, 23);
+            this.txtNombre.Size = new System.Drawing.Size(181, 16);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -158,6 +161,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel8);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.btnRegistrar);
@@ -180,6 +184,14 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de departamentos";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Location = new System.Drawing.Point(70, 49);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(181, 1);
+            this.panel8.TabIndex = 65;
             // 
             // RegistroDepartamentos
             // 
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel8;
     }
 }
