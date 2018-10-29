@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,82 @@ namespace SistemaARD.Vistas
             {
                 dataGridView1.DataSource = db.Empleados.ToList<Empleados>();
             }
+        }
+
+        int VerificarPagoVacacion()
+        {
+            int res;
+            using (DBEntities db = new DBEntities())
+            {
+                db.Database.Connection.Open();
+                System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                cmd.CommandText = "VerificarPagoVacacion";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("Fecha", DateTime.Now));
+                cmd.Parameters.Add(new SqlParameter("IdEmpleado", int.Parse(idEmpleado)));
+                res = (int)cmd.ExecuteScalar();
+                db.Database.Connection.Close();
+            }
+            return res;
+        }
+
+        decimal SalarioQuincenalAdministracion()
+        {
+            decimal sal = 0;
+            using (DBEntities db = new DBEntities())
+            {
+                int empleado = int.Parse(idEmpleado);
+                var ultimoMes = db.Planillas_Jefes.OrderByDescending(j => j.Id).Where(p => p.Empleado_Id == empleado).Take(1);
+                var pagos = ultimoMes.FirstOrDefault();
+                sal = pagos.Salario_quincenal;
+            }
+            return sal;
+        }
+
+        decimal SalarioQuincenalVentas()
+        {
+            decimal sal = 0;
+            using (DBEntities db = new DBEntities())
+            {
+                int empleado = int.Parse(idEmpleado);
+                var ultimoMes = db.PlanillasVentas.OrderByDescending(j => j.Id).Where(p => p.Empleado_Id == empleado).Take(1);
+                var pagos = ultimoMes.FirstOrDefault();
+                decimal diario = pagos.Pago_diario;
+                sal = diario * 15;
+            }
+            return sal;
+        }
+
+        decimal SalarioQuincenalProduccion()
+        {
+            decimal sal = 0;
+            using (DBEntities db = new DBEntities())
+            {
+                int empleado = int.Parse(idEmpleado);
+                var ultimoMes = db.PlanillasProduccion.OrderByDescending(j => j.Id).Where(p => p.Empleado_Id == empleado).Take(1);
+                var pagos = ultimoMes.FirstOrDefault();
+                decimal hora = pagos.Pago_hora;
+                decimal hlaboradas = pagos.Horas_laboradas;
+                sal = Math.Round(hora * hlaboradas, 2);
+            }
+            return sal;
+        }
+
+        int DeterminarDepto()
+        {
+            int depto;
+            using (DBEntities db = new DBEntities())
+            {
+                db.Database.Connection.Open();
+                System.Data.Common.DbCommand cmd = db.Database.Connection.CreateCommand();
+                cmd.CommandText = "DeterminarDepartamento";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("idEmpleado", int.Parse(idEmpleado)));
+                depto = (int)cmd.ExecuteScalar();
+                db.Database.Connection.Close();
+            }
+
+            return depto;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -89,6 +166,7 @@ namespace SistemaARD.Vistas
                 btnEditar.Visible = true;
                 btnDetalle.Visible = true;
                 btnContrato.Visible = true;
+                btnVacaciones.Visible = true;
             }
         }
 
@@ -195,6 +273,61 @@ namespace SistemaARD.Vistas
             contrato.Show();
         }
 
-       
+        private void btnVacaciones_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog;
+            dialog = MessageBox.Show("¿Está seguro de que desea asignar pago por vacaciones para este empleado?", "Vacaciones", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialog == DialogResult.Yes)
+            {
+                int resultado = VerificarPagoVacacion();
+                if(resultado == 0)
+                {
+                    MessageBox.Show("Este empleado ya tiene un pago de vacación registrado en el corriente año", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    try
+                    {
+                        using (DBEntities db = new DBEntities())
+                        {
+                            PagoVacaciones pagoVacacion = new PagoVacaciones();
+                            decimal pagoQuincenal = 0;
+                            int departamento = DeterminarDepto();
+                            if(departamento == 1)
+                            {
+                                pagoQuincenal = SalarioQuincenalAdministracion();
+                            }else if(departamento == 2)
+                            {
+                                pagoQuincenal = SalarioQuincenalVentas();
+                            }else if(departamento == 3)
+                            {
+                                pagoQuincenal = SalarioQuincenalProduccion();
+                            }else if(departamento == 4)
+                            {
+                                pagoQuincenal = SalarioQuincenalVentas();
+                            }else if(departamento == 5)
+                            {
+                                pagoQuincenal = SalarioQuincenalVentas();
+                            }
+
+                            int emp = int.Parse(idEmpleado);
+                            decimal montoPagar = (pagoQuincenal * Convert.ToDecimal(0.3) + pagoQuincenal);
+                            pagoVacacion.Empleado_Id = emp;
+                            pagoVacacion.Monto = Math.Round(montoPagar, 2);
+                            pagoVacacion.Fecha = DateTime.Now;
+
+                            db.PagoVacaciones.Add(pagoVacacion);
+                            db.SaveChanges();
+                        }
+                        MessageBox.Show("El pago se ha registrado correctamente", "Pago de vacación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                } 
+            }
+        }
     }
 }

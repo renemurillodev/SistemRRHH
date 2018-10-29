@@ -192,6 +192,12 @@
     <Compile Include="Vistas\ListaIndemnizaciones.Designer.cs">
       <DependentUpon>ListaIndemnizaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ListaVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListaVacaciones.Designer.cs">
+      <DependentUpon>ListaVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ListaIndemnizaciones.resx">
       <DependentUpon>ListaIndemnizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListaVacaciones.resx">
+      <DependentUpon>ListaVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

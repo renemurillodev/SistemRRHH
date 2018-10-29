@@ -86,6 +86,7 @@ namespace SistemaARD.Vistas
             CargarDataGrid();
             CargarPagos();
             txtAnticipos.Text = "0";
+            txtHorasExtra.Text = "0";
             chbAfp.Checked = true;
             chbIsss.Checked = true;
             if(textBox1.Text == "Ventas" || textBox1.Text == "Transporte")

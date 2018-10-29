@@ -58,6 +58,7 @@
             this.btnContrato = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnVacaciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -316,6 +317,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnVacaciones);
             this.groupBox1.Controls.Add(this.lblApellido);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,6 +393,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de empleados";
             // 
+            // btnVacaciones
+            // 
+            this.btnVacaciones.Location = new System.Drawing.Point(397, 34);
+            this.btnVacaciones.Name = "btnVacaciones";
+            this.btnVacaciones.Size = new System.Drawing.Size(139, 23);
+            this.btnVacaciones.TabIndex = 3;
+            this.btnVacaciones.Text = "Pago vacaciones";
+            this.btnVacaciones.UseVisualStyleBackColor = true;
+            this.btnVacaciones.Visible = false;
+            this.btnVacaciones.Click += new System.EventHandler(this.btnVacaciones_Click);
+            // 
             // ListaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,5 +458,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Salario;
+        private System.Windows.Forms.Button btnVacaciones;
     }
 }
