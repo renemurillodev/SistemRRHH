@@ -329,5 +329,21 @@ namespace SistemaARD.Vistas
                 } 
             }
         }
+
+        private void txtApellido_Enter(object sender, EventArgs e)
+        {
+            if (txtApellido.Text == "Apellido")
+            {
+                txtApellido.Text = "";
+            }
+        }
+
+        private void txtApellido_Leave(object sender, EventArgs e)
+        {
+            if (txtApellido.Text == "")
+            {
+                txtApellido.Text = "Apellido";
+            }
+        }
     }
 }

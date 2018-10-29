@@ -59,8 +59,16 @@
             this.lblCargo = new System.Windows.Forms.Label();
             this.cbxCargos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSalario = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,9 +90,10 @@
             // 
             // cbxEstado
             // 
+            this.cbxEstado.BackColor = System.Drawing.SystemColors.Window;
             this.cbxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cbxEstado.FormattingEnabled = true;
-            this.cbxEstado.Location = new System.Drawing.Point(127, 481);
+            this.cbxEstado.Location = new System.Drawing.Point(127, 493);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(121, 24);
             this.cbxEstado.TabIndex = 42;
@@ -100,6 +109,7 @@
             // 
             // cbxNombreAfp
             // 
+            this.cbxNombreAfp.BackColor = System.Drawing.SystemColors.Window;
             this.cbxNombreAfp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cbxNombreAfp.FormattingEnabled = true;
             this.cbxNombreAfp.Location = new System.Drawing.Point(136, 305);
@@ -109,46 +119,55 @@
             // 
             // txtNumeroIsss
             // 
+            this.txtNumeroIsss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNumeroIsss.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumeroIsss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNumeroIsss.Location = new System.Drawing.Point(136, 376);
             this.txtNumeroIsss.Mask = "000000000";
             this.txtNumeroIsss.Name = "txtNumeroIsss";
-            this.txtNumeroIsss.Size = new System.Drawing.Size(121, 23);
+            this.txtNumeroIsss.Size = new System.Drawing.Size(121, 16);
             this.txtNumeroIsss.TabIndex = 39;
             this.txtNumeroIsss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroIsss_KeyPress);
             // 
             // txtNup
             // 
+            this.txtNup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNup.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNup.Location = new System.Drawing.Point(136, 343);
             this.txtNup.Mask = "000000000000";
             this.txtNup.Name = "txtNup";
-            this.txtNup.Size = new System.Drawing.Size(121, 23);
+            this.txtNup.Size = new System.Drawing.Size(121, 16);
             this.txtNup.TabIndex = 38;
             this.txtNup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNup_KeyPress);
             // 
             // txtNumeroNit
             // 
+            this.txtNumeroNit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNumeroNit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumeroNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNumeroNit.Location = new System.Drawing.Point(136, 268);
             this.txtNumeroNit.Mask = "0000-000000-000-0";
             this.txtNumeroNit.Name = "txtNumeroNit";
-            this.txtNumeroNit.Size = new System.Drawing.Size(121, 23);
+            this.txtNumeroNit.Size = new System.Drawing.Size(121, 16);
             this.txtNumeroNit.TabIndex = 37;
             this.txtNumeroNit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroNit_KeyPress);
             // 
             // txtNumeroDui
             // 
+            this.txtNumeroDui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNumeroDui.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumeroDui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNumeroDui.Location = new System.Drawing.Point(136, 231);
             this.txtNumeroDui.Mask = "00000000-0";
             this.txtNumeroDui.Name = "txtNumeroDui";
-            this.txtNumeroDui.Size = new System.Drawing.Size(121, 23);
+            this.txtNumeroDui.Size = new System.Drawing.Size(121, 16);
             this.txtNumeroDui.TabIndex = 36;
             this.txtNumeroDui.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroDui_KeyPress);
             // 
             // cbxGenero
             // 
+            this.cbxGenero.BackColor = System.Drawing.SystemColors.Window;
             this.cbxGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cbxGenero.FormattingEnabled = true;
             this.cbxGenero.Location = new System.Drawing.Point(79, 191);
@@ -158,6 +177,8 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtDireccion.Location = new System.Drawing.Point(79, 157);
             this.txtDireccion.Multiline = true;
@@ -168,6 +189,8 @@
             // 
             // txtApellidos
             // 
+            this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtApellidos.Location = new System.Drawing.Point(79, 72);
             this.txtApellidos.Multiline = true;
@@ -178,6 +201,8 @@
             // 
             // txtNombres
             // 
+            this.txtNombres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtNombres.Location = new System.Drawing.Point(79, 33);
             this.txtNombres.Multiline = true;
@@ -190,7 +215,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.lblEstado.Location = new System.Drawing.Point(4, 481);
+            this.lblEstado.Location = new System.Drawing.Point(6, 496);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(52, 17);
             this.lblEstado.TabIndex = 31;
@@ -343,7 +368,7 @@
             // 
             this.lblCargo.AutoSize = true;
             this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.lblCargo.Location = new System.Drawing.Point(7, 449);
+            this.lblCargo.Location = new System.Drawing.Point(7, 453);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(46, 17);
             this.lblCargo.TabIndex = 46;
@@ -351,9 +376,10 @@
             // 
             // cbxCargos
             // 
+            this.cbxCargos.BackColor = System.Drawing.SystemColors.Window;
             this.cbxCargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cbxCargos.FormattingEnabled = true;
-            this.cbxCargos.Location = new System.Drawing.Point(127, 449);
+            this.cbxCargos.Location = new System.Drawing.Point(127, 453);
             this.cbxCargos.Name = "cbxCargos";
             this.cbxCargos.Size = new System.Drawing.Size(121, 24);
             this.cbxCargos.TabIndex = 47;
@@ -363,6 +389,14 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.panel9);
+            this.groupBox1.Controls.Add(this.panel8);
+            this.groupBox1.Controls.Add(this.panel6);
+            this.groupBox1.Controls.Add(this.panel5);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txtSalario);
             this.groupBox1.Controls.Add(this.lblSalario);
             this.groupBox1.Controls.Add(this.lblNombres);
@@ -397,11 +431,20 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 511);
+            this.groupBox1.Size = new System.Drawing.Size(746, 533);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del empleado";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            this.txtSalario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalario.Location = new System.Drawing.Point(498, 352);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(100, 14);
+            this.txtSalario.TabIndex = 49;
             // 
             // lblSalario
             // 
@@ -412,19 +455,76 @@
             this.lblSalario.TabIndex = 48;
             this.lblSalario.Text = "Salario mensual";
             // 
-            // txtSalario
+            // panel1
             // 
-            this.txtSalario.Location = new System.Drawing.Point(498, 352);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(100, 21);
-            this.txtSalario.TabIndex = 49;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel1.Location = new System.Drawing.Point(79, 59);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 1);
+            this.panel1.TabIndex = 50;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel2.Location = new System.Drawing.Point(78, 98);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 1);
+            this.panel2.TabIndex = 51;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel3.Location = new System.Drawing.Point(79, 183);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 1);
+            this.panel3.TabIndex = 52;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel5.Location = new System.Drawing.Point(136, 253);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(121, 1);
+            this.panel5.TabIndex = 54;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel6.Location = new System.Drawing.Point(136, 290);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(121, 1);
+            this.panel6.TabIndex = 54;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Location = new System.Drawing.Point(136, 365);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(121, 1);
+            this.panel8.TabIndex = 56;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel9.Location = new System.Drawing.Point(136, 398);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(121, 1);
+            this.panel9.TabIndex = 57;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel4.Location = new System.Drawing.Point(498, 372);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 1);
+            this.panel4.TabIndex = 58;
             // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(770, 527);
+            this.ClientSize = new System.Drawing.Size(770, 549);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -471,5 +571,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label lblSalario;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel3;
     }
 }

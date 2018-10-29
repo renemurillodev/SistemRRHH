@@ -268,6 +268,32 @@
         ZfvQh/8P+vX7G1gAoGbN0rovAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btnVacaciones.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAABJJJREFUaEPtl19MW3UUxyuLfyIPhkSTjRizqOB0KXOAliB/FtoGARljoRRIOwbo
+        lMneYMSxWDCTsmRqMqKDGZdtsUsGPmiGzo0Z3NSYmD34osk0bLsPRh/MsmVPavI9ntMcuFx6L72aWWLS
+        T/JNf997zu93vpSb29aTJUuWLFn+J4RoTf6r6Mrvo7HV0NrdiHpilKNp3LG+F2+v3w3w61V+nc+wrrFk
+        9psaxx2Fu/BzwS68qzbjFLyM9znDD2rd4e2B4X0RcbUZR2ZLBrXu2NwFY3O3Gbq4C76SHgq5UfFOFOs2
+        R4pfwrpk/y66Xy9ZkNmSQa07fJ0wynaYoX07kCjrJHInvKfbHHm2Ew3S+1yUHtFLFmS2ZFDrjqoIDNZi
+        6GAEuRUdlOdGTu9eeRvy+cxzlRH8XhnF7aooUWWUblZFcUPE149qq8yPSwa17vC3w/B3mKFr2tHm76Cx
+        dKoO0VrdkkKgAydYv/G5+wPtGFyuYDsatdUjsznDrdQZiAfa0B6zexzWhWHUtZqh2b/Dfj6dalvwhG5J
+        gc/4njWhdkX4rHh9GH8tP591vT5MxLWD2mqyrQVGc4sZ+k7AZ37HOql2RWS2ZFBrYVsIE1y/otYk3Ayj
+        tdkMPXwR4ZGLmF1Jw5fwUeyy/f0s8JmjfOafrDlezy6odTtmwtvR5/HQXdrqkdmSQa0Fx1qkCQZrMfTx
+        80gcnyVKp2Pn4dUtKYRCdA+fuTe6FaejTTS1oMhWfB5tAiJNtFNbZX5cMqi14FjrboTBWgw9dwaJuTNE
+        6fTlp86hV6K7kS73NOKEWpkflwxqLTjWeutgsBZD/3oSuUaC8tKJpmiNbvlHvFKHb3rr8aFamR+XDGot
+        ONb2PA9jT60Zmn0jq0XXvaxq1r2sQdZTrId1/VBygw1c69Yeq3gO64++Wgxoqyd5jTOoteBY6w/CGAia
+        oXmdYM3IeqE2GKAHBoJE/X508LpC1nv9zrfHQABf9wdwI6kgbif3Bukmr3/h847Gquk+bZV5cZmj1oJj
+        bagGxr4aMzT7BCsZeqEmoYf8RK9x6CEOLev9K4Reyj4/GqSfz7D9GJfzZY5aC461kWoYw1vM0CNb4ON3
+        okLXDW9UwTtZQnePVFMoxoO59qCsx/gPSW5Iw4FKrEvufcH+ESmzJYNaC4610UoYoxVm6EwjsyWDWguO
+        tbfKceVQubuP3P8Cnv8By/ZHAF+Pc7bU0OM+HBwvIzrsw/XDZZjPpHi2IbPHy/C6xrHA1+PSo9Yk5qGc
+        yVK0TZQiPllKY1bhFl//NvX6ndHEMxg9UoIWWvKxvhTJxD22t44jx4phsFbtfpfZkkGtOxKbYJzaZIY+
+        VQRf4mkKpdNUiflksasvF89o0HYLMlsyqHXHdBGMaa8Zmn1iuogonU57zWe4XT1V9sFktlPNkY83wvhk
+        oxn6XBFyZ7yUl05TIfN7iV19uZb+Z5YisyWDWnec3YAfzz5p/p7LNJ9twBHWT2rd8UUhDlwoBC4U4Bqv
+        5zOqAlyV2bw+pHHcwY+inEuPI/LVYzS2KnoUnVOef/cVOEuWLFmyZBqP528ZUK7s/Y0bMQAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <data name="btnContrato.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
