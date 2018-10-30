@@ -11,7 +11,7 @@ namespace SistemaARD.Clases
     {
         public static string ObtenerConexion()
         {
-            string CadenaConexion = "Data Source=.\\SQLEXPRESS; Initial Catalog=losnacimientos; Integrated Security=true;";
+            string CadenaConexion = "Data Source=.; Initial Catalog=losnacimientos; Integrated Security=true;";
 
             return CadenaConexion;
         }

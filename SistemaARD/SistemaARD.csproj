@@ -156,6 +156,12 @@
     <Compile Include="Vistas\AdministracionPlanilla.Designer.cs">
       <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\CambioContrasenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\CambioContrasenia.Designer.cs">
+      <DependentUpon>CambioContrasenia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     </Compile>
     <Compile Include="Vistas\ListaVacaciones.Designer.cs">
       <DependentUpon>ListaVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\MainForm.cs">
       <SubType>Form</SubType>
@@ -242,6 +254,12 @@
     <Compile Include="Vistas\RegistroRoles.Designer.cs">
       <DependentUpon>RegistroRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\RegistroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\RegistroUsuarios.Designer.cs">
+      <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\TiposDeTelefono.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\AdministracionPlanilla.resx">
       <DependentUpon>AdministracionPlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\CambioContrasenia.resx">
+      <DependentUpon>CambioContrasenia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -284,6 +305,9 @@
     <EmbeddedResource Include="Vistas\ListaVacaciones.resx">
       <DependentUpon>ListaVacaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\RegistroRoles.resx">
       <DependentUpon>RegistroRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\RegistroUsuarios.resx">
+      <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\TiposDeTelefono.resx">
       <DependentUpon>TiposDeTelefono.cs</DependentUpon>
