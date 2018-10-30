@@ -49,18 +49,20 @@
             // lblModalidad
             // 
             this.lblModalidad.AutoSize = true;
+            this.lblModalidad.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModalidad.Location = new System.Drawing.Point(32, 23);
             this.lblModalidad.Name = "lblModalidad";
-            this.lblModalidad.Size = new System.Drawing.Size(56, 13);
+            this.lblModalidad.Size = new System.Drawing.Size(74, 16);
             this.lblModalidad.TabIndex = 0;
             this.lblModalidad.Text = "Modalidad";
             // 
             // lblValorPago
             // 
             this.lblValorPago.AutoSize = true;
+            this.lblValorPago.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValorPago.Location = new System.Drawing.Point(35, 63);
             this.lblValorPago.Name = "lblValorPago";
-            this.lblValorPago.Size = new System.Drawing.Size(75, 13);
+            this.lblValorPago.Size = new System.Drawing.Size(99, 16);
             this.lblValorPago.TabIndex = 1;
             this.lblValorPago.Text = "Valor del pago";
             // 
@@ -68,18 +70,20 @@
             // 
             this.txtModalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtModalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtModalidad.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtModalidad.Location = new System.Drawing.Point(149, 23);
             this.txtModalidad.Name = "txtModalidad";
-            this.txtModalidad.Size = new System.Drawing.Size(100, 13);
+            this.txtModalidad.Size = new System.Drawing.Size(100, 17);
             this.txtModalidad.TabIndex = 2;
             // 
             // txtValor
             // 
             this.txtValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValor.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtValor.Location = new System.Drawing.Point(149, 63);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 13);
+            this.txtValor.Size = new System.Drawing.Size(100, 17);
             this.txtValor.TabIndex = 3;
             // 
             // dtgPagos

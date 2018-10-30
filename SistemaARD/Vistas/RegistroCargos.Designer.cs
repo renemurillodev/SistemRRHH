@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroCargos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cbxDepartamento = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgCargos = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +45,6 @@
             this.Departamento_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCargos)).BeginInit();
@@ -67,9 +68,9 @@
             // 
             // cbxDepartamento
             // 
-            this.cbxDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cbxDepartamento.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.cbxDepartamento.FormattingEnabled = true;
-            this.cbxDepartamento.Location = new System.Drawing.Point(448, 31);
+            this.cbxDepartamento.Location = new System.Drawing.Point(437, 24);
             this.cbxDepartamento.Name = "cbxDepartamento";
             this.cbxDepartamento.Size = new System.Drawing.Size(167, 24);
             this.cbxDepartamento.TabIndex = 8;
@@ -78,32 +79,33 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtNombre.Location = new System.Drawing.Point(133, 31);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(167, 16);
+            this.txtNombre.Size = new System.Drawing.Size(167, 17);
             this.txtNombre.TabIndex = 7;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblDepartamento
             // 
             this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.lblDepartamento.Location = new System.Drawing.Point(324, 31);
+            this.lblDepartamento.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.lblDepartamento.Location = new System.Drawing.Point(339, 31);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(98, 17);
+            this.lblDepartamento.Size = new System.Drawing.Size(92, 16);
             this.lblDepartamento.TabIndex = 6;
             this.lblDepartamento.Text = "Departamento";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.lblNombre.Location = new System.Drawing.Point(6, 31);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.lblNombre.Location = new System.Drawing.Point(10, 32);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(121, 17);
+            this.lblNombre.Size = new System.Drawing.Size(117, 16);
             this.lblNombre.TabIndex = 5;
             this.lblNombre.Text = "Nombre del cargo";
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // iconCerrar
             // 
@@ -136,6 +138,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignación de cargos";
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Location = new System.Drawing.Point(133, 53);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(167, 1);
+            this.panel8.TabIndex = 37;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -161,6 +171,14 @@
             this.Nombre,
             this.Departamento_Id,
             this.Departamento});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgCargos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgCargos.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dtgCargos.Location = new System.Drawing.Point(6, 26);
             this.dtgCargos.Name = "dtgCargos";
@@ -212,14 +230,6 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado de cargos";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel8.Location = new System.Drawing.Point(133, 53);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(167, 1);
-            this.panel8.TabIndex = 37;
             // 
             // RegistroCargos
             // 

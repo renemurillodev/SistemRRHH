@@ -59,6 +59,7 @@
             this.lblCargo = new System.Windows.Forms.Label();
             this.cbxCargos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -69,7 +70,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.lblSalario = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,7 @@
             // 
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.Location = new System.Drawing.Point(277, 465);
@@ -92,7 +93,7 @@
             // cbxEstado
             // 
             this.cbxEstado.BackColor = System.Drawing.SystemColors.Window;
-            this.cbxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cbxEstado.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Location = new System.Drawing.Point(127, 493);
             this.cbxEstado.Name = "cbxEstado";
@@ -101,17 +102,17 @@
             // 
             // dtpFechaIngreso
             // 
-            this.dtpFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.dtpFechaIngreso.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaIngreso.Location = new System.Drawing.Point(127, 412);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 23);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(200, 24);
             this.dtpFechaIngreso.TabIndex = 41;
             // 
             // cbxNombreAfp
             // 
             this.cbxNombreAfp.BackColor = System.Drawing.SystemColors.Window;
-            this.cbxNombreAfp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cbxNombreAfp.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.cbxNombreAfp.FormattingEnabled = true;
             this.cbxNombreAfp.Location = new System.Drawing.Point(136, 305);
             this.cbxNombreAfp.Name = "cbxNombreAfp";
@@ -122,11 +123,11 @@
             // 
             this.txtNumeroIsss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtNumeroIsss.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumeroIsss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtNumeroIsss.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtNumeroIsss.Location = new System.Drawing.Point(136, 376);
             this.txtNumeroIsss.Mask = "000000000";
             this.txtNumeroIsss.Name = "txtNumeroIsss";
-            this.txtNumeroIsss.Size = new System.Drawing.Size(121, 16);
+            this.txtNumeroIsss.Size = new System.Drawing.Size(121, 17);
             this.txtNumeroIsss.TabIndex = 39;
             this.txtNumeroIsss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroIsss_KeyPress);
             // 
@@ -134,11 +135,11 @@
             // 
             this.txtNup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtNup.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtNup.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtNup.Location = new System.Drawing.Point(136, 343);
             this.txtNup.Mask = "000000000000";
             this.txtNup.Name = "txtNup";
-            this.txtNup.Size = new System.Drawing.Size(121, 16);
+            this.txtNup.Size = new System.Drawing.Size(121, 17);
             this.txtNup.TabIndex = 38;
             this.txtNup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNup_KeyPress);
             // 
@@ -146,11 +147,11 @@
             // 
             this.txtNumeroNit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtNumeroNit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumeroNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtNumeroNit.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtNumeroNit.Location = new System.Drawing.Point(136, 268);
             this.txtNumeroNit.Mask = "0000-000000-000-0";
             this.txtNumeroNit.Name = "txtNumeroNit";
-            this.txtNumeroNit.Size = new System.Drawing.Size(121, 16);
+            this.txtNumeroNit.Size = new System.Drawing.Size(121, 17);
             this.txtNumeroNit.TabIndex = 37;
             this.txtNumeroNit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroNit_KeyPress);
             // 
@@ -158,18 +159,18 @@
             // 
             this.txtNumeroDui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtNumeroDui.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumeroDui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtNumeroDui.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtNumeroDui.Location = new System.Drawing.Point(136, 231);
             this.txtNumeroDui.Mask = "00000000-0";
             this.txtNumeroDui.Name = "txtNumeroDui";
-            this.txtNumeroDui.Size = new System.Drawing.Size(121, 16);
+            this.txtNumeroDui.Size = new System.Drawing.Size(121, 17);
             this.txtNumeroDui.TabIndex = 36;
             this.txtNumeroDui.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroDui_KeyPress);
             // 
             // cbxGenero
             // 
             this.cbxGenero.BackColor = System.Drawing.SystemColors.Window;
-            this.cbxGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cbxGenero.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.cbxGenero.FormattingEnabled = true;
             this.cbxGenero.Location = new System.Drawing.Point(79, 191);
             this.cbxGenero.Name = "cbxGenero";
@@ -180,7 +181,7 @@
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtDireccion.Location = new System.Drawing.Point(79, 157);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
@@ -192,7 +193,7 @@
             // 
             this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtApellidos.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtApellidos.Location = new System.Drawing.Point(79, 72);
             this.txtApellidos.Multiline = true;
             this.txtApellidos.Name = "txtApellidos";
@@ -204,7 +205,7 @@
             // 
             this.txtNombres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtNombres.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtNombres.Location = new System.Drawing.Point(79, 33);
             this.txtNombres.Multiline = true;
             this.txtNombres.Name = "txtNombres";
@@ -215,139 +216,139 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblEstado.Location = new System.Drawing.Point(6, 496);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(52, 17);
+            this.lblEstado.Size = new System.Drawing.Size(48, 16);
             this.lblEstado.TabIndex = 31;
             this.lblEstado.Text = "Estado";
             // 
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblFechaIngreso.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblFechaIngreso.Location = new System.Drawing.Point(7, 412);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
-            this.lblFechaIngreso.Size = new System.Drawing.Size(118, 17);
+            this.lblFechaIngreso.Size = new System.Drawing.Size(108, 16);
             this.lblFechaIngreso.TabIndex = 30;
             this.lblFechaIngreso.Text = "Fecha de ingreso";
             // 
             // lblIsss
             // 
             this.lblIsss.AutoSize = true;
-            this.lblIsss.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblIsss.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblIsss.Location = new System.Drawing.Point(13, 383);
             this.lblIsss.Name = "lblIsss";
-            this.lblIsss.Size = new System.Drawing.Size(38, 17);
+            this.lblIsss.Size = new System.Drawing.Size(32, 16);
             this.lblIsss.TabIndex = 29;
             this.lblIsss.Text = "ISSS";
             // 
             // lblNup
             // 
             this.lblNup.AutoSize = true;
-            this.lblNup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblNup.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblNup.Location = new System.Drawing.Point(10, 346);
             this.lblNup.Name = "lblNup";
-            this.lblNup.Size = new System.Drawing.Size(37, 17);
+            this.lblNup.Size = new System.Drawing.Size(34, 16);
             this.lblNup.TabIndex = 28;
             this.lblNup.Text = "NUP";
             // 
             // lblNombreAFP
             // 
             this.lblNombreAFP.AutoSize = true;
-            this.lblNombreAFP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblNombreAFP.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblNombreAFP.Location = new System.Drawing.Point(10, 314);
             this.lblNombreAFP.Name = "lblNombreAFP";
-            this.lblNombreAFP.Size = new System.Drawing.Size(108, 17);
+            this.lblNombreAFP.Size = new System.Drawing.Size(101, 16);
             this.lblNombreAFP.TabIndex = 27;
             this.lblNombreAFP.Text = "Nombre de AFP";
             // 
             // lblNit
             // 
             this.lblNit.AutoSize = true;
-            this.lblNit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblNit.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblNit.Location = new System.Drawing.Point(7, 271);
             this.lblNit.Name = "lblNit";
-            this.lblNit.Size = new System.Drawing.Size(104, 17);
+            this.lblNit.Size = new System.Drawing.Size(99, 16);
             this.lblNit.TabIndex = 26;
             this.lblNit.Text = "Número de NIT";
             // 
             // lblDui
             // 
             this.lblDui.AutoSize = true;
-            this.lblDui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblDui.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblDui.Location = new System.Drawing.Point(6, 231);
             this.lblDui.Name = "lblDui";
-            this.lblDui.Size = new System.Drawing.Size(105, 17);
+            this.lblDui.Size = new System.Drawing.Size(100, 16);
             this.lblDui.TabIndex = 25;
             this.lblDui.Text = "Número de DUI";
             // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
-            this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblGenero.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblGenero.Location = new System.Drawing.Point(6, 194);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(56, 17);
+            this.lblGenero.Size = new System.Drawing.Size(51, 16);
             this.lblGenero.TabIndex = 24;
             this.lblGenero.Text = "Género";
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblDireccion.Location = new System.Drawing.Point(6, 157);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(67, 17);
+            this.lblDireccion.Size = new System.Drawing.Size(62, 16);
             this.lblDireccion.TabIndex = 23;
             this.lblDireccion.Text = "Dirección";
             // 
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblFechaNacimiento.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblFechaNacimiento.Location = new System.Drawing.Point(6, 116);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(139, 17);
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(127, 16);
             this.lblFechaNacimiento.TabIndex = 22;
             this.lblFechaNacimiento.Text = "Fecha de nacimiento";
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(153, 111);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(126, 23);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(126, 24);
             this.dtpFechaNacimiento.TabIndex = 21;
             // 
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblApellidos.Location = new System.Drawing.Point(6, 75);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(65, 17);
+            this.lblApellidos.Size = new System.Drawing.Size(62, 16);
             this.lblApellidos.TabIndex = 20;
             this.lblApellidos.Text = "Apellidos";
             // 
             // lblNombres
             // 
             this.lblNombres.AutoSize = true;
-            this.lblNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblNombres.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblNombres.Location = new System.Drawing.Point(6, 36);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(65, 17);
+            this.lblNombres.Size = new System.Drawing.Size(63, 16);
             this.lblNombres.TabIndex = 19;
             this.lblNombres.Text = "Nombres";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblId.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblId.Location = new System.Drawing.Point(232, 193);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(46, 17);
+            this.lblId.Size = new System.Drawing.Size(43, 16);
             this.lblId.TabIndex = 44;
             this.lblId.Text = "label1";
             this.lblId.Visible = false;
@@ -368,17 +369,17 @@
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.lblCargo.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.lblCargo.Location = new System.Drawing.Point(7, 453);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(46, 17);
+            this.lblCargo.Size = new System.Drawing.Size(44, 16);
             this.lblCargo.TabIndex = 46;
             this.lblCargo.Text = "Cargo";
             // 
             // cbxCargos
             // 
             this.cbxCargos.BackColor = System.Drawing.SystemColors.Window;
-            this.cbxCargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cbxCargos.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.cbxCargos.FormattingEnabled = true;
             this.cbxCargos.Location = new System.Drawing.Point(127, 453);
             this.cbxCargos.Name = "cbxCargos";
@@ -439,9 +440,19 @@
             this.groupBox1.Text = "Datos del empleado";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel7.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.panel7.Location = new System.Drawing.Point(277, 516);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(130, 1);
+            this.panel7.TabIndex = 59;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel4.Location = new System.Drawing.Point(498, 372);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(100, 1);
@@ -450,6 +461,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel9.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel9.Location = new System.Drawing.Point(136, 398);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(121, 1);
@@ -458,6 +470,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel8.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel8.Location = new System.Drawing.Point(136, 365);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(121, 1);
@@ -466,6 +479,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel6.Location = new System.Drawing.Point(136, 290);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(121, 1);
@@ -474,6 +488,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel5.Location = new System.Drawing.Point(136, 253);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(121, 1);
@@ -482,6 +497,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel3.Location = new System.Drawing.Point(79, 183);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 1);
@@ -490,6 +506,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel2.Location = new System.Drawing.Point(78, 98);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 1);
@@ -498,6 +515,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.panel1.Location = new System.Drawing.Point(79, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 1);
@@ -507,27 +525,21 @@
             // 
             this.txtSalario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.txtSalario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSalario.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.txtSalario.Location = new System.Drawing.Point(498, 352);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(100, 14);
+            this.txtSalario.Size = new System.Drawing.Size(100, 17);
             this.txtSalario.TabIndex = 49;
             // 
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(368, 352);
+            this.lblSalario.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.lblSalario.Location = new System.Drawing.Point(392, 353);
             this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(112, 15);
+            this.lblSalario.Size = new System.Drawing.Size(100, 16);
             this.lblSalario.TabIndex = 48;
             this.lblSalario.Text = "Salario mensual";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel7.Location = new System.Drawing.Point(277, 516);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(130, 1);
-            this.panel7.TabIndex = 59;
             // 
             // RegistroEmpleados
             // 

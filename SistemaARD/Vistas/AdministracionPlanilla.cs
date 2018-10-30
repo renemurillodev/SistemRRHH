@@ -870,6 +870,11 @@ namespace SistemaARD.Vistas
                 e.Handled = true;
             }
         }
+
+        private void txtHorasExtra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class LlenarPlanilla

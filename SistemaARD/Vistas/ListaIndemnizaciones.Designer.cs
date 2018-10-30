@@ -66,18 +66,20 @@
             // lblTotalPagoLiquido
             // 
             this.lblTotalPagoLiquido.AutoSize = true;
-            this.lblTotalPagoLiquido.Location = new System.Drawing.Point(439, 471);
+            this.lblTotalPagoLiquido.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.lblTotalPagoLiquido.Location = new System.Drawing.Point(445, 465);
             this.lblTotalPagoLiquido.Name = "lblTotalPagoLiquido";
-            this.lblTotalPagoLiquido.Size = new System.Drawing.Size(68, 13);
+            this.lblTotalPagoLiquido.Size = new System.Drawing.Size(84, 16);
             this.lblTotalPagoLiquido.TabIndex = 1;
             this.lblTotalPagoLiquido.Text = "Total Liquido";
             // 
             // dtpDesde
             // 
+            this.dtpDesde.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(79, 25);
+            this.dtpDesde.Location = new System.Drawing.Point(79, 21);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(139, 20);
+            this.dtpDesde.Size = new System.Drawing.Size(139, 24);
             this.dtpDesde.TabIndex = 2;
             // 
             // lblDesde
@@ -116,10 +118,11 @@
             // 
             // dtpHasta
             // 
+            this.dtpHasta.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(331, 25);
+            this.dtpHasta.Location = new System.Drawing.Point(331, 21);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(124, 20);
+            this.dtpHasta.Size = new System.Drawing.Size(124, 24);
             this.dtpHasta.TabIndex = 6;
             // 
             // btnFiltrar
@@ -140,6 +143,7 @@
             // 
             // cbxDepartamento
             // 
+            this.cbxDepartamento.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
             this.cbxDepartamento.FormattingEnabled = true;
             this.cbxDepartamento.Items.AddRange(new object[] {
             "Todos",
@@ -150,24 +154,26 @@
             "Transporte"});
             this.cbxDepartamento.Location = new System.Drawing.Point(79, 76);
             this.cbxDepartamento.Name = "cbxDepartamento";
-            this.cbxDepartamento.Size = new System.Drawing.Size(139, 21);
+            this.cbxDepartamento.Size = new System.Drawing.Size(139, 24);
             this.cbxDepartamento.TabIndex = 8;
             // 
             // lblRetenciones
             // 
             this.lblRetenciones.AutoSize = true;
-            this.lblRetenciones.Location = new System.Drawing.Point(214, 471);
+            this.lblRetenciones.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.lblRetenciones.Location = new System.Drawing.Point(220, 465);
             this.lblRetenciones.Name = "lblRetenciones";
-            this.lblRetenciones.Size = new System.Drawing.Size(89, 13);
+            this.lblRetenciones.Size = new System.Drawing.Size(108, 16);
             this.lblRetenciones.TabIndex = 9;
             this.lblRetenciones.Text = "Total retenciones";
             // 
             // lblTotalPago
             // 
             this.lblTotalPago.AutoSize = true;
-            this.lblTotalPago.Location = new System.Drawing.Point(13, 471);
+            this.lblTotalPago.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.lblTotalPago.Location = new System.Drawing.Point(19, 465);
             this.lblTotalPago.Name = "lblTotalPago";
-            this.lblTotalPago.Size = new System.Drawing.Size(58, 13);
+            this.lblTotalPago.Size = new System.Drawing.Size(72, 16);
             this.lblTotalPago.TabIndex = 10;
             this.lblTotalPago.Text = "Total pago";
             // 

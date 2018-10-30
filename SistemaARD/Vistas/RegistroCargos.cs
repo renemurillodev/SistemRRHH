@@ -116,6 +116,11 @@ namespace SistemaARD.Vistas
                 e.Handled = true;
             }
         }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class LlenarGridCargos
