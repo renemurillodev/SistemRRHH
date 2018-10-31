@@ -58,7 +58,9 @@ namespace SistemaARD.Vistas
                 }
                 else
                 {
-                    MessageBox.Show("Bienvenido");
+                    MainForm principal = new MainForm();
+                    this.Hide();
+                    principal.Show();
                 }
             }
             catch (Exception)

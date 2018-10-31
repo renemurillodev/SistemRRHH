@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CambioContrasenia));
             this.lblUsername = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnSolicitar = new System.Windows.Forms.Button();
             this.txtRepetirPass = new System.Windows.Forms.TextBox();
             this.lblRePass = new System.Windows.Forms.Label();
@@ -38,11 +37,12 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnCambiar = new System.Windows.Forms.Button();
             this.panelCambiar = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSolicitar = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panelCambiar.SuspendLayout();
             this.panelSolicitar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,17 +58,6 @@
             this.lblUsername.Size = new System.Drawing.Size(123, 16);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Nombre de usuario";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtUsername.Location = new System.Drawing.Point(144, 16);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 17);
-            this.txtUsername.TabIndex = 1;
             // 
             // btnSolicitar
             // 
@@ -160,6 +149,24 @@
             this.panelCambiar.TabIndex = 9;
             this.panelCambiar.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(170, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 2);
+            this.label3.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(170, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 2);
+            this.label1.TabIndex = 13;
+            // 
             // panelSolicitar
             // 
             this.panelSolicitar.Controls.Add(this.label2);
@@ -180,24 +187,6 @@
             this.label2.Size = new System.Drawing.Size(100, 2);
             this.label2.TabIndex = 12;
             // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(170, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 2);
-            this.label1.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(170, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 2);
-            this.label3.TabIndex = 14;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -210,6 +199,17 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtUsername.Location = new System.Drawing.Point(144, 16);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 17);
+            this.txtUsername.TabIndex = 1;
             // 
             // CambioContrasenia
             // 
@@ -237,7 +237,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Button btnSolicitar;
         private System.Windows.Forms.TextBox txtRepetirPass;
         private System.Windows.Forms.Label lblRePass;
@@ -250,5 +249,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }

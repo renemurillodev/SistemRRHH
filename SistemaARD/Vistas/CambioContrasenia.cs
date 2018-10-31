@@ -28,7 +28,6 @@ namespace SistemaARD.Vistas
 
         public CambioContrasenia()
         {
-            InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
@@ -41,8 +40,10 @@ namespace SistemaARD.Vistas
         {
             using (DBEntities db = new DBEntities())
             {
+                string usu = txtUsername.Text;
+
                 var exist = (from u in db.Usuarios
-                             where u.Username == txtUsername.Text.Trim()
+                             where u.Username == usu.Trim()
                              select u).FirstOrDefault();
 
                 if(exist != null)
